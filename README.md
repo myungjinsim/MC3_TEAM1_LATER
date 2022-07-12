@@ -3,7 +3,7 @@
 ## ⏰LATER
 
 ## 👨‍👨‍👧‍👦👨‍👦 Members
-|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|
+|<img src="https://github.com/mxnxxii.png">|<img src="https://github.com/myungjinsim.png">|<img src="https://github.com/phainestha1.png">|<img src="https://github.com/timo-nam.png">|<img src="https://github.com/devluce.png">|<img src="https://github.com/otoolz.png">|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[로미](https://github.com/mxnxxii)|[스티브](https://github.com/myungjinsim)|[테오](https://github.com/phainestha1)|[티모](https://github.com/timo-nam)|[혀키](https://github.com/devluce)|[홍기](https://github.com/otoolz)|
 
