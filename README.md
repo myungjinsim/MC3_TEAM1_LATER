@@ -5,7 +5,7 @@
 ## 👨‍👨‍👧‍👦👨‍👦 Members
 |<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|<img src="https://github.com/otoolz.png">|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[로미](https://github.com/)|[스티브](https://github.com/)|[테오](https://github.com/)|[티모](https://github.com/)|[혀키](https://github.com/)|[홍기](https://github.com/otoolz)|
+|[로미](https://github.com/mxnxxii)|[스티브](https://github.com/myungjinsim)|[테오](https://github.com/phainestha1)|[티모](https://github.com/timo-nam)|[혀키](https://github.com/devluce)|[홍기](https://github.com/otoolz)|
 
 ## 🤙 Git Commit Convention
 
