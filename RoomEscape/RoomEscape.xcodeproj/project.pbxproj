@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A06CF9EB287C58B8005B5866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06CF9EA287C58B8005B5866 /* AppDelegate.swift */; };
-		A06CF9EF287C58B8005B5866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06CF9EE287C58B8005B5866 /* ViewController.swift */; };
-		A06CF9F4287C58B9005B5866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06CF9F3287C58B9005B5866 /* Assets.xcassets */; };
-		A06CF9F7287C58B9005B5866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06CF9F5287C58B9005B5866 /* LaunchScreen.storyboard */; };
+		A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */; };
+		A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */; };
+		A0FEF75D287EBDF500DA3FBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75C287EBDF500DA3FBE /* ViewController.swift */; };
+		A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF75E287EBDF500DA3FBE /* Main.storyboard */; };
+		A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF761287EBDF600DA3FBE /* Assets.xcassets */; };
+		A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A06CF9E7287C58B8005B5866 /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A06CF9EA287C58B8005B5866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A06CF9EE287C58B8005B5866 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A06CF9F3287C58B9005B5866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A06CF9F6287C58B9005B5866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A06CF9F8287C58B9005B5866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FEF755287EBDF500DA3FBE /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0FEF75C287EBDF500DA3FBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0FEF75F287EBDF500DA3FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0FEF761287EBDF600DA3FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0FEF764287EBDF600DA3FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0FEF766287EBDF600DA3FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A06CF9E4287C58B8005B5866 /* Frameworks */ = {
+		A0FEF752287EBDF500DA3FBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,30 +37,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A06CF9DE287C58B8005B5866 = {
+		A0ED96E32880480900C31E95 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A06CF9E9287C58B8005B5866 /* RoomEscape */,
-				A06CF9E8287C58B8005B5866 /* Products */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0ED96E42880481100C31E95 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEF75C287EBDF500DA3FBE /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A0ED96E52880497E00C31E95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A0FEF74C287EBDF500DA3FBE = {
+			isa = PBXGroup;
+			children = (
+				A0FEF757287EBDF500DA3FBE /* RoomEscape */,
+				A0FEF756287EBDF500DA3FBE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A06CF9E8287C58B8005B5866 /* Products */ = {
+		A0FEF756287EBDF500DA3FBE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A06CF9E7287C58B8005B5866 /* RoomEscape.app */,
+				A0FEF755287EBDF500DA3FBE /* RoomEscape.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A06CF9E9287C58B8005B5866 /* RoomEscape */ = {
+		A0FEF757287EBDF500DA3FBE /* RoomEscape */ = {
 			isa = PBXGroup;
 			children = (
-				A06CF9EA287C58B8005B5866 /* AppDelegate.swift */,
-				A06CF9EE287C58B8005B5866 /* ViewController.swift */,
-				A06CF9F3287C58B9005B5866 /* Assets.xcassets */,
-				A06CF9F5287C58B9005B5866 /* LaunchScreen.storyboard */,
-				A06CF9F8287C58B9005B5866 /* Info.plist */,
+				A0ED96E52880497E00C31E95 /* Extensions */,
+				A0ED96E42880481100C31E95 /* ViewControllers */,
+				A0ED96E32880480900C31E95 /* Models */,
+				A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */,
+				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
+				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
+				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
+				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
+				A0FEF766287EBDF600DA3FBE /* Info.plist */,
 			);
 			path = RoomEscape;
 			sourceTree = "<group>";
@@ -64,13 +94,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A06CF9E6287C58B8005B5866 /* RoomEscape */ = {
+		A0FEF754287EBDF500DA3FBE /* RoomEscape */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A06CF9FB287C58B9005B5866 /* Build configuration list for PBXNativeTarget "RoomEscape" */;
+			buildConfigurationList = A0FEF769287EBDF600DA3FBE /* Build configuration list for PBXNativeTarget "RoomEscape" */;
 			buildPhases = (
-				A06CF9E3287C58B8005B5866 /* Sources */,
-				A06CF9E4287C58B8005B5866 /* Frameworks */,
-				A06CF9E5287C58B8005B5866 /* Resources */,
+				A0FEF751287EBDF500DA3FBE /* Sources */,
+				A0FEF752287EBDF500DA3FBE /* Frameworks */,
+				A0FEF753287EBDF500DA3FBE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -78,25 +108,25 @@
 			);
 			name = RoomEscape;
 			productName = RoomEscape;
-			productReference = A06CF9E7287C58B8005B5866 /* RoomEscape.app */;
+			productReference = A0FEF755287EBDF500DA3FBE /* RoomEscape.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A06CF9DF287C58B8005B5866 /* Project object */ = {
+		A0FEF74D287EBDF500DA3FBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					A06CF9E6287C58B8005B5866 = {
+					A0FEF754287EBDF500DA3FBE = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
-			buildConfigurationList = A06CF9E2287C58B8005B5866 /* Build configuration list for PBXProject "RoomEscape" */;
+			buildConfigurationList = A0FEF750287EBDF500DA3FBE /* Build configuration list for PBXProject "RoomEscape" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,45 +134,55 @@
 				en,
 				Base,
 			);
-			mainGroup = A06CF9DE287C58B8005B5866;
-			productRefGroup = A06CF9E8287C58B8005B5866 /* Products */;
+			mainGroup = A0FEF74C287EBDF500DA3FBE;
+			productRefGroup = A0FEF756287EBDF500DA3FBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A06CF9E6287C58B8005B5866 /* RoomEscape */,
+				A0FEF754287EBDF500DA3FBE /* RoomEscape */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A06CF9E5287C58B8005B5866 /* Resources */ = {
+		A0FEF753287EBDF500DA3FBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A06CF9F7287C58B9005B5866 /* LaunchScreen.storyboard in Resources */,
-				A06CF9F4287C58B9005B5866 /* Assets.xcassets in Resources */,
+				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
+				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
+				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A06CF9E3287C58B8005B5866 /* Sources */ = {
+		A0FEF751287EBDF500DA3FBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A06CF9EF287C58B8005B5866 /* ViewController.swift in Sources */,
-				A06CF9EB287C58B8005B5866 /* AppDelegate.swift in Sources */,
+				A0FEF75D287EBDF500DA3FBE /* ViewController.swift in Sources */,
+				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
+				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A06CF9F5287C58B9005B5866 /* LaunchScreen.storyboard */ = {
+		A0FEF75E287EBDF500DA3FBE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A06CF9F6287C58B9005B5866 /* Base */,
+				A0FEF75F287EBDF500DA3FBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0FEF764287EBDF600DA3FBE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -150,7 +190,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A06CF9F9287C58B9005B5866 /* Debug */ = {
+		A0FEF767287EBDF600DA3FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -210,7 +250,7 @@
 			};
 			name = Debug;
 		};
-		A06CF9FA287C58B9005B5866 /* Release */ = {
+		A0FEF768287EBDF600DA3FBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +304,7 @@
 			};
 			name = Release;
 		};
-		A06CF9FC287C58B9005B5866 /* Debug */ = {
+		A0FEF76A287EBDF600DA3FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -275,6 +315,7 @@
 				INFOPLIST_FILE = RoomEscape/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -290,7 +331,7 @@
 			};
 			name = Debug;
 		};
-		A06CF9FD287C58B9005B5866 /* Release */ = {
+		A0FEF76B287EBDF600DA3FBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -301,6 +342,7 @@
 				INFOPLIST_FILE = RoomEscape/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,25 +361,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A06CF9E2287C58B8005B5866 /* Build configuration list for PBXProject "RoomEscape" */ = {
+		A0FEF750287EBDF500DA3FBE /* Build configuration list for PBXProject "RoomEscape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A06CF9F9287C58B9005B5866 /* Debug */,
-				A06CF9FA287C58B9005B5866 /* Release */,
+				A0FEF767287EBDF600DA3FBE /* Debug */,
+				A0FEF768287EBDF600DA3FBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A06CF9FB287C58B9005B5866 /* Build configuration list for PBXNativeTarget "RoomEscape" */ = {
+		A0FEF769287EBDF600DA3FBE /* Build configuration list for PBXNativeTarget "RoomEscape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A06CF9FC287C58B9005B5866 /* Debug */,
-				A06CF9FD287C58B9005B5866 /* Release */,
+				A0FEF76A287EBDF600DA3FBE /* Debug */,
+				A0FEF76B287EBDF600DA3FBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A06CF9DF287C58B8005B5866 /* Project object */;
+	rootObject = A0FEF74D287EBDF500DA3FBE /* Project object */;
 }
