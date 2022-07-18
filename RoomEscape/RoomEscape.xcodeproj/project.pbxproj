@@ -11,6 +11,8 @@
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
+		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
+		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
 		A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
+		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
 		A0FEF755287EBDF500DA3FBE /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
+				7ABEE2B92885CE3200C2C020 /* Home.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -78,6 +83,7 @@
 			children = (
 				A0FEF75C287EBDF500DA3FBE /* MainTabBarController.swift */,
 				1659079428848AF100B23372 /* PickViewController.swift */,
+				7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				16590793288482EF00B23372 /* Cart.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
+				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 			);
@@ -201,6 +208,7 @@
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
+				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
