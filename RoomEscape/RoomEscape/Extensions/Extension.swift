@@ -28,4 +28,3 @@ extension UIColor {
     static let background2 = UIColor(named: "background2")
     
 }
-
