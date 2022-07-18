@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
+		3D8FC6BB288536BB00722937 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8FC6BA288536BB00722937 /* test.storyboard */; };
 		A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */; };
 		A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */; };
 		A0FEF75D287EBDF500DA3FBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75C287EBDF500DA3FBE /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3D8FC6BA288536BB00722937 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		A0FEF755287EBDF500DA3FBE /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		A0ED96E52880497E00C31E95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3D8FC6B82885339700722937 /* Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
+				3D8FC6BA288536BB00722937 /* test.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
 			);
 			path = RoomEscape;
@@ -151,6 +157,7 @@
 			files = (
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
+				3D8FC6BB288536BB00722937 /* test.storyboard in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FEF75D287EBDF500DA3FBE /* ViewController.swift in Sources */,
+				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 			);
