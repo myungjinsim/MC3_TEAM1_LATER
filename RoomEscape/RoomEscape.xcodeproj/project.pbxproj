@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16590793288482EF00B23372 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Cart.storyboard */; };
+		16590793288482EF00B23372 /* Pick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Pick.storyboard */; };
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16590792288482EF00B23372 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		16590792288482EF00B23372 /* Pick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pick.storyboard; sourceTree = "<group>"; };
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
+				16590792288482EF00B23372 /* Pick.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,7 +118,6 @@
 				A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */,
 				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
 				7AEAB5FC2885764500BA2216 /* StoreData.json */,
-				16590792288482EF00B23372 /* Cart.storyboard */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
@@ -183,7 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16590793288482EF00B23372 /* Cart.storyboard in Resources */,
+				16590793288482EF00B23372 /* Pick.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
