@@ -17,10 +17,11 @@ class HomeViewController: UIViewController {
         
         locationCollectionView.delegate = self
         locationCollectionView.dataSource = self
+        locationCollectionView.register(UINib(nibName: "RoomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RoomCollectionViewCell")
         
         recommendTableView.delegate = self
         recommendTableView.dataSource = self
-        recommendTableView.register(UINib(nibName: "RoomCell", bundle: nil), forCellReuseIdentifier: "RoomCell")
+        recommendTableView.register(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomTableViewCell")
     }
     
 }// HomeViewController
@@ -33,17 +34,17 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return sampleRoomArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCollectionViewCell", for: indexPath) as! RoomCollectionViewCell
+        let url = URL(string: sampleRoomArray[indexPath.row].image)
         
-        cell.setUp(text: "HELLO")
+        DispatchQueue.main.async {
+            let data = try? Data(contentsOf: url!)
+            cell.roomImage?.image = UIImage(data: data!)
+        }
         
         return cell
     }
@@ -66,7 +67,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as! RoomCell
         let url = URL(string: sampleRoomArray[indexPath.row].image)
 
         DispatchQueue.main.async {
@@ -78,3 +79,9 @@ extension HomeViewController: UITableViewDataSource {
     }
 
 }// UITableViewDataSource
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 180, height: 354)
+    }
+}
