@@ -21,24 +21,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DPx-bZ-Qjv">
-                                <rect key="frame" x="24" y="166.5" width="366" height="32"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="MY THEME"/>
-                                    <segment title="TEAM"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="segmentValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="0p6-tT-FuZ"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="65a-sn-Wiq">
-                                <rect key="frame" x="23" y="233.5" width="368" height="628.5"/>
+                                <rect key="frame" x="23" y="174.5" width="368" height="687.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickCell" rowHeight="127" id="WPE-5j-TgT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="127" id="WPE-5j-TgT">
                                         <rect key="frame" x="0.0" y="44.5" width="368" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WPE-5j-TgT" id="VC9-Sg-fVo">
@@ -50,23 +37,19 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DPx-bZ-Qjv" firstAttribute="top" secondItem="TcB-M4-XZP" secondAttribute="bottom" constant="19" id="4Uv-7g-D96"/>
                             <constraint firstItem="TcB-M4-XZP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="E9C-GC-7Dz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TcB-M4-XZP" secondAttribute="trailing" constant="30" id="FkD-Af-pkB"/>
+                            <constraint firstItem="65a-sn-Wiq" firstAttribute="top" secondItem="TcB-M4-XZP" secondAttribute="bottom" constant="27" id="QwO-24-6fK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="65a-sn-Wiq" secondAttribute="trailing" constant="23" id="RXA-e9-Xu8"/>
                             <constraint firstItem="65a-sn-Wiq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="YC0-BB-A4g"/>
-                            <constraint firstItem="65a-sn-Wiq" firstAttribute="top" secondItem="DPx-bZ-Qjv" secondAttribute="bottom" constant="36" id="Yjs-ob-9gS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="65a-sn-Wiq" secondAttribute="bottom" id="Yt9-tT-RCn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DPx-bZ-Qjv" secondAttribute="trailing" constant="24" id="fTG-ML-JJI"/>
-                            <constraint firstItem="DPx-bZ-Qjv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="kSR-gJ-5po"/>
                             <constraint firstItem="TcB-M4-XZP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="65" id="lv9-kp-oOP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pickTableView" destination="65a-sn-Wiq" id="4H8-8e-GvZ"/>
-                        <outlet property="segmentControl" destination="DPx-bZ-Qjv" id="g40-F8-yap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
