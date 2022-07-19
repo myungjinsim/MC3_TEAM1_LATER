@@ -30,6 +30,38 @@ class ThemeCompareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchLabelText()
+    }
+    
+    private func fetchLabelText() {
+        firstThemeTitle.text = firstTheme.title
+        firstThemeGenre.text = firstTheme.genre
+        firstThemeDifficulty.text = "\(firstTheme.difficulty)"
+        firstThemeActivity.text = firstTheme.activity
+        firstThemeMaxParty.text = "\(firstTheme.maxParty)명"
+        firstThemeTimeLimit.text = "\(firstTheme.timeLimit)분"
+        
+        secondThemeTitle.text = secondTheme.title
+        secondThemeGenre.text = secondTheme.genre
+        secondThemeDifficulty.text = "\(secondTheme.difficulty)"
+        secondThemeActivity.text = secondTheme.activity
+        secondThemeMaxParty.text = "\(secondTheme.maxParty)명"
+        secondThemeTimeLimit.text = "\(secondTheme.timeLimit)분"
+    }
+    
+    private func fetchImage() {
+    }
+    
+    private func compareDifficulty() {
+    }
+    
+    private func compareActivity() {
+    }
+    
+    private func compareMaxParty() {
+    }
+    
+    private func compareTimeLimit() {
     }
 }
 
