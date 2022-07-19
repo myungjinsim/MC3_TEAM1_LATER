@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16590793288482EF00B23372 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Cart.storyboard */; };
+		16590793288482EF00B23372 /* Pick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Pick.storyboard */; };
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
+		1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079C2885B4E800B23372 /* RoomTableViewCell.swift */; };
+		1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1659079D2885B4E800B23372 /* RoomTableViewCell.xib */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
+		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
+		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
+		89815E7C28865FCB000C5C24 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */; };
+		89815E7E28866865000C5C24 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E7D28866865000C5C24 /* HomeTableViewCell.swift */; };
+		89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */; };
+		89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */; };
 		A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */; };
 		A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */; };
 		A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75C287EBDF500DA3FBE /* MainTabBarController.swift */; };
@@ -22,12 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16590792288482EF00B23372 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		16590792288482EF00B23372 /* Pick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pick.storyboard; sourceTree = "<group>"; };
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
+		1659079C2885B4E800B23372 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
+		1659079D2885B4E800B23372 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
+		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
+		89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		89815E7D28866865000C5C24 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionViewCell.xib; sourceTree = "<group>"; };
 		A0FEF755287EBDF500DA3FBE /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +76,15 @@
 		7AEAB5FB2885748600BA2216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */,
+				89815E7D28866865000C5C24 /* HomeTableViewCell.swift */,
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
+				7ABEE2B92885CE3200C2C020 /* Home.storyboard */,
+				16590792288482EF00B23372 /* Pick.storyboard */,
+				1659079C2885B4E800B23372 /* RoomTableViewCell.swift */,
+				1659079D2885B4E800B23372 /* RoomTableViewCell.xib */,
+				89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */,
+				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -78,6 +102,7 @@
 			children = (
 				A0FEF75C287EBDF500DA3FBE /* MainTabBarController.swift */,
 				1659079428848AF100B23372 /* PickViewController.swift */,
+				7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,7 +142,6 @@
 				A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */,
 				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
 				7AEAB5FC2885764500BA2216 /* StoreData.json */,
-				16590792288482EF00B23372 /* Cart.storyboard */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
@@ -183,11 +207,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16590793288482EF00B23372 /* Cart.storyboard in Resources */,
+				16590793288482EF00B23372 /* Pick.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
+				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
+				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
+				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,10 +228,15 @@
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
+				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
+				89815E7C28865FCB000C5C24 /* HomeCollectionViewCell.swift in Sources */,
+				89815E7E28866865000C5C24 /* HomeTableViewCell.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
+				1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
+				89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
