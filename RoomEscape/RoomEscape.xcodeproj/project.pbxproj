@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16590793288482EF00B23372 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Cart.storyboard */; };
+		16590793288482EF00B23372 /* Pick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Pick.storyboard */; };
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
+		1659079E2885B4E800B23372 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079C2885B4E800B23372 /* RoomCell.swift */; };
+		1659079F2885B4E800B23372 /* RoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1659079D2885B4E800B23372 /* RoomCell.xib */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
 		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
@@ -24,8 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16590792288482EF00B23372 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		16590792288482EF00B23372 /* Pick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pick.storyboard; sourceTree = "<group>"; };
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
+		1659079C2885B4E800B23372 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; usesTabs = 0; };
+		1659079D2885B4E800B23372 /* RoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCell.xib; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
 		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,9 @@
 			children = (
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
 				7ABEE2B92885CE3200C2C020 /* Home.storyboard */,
+				16590792288482EF00B23372 /* Pick.storyboard */,
+				1659079C2885B4E800B23372 /* RoomCell.swift */,
+				1659079D2885B4E800B23372 /* RoomCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,7 +130,6 @@
 				A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */,
 				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
 				7AEAB5FC2885764500BA2216 /* StoreData.json */,
-				16590792288482EF00B23372 /* Cart.storyboard */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
@@ -189,8 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16590793288482EF00B23372 /* Cart.storyboard in Resources */,
+				16590793288482EF00B23372 /* Pick.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
+				1659079F2885B4E800B23372 /* RoomCell.xib in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
@@ -212,6 +219,7 @@
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
+				1659079E2885B4E800B23372 /* RoomCell.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
