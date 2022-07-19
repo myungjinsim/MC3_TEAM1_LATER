@@ -9,30 +9,36 @@ import UIKit
 
 class PickViewController: UIViewController {
     
-    @IBOutlet weak var pickTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     let teams = ["My PICK!", "룸메즈 입문 추천용"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pickTableView.dataSource = self
-        self.pickTableView.delegate = self
-        
-        pickTableView.register(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomTableViewCell")
-    }
-    
-    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
-        self.pickTableView.reloadData()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 }
 
 extension PickViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teams.count
+        return teams.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PickCell", for: indexPath) as UITableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as? TeamCell else { return UITableViewCell() }
+        
+        if indexPath.row == teams.count {
+            cell.teamName.text = ""
+            cell.descriptionLabel.text = ""
+            cell.addImage.image = UIImage(systemName: "plus")
+            cell.addLabel.text = "새로운 팀 만들기"
+        } else {
+            cell.teamName.text = teams[indexPath.row]
+            cell.descriptionLabel.text = "4개의 방탈출 테마"
+            cell.addImage.image = .none
+            cell.addLabel.text = ""
+        }
         
         return cell
     }
