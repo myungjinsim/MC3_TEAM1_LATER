@@ -21,6 +21,8 @@ class PickViewController: UIViewController {
         self.pickTableView.delegate = self
         segmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         segmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        
+        pickTableView.register(UINib(nibName: "RoomCell", bundle: nil), forCellReuseIdentifier: "RoomCell")
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
@@ -43,7 +45,9 @@ extension PickViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PickCell", for: indexPath) as UITableViewCell
         
         if segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = firstArray[indexPath.row]
+            let roomCell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomCell
+            roomCell.roomName.text = firstArray[indexPath.row]
+            return roomCell
         } else if segmentControl.selectedSegmentIndex == 1 {
             cell.textLabel?.text = secondArray[indexPath.row]
         }
