@@ -45,5 +45,11 @@ extension PickViewController: UITableViewDataSource {
 }
 
 extension PickViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == teams.count {
+            guard let viewController = self.storyboard?.instantiateViewController(identifier: "MakeTeamViewController") as? MakeTeamViewController else { return }
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
 }
