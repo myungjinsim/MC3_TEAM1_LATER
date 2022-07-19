@@ -352,6 +352,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kzM-2P-732"/>
+                    <connections>
+                        <outlet property="firstThemeActivity" destination="ZTv-bh-g28" id="zBG-FF-Hve"/>
+                        <outlet property="firstThemeDifficulty" destination="2tc-iT-YUs" id="GZp-pP-NJK"/>
+                        <outlet property="firstThemeGenre" destination="yag-3S-miW" id="R8a-6k-Eyt"/>
+                        <outlet property="firstThemeImage" destination="hcS-yM-5vO" id="fgA-1Y-dl9"/>
+                        <outlet property="firstThemeMaxParty" destination="HC4-jp-8U6" id="q7d-4Y-a1t"/>
+                        <outlet property="firstThemeTimeLimit" destination="fMI-ZB-kMm" id="bYk-iw-mmk"/>
+                        <outlet property="firstThemeTitle" destination="3DA-sX-Erj" id="W9I-E9-nhv"/>
+                        <outlet property="secondThemeActivity" destination="Esd-KU-gWz" id="UUK-fE-gSs"/>
+                        <outlet property="secondThemeDifficulty" destination="EDZ-7h-FeW" id="5ds-PQ-cgX"/>
+                        <outlet property="secondThemeGenre" destination="0Vw-q4-y87" id="Tko-PR-Wj0"/>
+                        <outlet property="secondThemeImage" destination="32E-tg-GRL" id="nHi-q8-Afr"/>
+                        <outlet property="secondThemeMaxParty" destination="Qtg-dw-D7z" id="sJn-dl-6zE"/>
+                        <outlet property="secondThemeTimeLimit" destination="ToI-wz-Q3l" id="K20-S2-orG"/>
+                        <outlet property="secondThemeTitle" destination="IyL-qs-uze" id="gee-Uv-pCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seA-ob-8e1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
