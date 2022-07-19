@@ -17,22 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHr-Hb-bCb">
-                                <rect key="frame" x="0.0" y="88" width="191" height="2003"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldx-wP-cK6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마 비교하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kny-4I-hcb">
-                                                <rect key="frame" x="30" y="15" width="354" height="0.0"/>
+                                                <rect key="frame" x="30" y="15" width="354" height="38.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
                                                 <color key="textColor" name="text1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8W-n1-Y0b">
-                                                <rect key="frame" x="0.0" y="20" width="414" height="235.5"/>
+                                                <rect key="frame" x="0.0" y="58.5" width="414" height="241"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-yM-5vO">
-                                                        <rect key="frame" x="31" y="20" width="69" height="189"/>
+                                                        <rect key="frame" x="30" y="21" width="150" height="199"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -41,7 +41,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32E-tg-GRL">
-                                                        <rect key="frame" x="234" y="21" width="43" height="189"/>
+                                                        <rect key="frame" x="234" y="21" width="150" height="199"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -64,7 +64,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cig-o6-Ht6">
-                                                <rect key="frame" x="25" y="345.5" width="364" height="1"/>
+                                                <rect key="frame" x="25" y="389.5" width="364" height="1"/>
                                                 <color key="backgroundColor" name="text5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="2qa-zs-pLY"/>
@@ -72,7 +72,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXY-a3-ZOh" userLabel="Theme Title View">
-                                                <rect key="frame" x="0.0" y="256" width="414" height="35"/>
+                                                <rect key="frame" x="0.0" y="299.5" width="414" height="35"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThemeTitle2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyL-qs-uze">
                                                         <rect key="frame" x="214.5" y="4.5" width="199.5" height="26.5"/>
@@ -99,7 +99,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYo-2d-q9d">
-                                                <rect key="frame" x="0.0" y="290.5" width="414" height="30"/>
+                                                <rect key="frame" x="0.0" y="334.5" width="414" height="30"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zBv-nP-aUn">
                                                         <rect key="frame" x="258" y="5" width="91.5" height="20"/>
@@ -137,7 +137,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ8-bE-eME">
-                                                <rect key="frame" x="0.0" y="356.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="400.5" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35z-GO-ghN">
                                                         <rect key="frame" x="177" y="16" width="60" height="18"/>
@@ -174,7 +174,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZ8-uM-LHH">
-                                                <rect key="frame" x="0.0" y="421.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="465.5" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대인원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-Dl-SS1">
                                                         <rect key="frame" x="177" y="16" width="60" height="18"/>
@@ -211,7 +211,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cI-mI-uQ4">
-                                                <rect key="frame" x="0.0" y="479.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="523.5" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="난이도" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3n-pP-05i">
                                                         <rect key="frame" x="177" y="16" width="60" height="18"/>
@@ -250,7 +250,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWv-K2-cCn">
-                                                <rect key="frame" x="0.0" y="537.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="581.5" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkd-YU-7Gc">
                                                         <rect key="frame" x="177" y="16" width="60" height="18"/>
@@ -287,7 +287,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-Aa-L1h">
-                                                <rect key="frame" x="0.0" y="595.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="639.5" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간제한" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjj-CT-hPf">
                                                         <rect key="frame" x="177" y="16" width="60" height="18"/>
@@ -389,9 +389,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="kzM-2P-732"/>
                     <connections>
+                        <outlet property="firstThemeActivity" destination="peE-Xr-Zcb" id="Kb8-Cl-COn"/>
+                        <outlet property="firstThemeDifficulty" destination="tVW-9y-1Zg" id="pCz-gx-iCv"/>
+                        <outlet property="firstThemeGenre" destination="QOh-6l-LWG" id="018-OW-y6r"/>
                         <outlet property="firstThemeImage" destination="hcS-yM-5vO" id="fgA-1Y-dl9"/>
+                        <outlet property="firstThemeMaxParty" destination="hhh-YH-Jn1" id="aNU-oN-O0c"/>
+                        <outlet property="firstThemeTimeLimit" destination="xkX-c1-uLx" id="PYh-eR-fQK"/>
                         <outlet property="firstThemeTitle" destination="3DA-sX-Erj" id="W9I-E9-nhv"/>
+                        <outlet property="secondThemeActivity" destination="ahn-ax-TJp" id="DSq-OR-wYt"/>
+                        <outlet property="secondThemeDifficulty" destination="Ygb-oy-6br" id="VWB-cZ-9Cw"/>
+                        <outlet property="secondThemeGenre" destination="yCh-R1-mLG" id="k0c-c7-TWq"/>
                         <outlet property="secondThemeImage" destination="32E-tg-GRL" id="nHi-q8-Afr"/>
+                        <outlet property="secondThemeMaxParty" destination="v0g-Qs-fkk" id="hwx-yW-Q8O"/>
+                        <outlet property="secondThemeTimeLimit" destination="W76-r2-Xft" id="AMB-8m-Kub"/>
                         <outlet property="secondThemeTitle" destination="IyL-qs-uze" id="gee-Uv-pCS"/>
                     </connections>
                 </viewController>
