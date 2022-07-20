@@ -12,27 +12,28 @@ class ThemeCompareViewController: UIViewController {
     let firstTheme: SampleModel = dummys[0]
     let secondTheme: SampleModel = dummys[1]
 
-    @IBOutlet weak var firstThemeTitle: UILabel!
     @IBOutlet weak var firstThemeImage: UIImageView!
+    @IBOutlet weak var firstThemeTitle: UILabel!
+    @IBOutlet weak var firstThemeStoreName: UILabel!
+    @IBOutlet weak var firstThemeStar: UILabel!
     @IBOutlet weak var firstThemeGenre: UILabel!
     @IBOutlet weak var firstThemeDifficulty: UILabel!
     @IBOutlet weak var firstThemeActivity: UILabel!
-    @IBOutlet weak var firstThemeMaxParty: UILabel!
-    @IBOutlet weak var firstThemeTimeLimit: UILabel!
+    @IBOutlet weak var firstThemeHorror: UILabel!
     
-    @IBOutlet weak var secondThemeTitle: UILabel!
     @IBOutlet weak var secondThemeImage: UIImageView!
+    @IBOutlet weak var secondThemeTitle: UILabel!
+    @IBOutlet weak var secondThemeStoreName: UILabel!
+    @IBOutlet weak var secondThemeStar: UILabel!
     @IBOutlet weak var secondThemeGenre: UILabel!
     @IBOutlet weak var secondThemeDifficulty: UILabel!
     @IBOutlet weak var secondThemeActivity: UILabel!
-    @IBOutlet weak var secondThemeMaxParty: UILabel!
-    @IBOutlet weak var secondThemeTimeLimit: UILabel!
+    @IBOutlet weak var secondThemeHorror: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchLabelText()
     }
-    
+   /*
     private func fetchLabelText() {
         firstThemeTitle.text = firstTheme.title
         firstThemeGenre.text = firstTheme.genre
@@ -143,23 +144,24 @@ class ThemeCompareViewController: UIViewController {
             secondThemeTimeLimit.setBetter()
         }
         
-    }
+    }*/
 }
 
 struct SampleModel {
     let title: String
     let image: String
+    let storeName: String
     let genre: String
-    let difficulty: Float
-    let activity: String
-    let maxParty: Int
-    let timeLimit: Int
     let description: String
+    let difficulty: Float
+    let activity: Float
+    let horror: Float
+    let star: Float
 }
     
 var dummys: [SampleModel] {
     [
-        SampleModel(title: "낭랑카페", image: "", genre: "미스테리", difficulty: 4.0, activity: "많음", maxParty: 6, timeLimit: 75, description: "안쓰는 디스크립션"),
-        SampleModel(title: "안개꽃", image: "", genre: "감성", difficulty: 3.0, activity: "적음", maxParty: 4, timeLimit: 60, description: "안쓰는 디스크립션")
+        SampleModel(title: "안개꽃", image: "https://blogfiles.pstatic.net/MjAxNzEwMDhfMjA1/MDAxNTA3NDYwODkyODM2.bTbkQeLmYyM_eo1ZB7uUusJ7o8vnxpm4ErDGMNo8oTIg.1CGn9lqXzLPBvjbwBUDeYvsZZLNvRvKZ5ABG_QdUAFUg.JPEG.theyescape/Christmas.jpg?type=w1", storeName: "C5 포항", genre: "감성", description: "안 개 꽃꼬로로롤로꽃", difficulty: 4.0, activity: 4.0, horror: 3.0, star: 4.1),
+        SampleModel(title: "크리스마스", image: "https://blogfiles.pstatic.net/MjAxNzEwMDhfMjA1/MDAxNTA3NDYwODkyODM2.bTbkQeLmYyM_eo1ZB7uUusJ7o8vnxpm4ErDGMNo8oTIg.1CGn9lqXzLPBvjbwBUDeYvsZZLNvRvKZ5ABG_QdUAFUg.JPEG.theyescape/Christmas.jpg?type=w1", storeName: "더와이빙 방탈출카페", genre: "코믹", description: "산을 타고있는 산타크로스", difficulty: 3.0, activity: 5.0, horror: 4.0, star: 4.5)
     ]
 }
