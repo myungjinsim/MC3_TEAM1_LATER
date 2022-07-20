@@ -67,7 +67,7 @@ class DetailPickSheetViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showBottomSheet()
+        showPickSheet()
     }
     
     private func setupUI() {
@@ -82,7 +82,7 @@ class DetailPickSheetViewController: UIViewController {
         setupLayout()
     }
     
-    private func showBottomSheet() {
+    private func showPickSheet() {
         let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding: CGFloat = view.safeAreaInsets.bottom
         

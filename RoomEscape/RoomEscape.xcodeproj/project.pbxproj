@@ -16,6 +16,8 @@
 		2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2552F8C62886A8BA00E40599 /* Detail.storyboard */; };
 		2558940528878D10008E4ACC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558940428878D10008E4ACC /* DetailViewController.swift */; };
 		25D711E428885482009B684A /* DetailPickSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D711E328885481009B684A /* DetailPickSheetViewController.swift */; };
+		25D711EC28886B02009B684A /* PickSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D711EB28886B02009B684A /* PickSheet.storyboard */; };
+		25D711F028887114009B684A /* PickSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D711EF28887114009B684A /* PickSheetViewController.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
@@ -49,6 +51,8 @@
 		2552F8C62886A8BA00E40599 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		2558940428878D10008E4ACC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		25D711E328885481009B684A /* DetailPickSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickSheetViewController.swift; sourceTree = "<group>"; };
+		25D711EB28886B02009B684A /* PickSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickSheet.storyboard; sourceTree = "<group>"; };
+		25D711EF28887114009B684A /* PickSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSheetViewController.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */,
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
+				25D711EB28886B02009B684A /* PickSheet.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				7A6604AE28871835000DC85B /* TeamViewController.swift */,
 				2558940428878D10008E4ACC /* DetailViewController.swift */,
 				25D711E328885481009B684A /* DetailPickSheetViewController.swift */,
+				25D711EF28887114009B684A /* PickSheetViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
 				7A6604B128871856000DC85B /* Team.storyboard in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
+				25D711EC28886B02009B684A /* PickSheet.storyboard in Resources */,
 				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
 				2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */,
 				C19893842887E91A0045CF40 /* PohangData.json in Resources */,
@@ -264,6 +271,7 @@
 				2558940528878D10008E4ACC /* DetailViewController.swift in Sources */,
 				25D711E428885482009B684A /* DetailPickSheetViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
+				25D711F028887114009B684A /* PickSheetViewController.swift in Sources */,
 				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
