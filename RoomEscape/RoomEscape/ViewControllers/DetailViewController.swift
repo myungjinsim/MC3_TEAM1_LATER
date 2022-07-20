@@ -13,8 +13,10 @@ class DetailViewController: UIViewController {
     
     var roomIndex: Int = 0
     
+    @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var roomTitle: UILabel!
+    @IBOutlet weak var stars: UIStackView!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var activity: UILabel!
@@ -28,8 +30,11 @@ class DetailViewController: UIViewController {
         
         let roomModel: RoomModel = JSONDataManager.shared.roomData[roomIndex]
         
-        print("🔥🔥🔥🔥🔥🔥🔥🔥")
-        print(roomIndex)
+        loadPosterFrom(urlAddress: roomModel.image)
+        
+        for i in 0 ..< roomModel.star {
+            stars.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         storeName.text = roomModel.storeName
         roomTitle.text = roomModel.title
@@ -39,6 +44,20 @@ class DetailViewController: UIViewController {
         horror.text = String(roomModel.horror) + ".0"
         roomDescription.text = "  " + roomModel.description
         recommendation.text = roomModel.recommendation
+    }
+    
+    func loadPosterFrom(urlAddress: String) {
+        guard let url = URL(string: urlAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.poster.image = loadedImage
+                }
+            }
+        }
     }
     
 }
