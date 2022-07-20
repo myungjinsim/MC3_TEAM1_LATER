@@ -56,9 +56,11 @@ class ThemeCompareViewController: UIViewController {
         if firstTheme.difficulty > secondTheme.difficulty {
             firstThemeDifficulty.setBetter()
             secondThemeDifficulty.setWorse()
+            
         } else if firstTheme.difficulty < secondTheme.difficulty {
             firstThemeDifficulty.setWorse()
             secondThemeDifficulty.setBetter()
+            
         } else {
             firstThemeDifficulty.setBetter()
             secondThemeDifficulty.setBetter()
@@ -69,6 +71,18 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func compareMaxParty() {
+        if firstTheme.maxParty > secondTheme.maxParty {
+            firstThemeMaxParty.setBetter()
+            secondThemeMaxParty.setWorse()
+            
+        } else if firstTheme.maxParty < secondTheme.maxParty {
+            firstThemeMaxParty.setWorse()
+            secondThemeMaxParty.setBetter()
+            
+        } else {
+            firstThemeMaxParty.setBetter()
+            secondThemeMaxParty.setBetter()
+        }
     }
     
     private func compareTimeLimit() {
