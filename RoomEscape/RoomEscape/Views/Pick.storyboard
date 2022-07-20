@@ -182,6 +182,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="makeButtonTapped:" destination="sGS-XN-1h4" eventType="touchUpInside" id="Yar-Te-xoE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YJh-FQ-Opl"/>
