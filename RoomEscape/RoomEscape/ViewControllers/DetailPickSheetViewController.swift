@@ -49,7 +49,7 @@ class DetailPickSheetViewController: UIViewController {
         hidePickSheetAndGoBack()
     }
     
-    private func hidePickSheetAndGoBack() {
+    func hidePickSheetAndGoBack() {
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding = view.safeAreaInsets.bottom
         

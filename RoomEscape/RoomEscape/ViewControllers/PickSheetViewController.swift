@@ -18,7 +18,9 @@ class PickSheetViewController: UIViewController {
     }
     
     @objc func saveButtonTapped() {
-        print("저장!!")
+        if let detailPickSheetViewController = self.parent as? DetailPickSheetViewController {
+            detailPickSheetViewController.hidePickSheetAndGoBack()
+        }
     }
     
 }
