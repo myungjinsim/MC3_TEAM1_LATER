@@ -69,6 +69,8 @@ extension PickViewController: UITableViewDelegate {
             self.navigationController?.pushViewController(viewController, animated: true)
         } else {
             guard let viewController = self.storyboard?.instantiateViewController(identifier: "TeamViewControllerRef") as? TeamViewController else { return }
+            let team = self.teams[indexPath.row]
+            viewController.team = team
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         self.tableView.reloadRows(at: [indexPath], with: .automatic)

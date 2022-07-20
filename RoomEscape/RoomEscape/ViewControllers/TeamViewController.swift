@@ -13,15 +13,16 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
+    var cancelButton: UIBarButtonItem?
+    var team: TeamModel?
     
-    var selectedThemes: [String] = []
-    var selectedIndexPath: [Int] = []
+    var selectedThemes: [Int] = []
     var isButtonPressed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        teamNameLabel.text = "룸메즈 입문 추천용"
+        self.configureView()
+        self.cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
         
         themeComparisonView.layer.cornerRadius = 5
         themeComparisonButton.layer.cornerRadius = 5
@@ -29,14 +30,30 @@ class TeamViewController: UIViewController {
         teamTableView.delegate = self
         teamTableView.dataSource = self
         teamTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
-        teamTableView.allowsMultipleSelection = true
+        teamTableView.allowsMultipleSelection = false
+    }
+    
+    private func configureView() {
+        guard let team = self.team else { return }
+        self.teamNameLabel.text = team.teamName
     }
     
     // Make the themeComparisonView disappear when this button is pressed
     @IBAction func themeComparisonButtonPressed(_ sender: UIButton) {
+        teamTableView.allowsMultipleSelection = true
+        self.navigationItem.rightBarButtonItem = self.cancelButton
         self.isButtonPressed = true
         self.themeComparisonButton.isHidden = true
         self.infoLabel.text = "비교해서 보고싶은 2가지 테마를 선택하세요!"
+    }
+    
+    @objc func cancelButtonTapped() {
+        teamTableView.allowsMultipleSelection = false
+        self.navigationItem.rightBarButtonItem = .none
+        self.isButtonPressed = false
+        self.themeComparisonButton.isHidden = false
+        self.infoLabel.text = "테마간 차이점이 궁금하다면?"
+        selectedThemes.removeAll()
     }
     
     
@@ -46,19 +63,20 @@ class TeamViewController: UIViewController {
 extension TeamViewController: UITableViewDelegate {
     // 터치가 비활성화 되었을 경우
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("✅✅✅✅✅✅✅✅")
-        print("I thought we were friends.. \(indexPath)")
+        selectedThemes.remove(at: indexPath.row)
     }
     
     // 터치가 활성화 되었을 경우
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard isButtonPressed == true else { return }
-        guard selectedThemes.count <= 2, selectedIndexPath.count <= 2 else { return }
-
-        selectedThemes.append(sampleRoomArray[indexPath.row].title)
-        selectedIndexPath.append(indexPath.row)
-
-        print(selectedThemes)
+        if isButtonPressed {
+            guard selectedThemes.count < 2 else {
+                self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
+                return
+            }
+            selectedThemes.append(indexPath.row)
+        } else {
+            self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
 }
 
