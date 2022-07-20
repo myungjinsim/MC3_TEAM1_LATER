@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var recommendation: UILabel!
 
+    @IBOutlet weak var pickButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class DetailViewController: UIViewController {
         horror.text = String(roomModel.horror) + ".0"
         roomDescription.text = "  " + roomModel.description
         recommendation.text = roomModel.recommendation
+        
+        pickButton.addTarget(self, action: #selector(pickButtonTapped), for: .touchUpInside)
     }
     
     func loadPosterFrom(urlAddress: String) {
@@ -60,4 +63,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @objc func pickButtonTapped() {
+        print("PICK!!!!")
+    }
 }
