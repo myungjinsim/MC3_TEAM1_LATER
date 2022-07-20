@@ -425,9 +425,11 @@
                         <outlet property="difficulty" destination="eTg-S9-aTJ" id="DR8-CG-kVy"/>
                         <outlet property="genre" destination="B1S-MG-odD" id="poa-Fl-Bfv"/>
                         <outlet property="horror" destination="riH-vF-fEr" id="vVg-Mo-xOR"/>
+                        <outlet property="poster" destination="WTA-ja-Bhc" id="oHk-qn-acl"/>
                         <outlet property="recommendation" destination="CJY-uv-OZy" id="vcZ-jK-gdI"/>
                         <outlet property="roomDescription" destination="kHh-V9-SM4" id="GC5-D1-hpg"/>
                         <outlet property="roomTitle" destination="YoH-BB-WEv" id="bzw-df-P8Z"/>
+                        <outlet property="stars" destination="MKj-5A-JNE" id="0yF-fe-s4A"/>
                         <outlet property="storeName" destination="K6p-gg-Ida" id="XJk-ga-wIX"/>
                     </connections>
                 </viewController>
