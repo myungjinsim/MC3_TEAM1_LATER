@@ -26,7 +26,6 @@
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
 		89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */; };
 		89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */; };
-		89815E882887D2B3000C5C24 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89815E872887D2B3000C5C24 /* PohangData.json */; };
 		A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DF42885320600F5272F /* ThemeCompare.storyboard */; };
 		A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */; };
 		A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */; };
@@ -36,6 +35,7 @@
 		A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF75E287EBDF500DA3FBE /* Main.storyboard */; };
 		A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF761287EBDF600DA3FBE /* Assets.xcassets */; };
 		A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */; };
+		C19893842887E91A0045CF40 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,6 @@
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
 		89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
 		89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionViewCell.xib; sourceTree = "<group>"; };
-		89815E872887D2B3000C5C24 /* PohangData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PohangData.json; sourceTree = "<group>"; };
 		A0181DF42885320600F5272F /* ThemeCompare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeCompare.storyboard; sourceTree = "<group>"; };
 		A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCompareViewController.swift; sourceTree = "<group>"; };
 		A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		A0FEF761287EBDF600DA3FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FEF764287EBDF600DA3FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0FEF766287EBDF600DA3FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C19893832887E91A0045CF40 /* PohangData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PohangData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
-				89815E872887D2B3000C5C24 /* PohangData.json */,
+				C19893832887E91A0045CF40 /* PohangData.json */,
 			);
 			path = RoomEscape;
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
 				2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */,
-				89815E882887D2B3000C5C24 /* PohangData.json in Resources */,
+				C19893842887E91A0045CF40 /* PohangData.json in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
