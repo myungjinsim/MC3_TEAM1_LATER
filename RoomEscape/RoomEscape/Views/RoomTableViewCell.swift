@@ -12,12 +12,12 @@ class RoomCell: UITableViewCell {
     @IBOutlet weak var roomImage: UIImageView!
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var stars: UIStackView!
     @IBOutlet weak var starImage1: UIImageView!
     @IBOutlet weak var starImage2: UIImageView!
     @IBOutlet weak var starImage3: UIImageView!
     @IBOutlet weak var starImage4: UIImageView!
     @IBOutlet weak var starImage5: UIImageView!
-    @IBOutlet weak var maxNum: UILabel!
     @IBOutlet weak var selectionCover: UIView!
     
     override func awakeFromNib() {
