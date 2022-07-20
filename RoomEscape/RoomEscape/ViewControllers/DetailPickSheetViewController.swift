@@ -21,19 +21,64 @@ class DetailPickSheetViewController: UIViewController {
         return view
     }()
     
+    private var pickSheetViewTopConstraint: NSLayoutConstraint!
+    
+    var defaultHeight: CGFloat = 300
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        let dimmedTap = UITapGestureRecognizer(target: self, action: #selector(dimmedViewTapped(_:)))
+        dimmedView.addGestureRecognizer(dimmedTap)
+        dimmedView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func dimmedViewTapped(_ tapRecognizer: UITapGestureRecognizer) {
+        hidePickSheetAndGoBack()
+    }
+    
+    private func hidePickSheetAndGoBack() {
+        let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
+        let bottomPadding = view.safeAreaInsets.bottom
+        
+        pickSheetViewTopConstraint.constant = safeAreaHeight + bottomPadding
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+            self.dimmedView.alpha = 0.0
+            self.view.layoutIfNeeded()
+        }) { _ in
+            if self.presentingViewController != nil {
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showBottomSheet()
     }
     
     private func setupUI() {
         view.addSubview(dimmedView)
         view.addSubview(pickSheetView)
         
+        dimmedView.alpha = 0.0
+        
         setupLayout()
     }
     
-    private var pickSheetViewTopConstraint: NSLayoutConstraint!
+    private func showBottomSheet() {
+        let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
+        let bottomPadding: CGFloat = view.safeAreaInsets.bottom
+        
+        pickSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - defaultHeight
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+            self.dimmedView.alpha = 0.7
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
     
     private func setupLayout() {
         dimmedView.translatesAutoresizingMaskIntoConstraints = false
