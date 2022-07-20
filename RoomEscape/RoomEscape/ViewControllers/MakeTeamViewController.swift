@@ -43,7 +43,8 @@ class MakeTeamViewController: UIViewController {
 
     @objc func textFieldDidChange(sender: UITextField) {
         if sender.hasText {
-            makeButton.tintColor = UIColor(rgb: 0x7B61FF)
+            makeButton.tintColor = UIColor.mainPurple
+            
         } else {
             makeButton.tintColor = UIColor(rgb: 0x464646)
         }
@@ -54,11 +55,13 @@ class MakeTeamViewController: UIViewController {
     }
     
     @IBAction func makeButtonTapped(_ sender: UIButton) {
-        guard let teamName = self.teamNameField.text else { return }
-        let team = TeamModel(teamName: teamName, themeList: [Int]())
-        self.teams.append(team)
-        print(self.teams)
-        self.navigationController?.popViewController(animated: true)
+        if makeButton.tintColor == UIColor.mainPurple {
+            guard let teamName = self.teamNameField.text else { return }
+            let team = TeamModel(teamName: teamName, themeList: [Int]())
+            self.teams.append(team)
+            print(self.teams)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }
