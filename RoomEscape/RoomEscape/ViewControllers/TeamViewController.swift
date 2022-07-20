@@ -63,7 +63,9 @@ class TeamViewController: UIViewController {
 extension TeamViewController: UITableViewDelegate {
     // 터치가 비활성화 되었을 경우
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedThemes.remove(at: indexPath.row)
+        if isButtonPressed {
+            selectedThemes.remove(at: indexPath.row)
+        }
     }
     
     // 터치가 활성화 되었을 경우
