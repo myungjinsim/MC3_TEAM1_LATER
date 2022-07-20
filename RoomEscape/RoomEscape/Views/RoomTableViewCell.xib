@@ -22,8 +22,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-jm-sVX">
                                 <rect key="frame" x="17" y="15" width="287" height="137"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-fj-McN">
-                                        <rect key="frame" x="0.0" y="0.5" width="107" height="136"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-fj-McN">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="137"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="137" id="PBU-21-mD7"/>
                                             <constraint firstAttribute="width" constant="107" id="dLF-f3-ZcT"/>
@@ -182,7 +182,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="house.circle" catalog="system" width="128" height="121"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
