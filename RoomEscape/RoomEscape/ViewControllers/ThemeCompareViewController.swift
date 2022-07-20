@@ -49,7 +49,27 @@ class ThemeCompareViewController: UIViewController {
         secondThemeTimeLimit.text = "\(secondTheme.timeLimit)분"
     }
     
-    private func fetchImage() {
+    private func requestImage(url: URL) async throws -> UIImage? {
+        let urlRequest = URLRequest(url: url)
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            fatalError("Image Request failed")
+        }
+        
+        let image = UIImage(data: data)
+        
+        return image
+    }
+    
+    private func fetchPosters() async throws -> Void {
+        do {
+            firstThemeImage.image = try await requestImage(url: URL(string: firstTheme.image)!)
+            secondThemeImage.image = try await requestImage(url: URL(string: secondTheme.image)!)
+        } catch {
+            print("fetchPosters Error")
+        }
     }
     
     private func compareDifficulty() {
@@ -83,7 +103,6 @@ class ThemeCompareViewController: UIViewController {
             firstThemeActivity.setBetter()
             secondThemeActivity.setBetter()
         }
-        
     }
     
     private func convertToActivityLevel(activity: String) -> Int {
