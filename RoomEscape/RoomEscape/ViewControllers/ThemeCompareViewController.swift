@@ -33,22 +33,25 @@ class ThemeCompareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-   /*
-    private func fetchLabelText() {
+    
+    private func fetchThemeData() {
         firstThemeTitle.text = firstTheme.title
+        firstThemeStoreName.text = firstTheme.storeName
+        firstThemeStar.text = "\(firstTheme.star)"
         firstThemeGenre.text = firstTheme.genre
         firstThemeDifficulty.text = "\(firstTheme.difficulty)"
-        firstThemeActivity.text = firstTheme.activity
-        firstThemeMaxParty.text = "\(firstTheme.maxParty)명"
-        firstThemeTimeLimit.text = "\(firstTheme.timeLimit)분"
+        firstThemeActivity.text = "\(firstTheme.activity)"
+        firstThemeHorror.text = "\(firstTheme.horror)"
         
         secondThemeTitle.text = secondTheme.title
+        secondThemeStoreName.text = secondTheme.storeName
+        secondThemeStar.text = "\(secondTheme.star)"
         secondThemeGenre.text = secondTheme.genre
         secondThemeDifficulty.text = "\(secondTheme.difficulty)"
-        secondThemeActivity.text = secondTheme.activity
-        secondThemeMaxParty.text = "\(secondTheme.maxParty)명"
-        secondThemeTimeLimit.text = "\(secondTheme.timeLimit)분"
+        secondThemeActivity.text = "\(secondTheme.activity)"
+        secondThemeHorror.text = "\(secondTheme.horror)"
     }
+   /*
     
     private func requestImage(url: URL) async throws -> UIImage? {
         let urlRequest = URLRequest(url: url)
