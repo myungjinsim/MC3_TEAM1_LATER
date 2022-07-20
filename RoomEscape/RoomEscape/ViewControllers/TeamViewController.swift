@@ -8,7 +8,6 @@
 import UIKit
 
 class TeamViewController: UIViewController {
-    
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var teamTableView: UITableView!
     @IBOutlet weak var themeComparisonButton: UIButton!
@@ -17,6 +16,7 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var selectedTheme2: UILabel!
     
     var selectedThemes: [String] = []
+    var selectedIndexPath: [Int] = []
     var isButtonPressed: Bool = false
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class TeamViewController: UIViewController {
         teamTableView.delegate = self
         teamTableView.dataSource = self
         teamTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
-        
+        teamTableView.allowsMultipleSelection = true
     }
     
     // Make the themeComparisonView disappear when this button is pressed
@@ -43,25 +43,37 @@ class TeamViewController: UIViewController {
     
 }// TeamViewController
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension TeamViewController: UITableViewDelegate {
+    // 터치가 비활성화 되었을 경우
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("✅✅✅✅✅✅✅✅")
+        print("I thought we were friends.. \(indexPath)")
+    }
+    
+    // 터치가 활성화 되었을 경우
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedCell = tableView.cellForRow(at: indexPath)
-        
+        guard isButtonPressed == true else { return }
+        guard selectedThemes.count <= 2, selectedIndexPath.count <= 2 else { return }
+
         selectedThemes.append(sampleRoomArray[indexPath.row].title)
+        selectedIndexPath.append(indexPath.row)
+        
         if selectedTheme1.text == "-" {
             selectedTheme1.text = sampleRoomArray[indexPath.row].title
         } else {
             selectedTheme2.text = sampleRoomArray[indexPath.row].title
         }
 
+        print(selectedThemes)
     }
 }
 
 extension TeamViewController: UITableViewDataSource {
 
+    // Models/StoreModel 파일에 샘플 데이터 있어요
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        // Models/StoreModel 파일에 샘플 데이터 있어요
         return sampleRoomArray.count
     }
     
