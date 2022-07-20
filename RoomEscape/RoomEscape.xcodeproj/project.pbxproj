@@ -11,6 +11,8 @@
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
 		1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079C2885B4E800B23372 /* RoomTableViewCell.swift */; };
 		1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1659079D2885B4E800B23372 /* RoomTableViewCell.xib */; };
+		2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2552F8C62886A8BA00E40599 /* Detail.storyboard */; };
+		2558940528878D10008E4ACC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558940428878D10008E4ACC /* DetailViewController.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
 		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
@@ -34,6 +36,8 @@
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		1659079C2885B4E800B23372 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
 		1659079D2885B4E800B23372 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
+		2552F8C62886A8BA00E40599 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		2558940428878D10008E4ACC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
 		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			children = (
 				89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */,
 				89815E7D28866865000C5C24 /* HomeTableViewCell.swift */,
+				2552F8C62886A8BA00E40599 /* Detail.storyboard */,
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
 				7ABEE2B92885CE3200C2C020 /* Home.storyboard */,
 				16590792288482EF00B23372 /* Pick.storyboard */,
@@ -103,6 +108,7 @@
 				A0FEF75C287EBDF500DA3FBE /* MainTabBarController.swift */,
 				1659079428848AF100B23372 /* PickViewController.swift */,
 				7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */,
+				2558940428878D10008E4ACC /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */,
+				2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
@@ -225,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2558940528878D10008E4ACC /* DetailViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
