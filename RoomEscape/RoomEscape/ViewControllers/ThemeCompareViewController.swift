@@ -53,6 +53,16 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func compareDifficulty() {
+        if firstTheme.difficulty > secondTheme.difficulty {
+            firstThemeDifficulty.setBetter()
+            secondThemeDifficulty.setWorse()
+        } else if firstTheme.difficulty < secondTheme.difficulty {
+            firstThemeDifficulty.setWorse()
+            secondThemeDifficulty.setBetter()
+        } else {
+            firstThemeDifficulty.setBetter()
+            secondThemeDifficulty.setBetter()
+        }
     }
     
     private func compareActivity() {
