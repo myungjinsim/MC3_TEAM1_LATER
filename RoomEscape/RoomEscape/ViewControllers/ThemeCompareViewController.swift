@@ -82,6 +82,19 @@ class ThemeCompareViewController: UIViewController {
             print("fetchPosters Error")
         }
     }
+    
+    private func compareValue(firstValue: Double, secondValue: Double, firstLabel: UILabel, secondLabel: UILabel) {
+        if firstValue > secondValue {
+            firstLabel.setBetter()
+            secondLabel.setWorse()
+        } else if firstValue < secondValue {
+            firstLabel.setWorse()
+            secondLabel.setBetter()
+        } else {
+            firstLabel.setBetter()
+            secondLabel.setBetter()
+        }
+    }
    /*
     private func compareDifficulty() {
         if firstTheme.difficulty > secondTheme.difficulty {
