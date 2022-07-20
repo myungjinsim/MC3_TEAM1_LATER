@@ -12,8 +12,7 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var teamTableView: UITableView!
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
-    @IBOutlet weak var selectedTheme1: UILabel!
-    @IBOutlet weak var selectedTheme2: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var selectedThemes: [String] = []
     var selectedIndexPath: [Int] = []
@@ -23,9 +22,8 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
 
         teamNameLabel.text = "룸메즈 입문 추천용"
-        selectedTheme1.text = "-"
-        selectedTheme2.text = "-"
         
+        themeComparisonView.layer.cornerRadius = 5
         themeComparisonButton.layer.cornerRadius = 5
         
         teamTableView.delegate = self
@@ -36,8 +34,9 @@ class TeamViewController: UIViewController {
     
     // Make the themeComparisonView disappear when this button is pressed
     @IBAction func themeComparisonButtonPressed(_ sender: UIButton) {
-        themeComparisonView.isHidden = true
         self.isButtonPressed = true
+        self.themeComparisonButton.isHidden = true
+        self.infoLabel.text = "비교해서 보고싶은 2가지 테마를 선택하세요!"
     }
     
     
@@ -58,12 +57,6 @@ extension TeamViewController: UITableViewDelegate {
 
         selectedThemes.append(sampleRoomArray[indexPath.row].title)
         selectedIndexPath.append(indexPath.row)
-        
-        if selectedTheme1.text == "-" {
-            selectedTheme1.text = sampleRoomArray[indexPath.row].title
-        } else {
-            selectedTheme2.text = sampleRoomArray[indexPath.row].title
-        }
 
         print(selectedThemes)
     }
