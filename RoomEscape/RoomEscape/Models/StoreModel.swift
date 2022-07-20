@@ -37,13 +37,18 @@ struct StoreModel: Codable {
 }
 
 struct RoomModel: Codable {
+    let storeName: String
+    let phoneNumber: String
+    let Homepage: String
+    let image: String
     let title: String
+    let star: Int
     let genre: String
     let difficulty: Int
-    let activity: String
-    let maxParty: Int
-    let timeLimit: Int
+    let activity: Int
+    let horror: Int
     let description: String
+    let recommendation: String
 }
 
 struct SampleRoomModel {
