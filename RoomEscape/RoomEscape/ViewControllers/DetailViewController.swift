@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
     
     @objc func pickButtonTapped() {
         let detailPickSheetVC = DetailPickSheetViewController(contentViewController: UIStoryboard(name: "PickSheet", bundle: nil)
-            .instantiateViewController(withIdentifier: "PickSheetViewController") as? PickSheetViewController ?? UIViewController())
+            .instantiateViewController(withIdentifier: "PickSheetViewController") as? PickSheetViewController ?? UIViewController(), roomIndex: self.roomIndex)
         detailPickSheetVC.modalPresentationStyle = .overFullScreen
         self.present(detailPickSheetVC, animated: false, completion: nil)
     }

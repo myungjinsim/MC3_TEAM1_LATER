@@ -10,9 +10,11 @@ import UIKit
 class DetailPickSheetViewController: UIViewController {
     
     private let contentViewController: UIViewController
+    public let roomIndex: Int
     
-    init(contentViewController: UIViewController) {
+    init(contentViewController: UIViewController, roomIndex: Int) {
         self.contentViewController = contentViewController
+        self.roomIndex = roomIndex
         super.init(nibName: nil, bundle: nil)
     }
     
