@@ -38,4 +38,5 @@ class RoomCell: UITableViewCell {
             selectionCover.backgroundColor = UIColor.background
         }
     }
+    
 }
