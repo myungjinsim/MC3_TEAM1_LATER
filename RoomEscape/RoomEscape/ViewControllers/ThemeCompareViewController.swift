@@ -32,6 +32,11 @@ class ThemeCompareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchThemeData()
+        compareValue(firstValue: firstTheme.star, secondValue: secondTheme.star, firstLabel: firstThemeStar, secondLabel: secondThemeStar)
+        compareValue(firstValue: firstTheme.horror, secondValue: secondTheme.horror, firstLabel: firstThemeHorror, secondLabel: secondThemeHorror)
+        compareValue(firstValue: firstTheme.activity, secondValue: secondTheme.activity, firstLabel: firstThemeActivity, secondLabel: secondThemeActivity)
+        compareValue(firstValue: firstTheme.difficulty, secondValue: secondTheme.difficulty, firstLabel: firstThemeDifficulty, secondLabel: secondThemeDifficulty)
     }
     
     private func fetchThemeData() {
@@ -83,7 +88,7 @@ class ThemeCompareViewController: UIViewController {
         }
     }
     
-    private func compareValue(firstValue: Double, secondValue: Double, firstLabel: UILabel, secondLabel: UILabel) {
+    private func compareValue(firstValue: Float, secondValue: Float, firstLabel: UILabel, secondLabel: UILabel) {
         if firstValue > secondValue {
             firstLabel.setBetter()
             secondLabel.setWorse()
