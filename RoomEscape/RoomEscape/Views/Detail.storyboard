@@ -25,9 +25,9 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-QB-705">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1042"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-ja-Bhc">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-ja-Bhc">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
-                                                        <color key="backgroundColor" name="text1"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="WTA-ja-Bhc" secondAttribute="height" multiplier="1:1" id="h1Z-gi-dPz"/>
                                                         </constraints>
@@ -425,9 +425,11 @@
                         <outlet property="difficulty" destination="eTg-S9-aTJ" id="DR8-CG-kVy"/>
                         <outlet property="genre" destination="B1S-MG-odD" id="poa-Fl-Bfv"/>
                         <outlet property="horror" destination="riH-vF-fEr" id="vVg-Mo-xOR"/>
+                        <outlet property="poster" destination="WTA-ja-Bhc" id="z5v-dw-FuZ"/>
                         <outlet property="recommendation" destination="CJY-uv-OZy" id="vcZ-jK-gdI"/>
                         <outlet property="roomDescription" destination="kHh-V9-SM4" id="GC5-D1-hpg"/>
                         <outlet property="roomTitle" destination="YoH-BB-WEv" id="bzw-df-P8Z"/>
+                        <outlet property="stars" destination="MKj-5A-JNE" id="w4m-4C-m9k"/>
                         <outlet property="storeName" destination="K6p-gg-Ida" id="XJk-ga-wIX"/>
                     </connections>
                 </viewController>
@@ -439,6 +441,9 @@
     <resources>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="Background">
+            <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background2">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
