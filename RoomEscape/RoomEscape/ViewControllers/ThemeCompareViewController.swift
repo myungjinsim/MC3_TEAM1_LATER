@@ -12,6 +12,7 @@ class ThemeCompareViewController: UIViewController {
     let firstTheme: SampleModel = dummys[0]
     let secondTheme: SampleModel = dummys[1]
 
+    
     @IBOutlet weak var firstThemeImage: UIImageView!
     @IBOutlet weak var firstThemeTitle: UILabel!
     @IBOutlet weak var firstThemeStoreName: UILabel!
