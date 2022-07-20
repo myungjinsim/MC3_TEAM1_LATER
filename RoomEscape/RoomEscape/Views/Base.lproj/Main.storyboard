@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1oT-jp-AIn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="XlR-aN-7fh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="rWz-Rh-QpO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7HZ-sh-wSn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sN-vf-nqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480" y="615"/>
+        </scene>
+        <!--Pick-->
+        <scene sceneID="hF5-qC-FTt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pick" id="GeK-6O-359" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="3Ie-ZB-yoW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1b-Xb-qJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-837" y="600"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="GOr-eQ-1qp">
+            <objects>
+                <tabBarController id="1oT-jp-AIn" customClass="MainTabBarController" customModule="RoomEscape" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WQE-0J-1gP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rWz-Rh-QpO" kind="relationship" relationship="viewControllers" id="eAu-72-aBM"/>
+                        <segue destination="GeK-6O-359" kind="relationship" relationship="viewControllers" id="aQW-y2-cLl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3D-bc-Ytb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="81"/>
+        </scene>
+    </scenes>
+</document>
