@@ -50,8 +50,15 @@ class ThemeCompareViewController: UIViewController {
         secondThemeDifficulty.text = "\(secondTheme.difficulty)"
         secondThemeActivity.text = "\(secondTheme.activity)"
         secondThemeHorror.text = "\(secondTheme.horror)"
+        
+        Task {
+            do {
+                try await fetchPosters()
+            } catch {
+                print("fetchPosters() Error")
+            }
+        }
     }
-   /*
     
     private func requestImage(url: URL) async throws -> UIImage? {
         let urlRequest = URLRequest(url: url)
@@ -75,7 +82,7 @@ class ThemeCompareViewController: UIViewController {
             print("fetchPosters Error")
         }
     }
-    
+   /*
     private func compareDifficulty() {
         if firstTheme.difficulty > secondTheme.difficulty {
             firstThemeDifficulty.setBetter()
