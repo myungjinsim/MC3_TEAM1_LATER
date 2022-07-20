@@ -68,6 +68,31 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func compareActivity() {
+        let firstActivityLevel = convertToActivityLevel(activity: firstTheme.activity)
+        let secondActivityLevel = convertToActivityLevel(activity: secondTheme.activity)
+        
+        if firstActivityLevel > secondActivityLevel {
+            firstThemeActivity.setBetter()
+            secondThemeActivity.setWorse()
+            
+        } else if firstActivityLevel < secondActivityLevel {
+            firstThemeActivity.setWorse()
+            secondThemeActivity.setBetter()
+            
+        } else {
+            firstThemeActivity.setBetter()
+            secondThemeActivity.setBetter()
+        }
+        
+    }
+    
+    private func convertToActivityLevel(activity: String) -> Int {
+        switch activity {
+        case "많음": return 3
+        case "중간": return 2
+        case "적음": return 1
+        default: return 0
+        }
     }
     
     private func compareMaxParty() {
