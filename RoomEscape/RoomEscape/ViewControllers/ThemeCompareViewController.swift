@@ -86,6 +86,19 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func compareTimeLimit() {
+        if firstTheme.timeLimit > secondTheme.timeLimit {
+            firstThemeTimeLimit.setBetter()
+            secondThemeTimeLimit.setWorse()
+            
+        } else if firstTheme.timeLimit < secondTheme.timeLimit {
+            firstThemeTimeLimit.setWorse()
+            secondThemeTimeLimit.setBetter()
+            
+        } else {
+            firstThemeTimeLimit.setBetter()
+            secondThemeTimeLimit.setBetter()
+        }
+        
     }
 }
 
