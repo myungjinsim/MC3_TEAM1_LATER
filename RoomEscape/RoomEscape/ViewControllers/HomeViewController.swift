@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var recommendTableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
     
     let roomDataManager = JSONDataManager.shared
     
@@ -27,6 +28,46 @@ class HomeViewController: UIViewController {
         recommendTableView.delegate = self
         recommendTableView.dataSource = self
         recommendTableView.register(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomTableViewCell")
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        showToast(message: "준비중입니다.")
+        UIView.animate(withDuration: 0.1,
+            animations: {
+                self.searchButton.layer.opacity = 0.5
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.searchButton.layer.opacity = 1
+                }
+            }
+        )
+    }
+    
+    private func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(
+            x: self.view.frame.size.width / 2 - 75,
+            y: self.view.frame.size.height - 750,
+            width: 150,
+            height: 35)
+        )
+        
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        
+        self.view.addSubview(toastLabel)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
     
 }// HomeViewController
@@ -46,6 +87,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.roomName?.text = roomInfo.title
         cell.storeName?.text = roomInfo.storeName
         cell.roomImage?.contentMode = .scaleToFill
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         DispatchQueue.main.async {
             if let url = url {
@@ -68,6 +113,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
         viewController.roomIndex = indexPath.row
+        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -89,6 +135,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.roomName?.text = roomInfo.title
         cell.storeName?.text = roomInfo.storeName
         cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         DispatchQueue.main.async {
             if let url = url {
@@ -105,6 +156,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        viewController.roomIndex = indexPath.row
+        
+        recommendTableView.reloadRows(at: [indexPath], with: .automatic)
+                
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
 }
