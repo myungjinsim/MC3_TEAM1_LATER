@@ -9,6 +9,17 @@ import UIKit
 
 class DetailPickSheetViewController: UIViewController {
     
+    private let contentViewController: UIViewController
+    
+    init(contentViewController: UIViewController) {
+        self.contentViewController = contentViewController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
@@ -63,6 +74,9 @@ class DetailPickSheetViewController: UIViewController {
         view.addSubview(dimmedView)
         view.addSubview(pickSheetView)
         
+        addChild(contentViewController)
+        pickSheetView.addSubview(contentViewController.view)
+        
         dimmedView.alpha = 0.0
         
         setupLayout()
@@ -100,6 +114,15 @@ class DetailPickSheetViewController: UIViewController {
             pickSheetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             pickSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             pickSheetViewTopConstraint
+        ])
+        
+        contentViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            contentViewController.view.topAnchor.constraint(equalTo: pickSheetView.topAnchor),
+            contentViewController.view.leadingAnchor.constraint(equalTo: pickSheetView.leadingAnchor),
+            contentViewController.view.trailingAnchor.constraint(equalTo: pickSheetView.trailingAnchor),
+            contentViewController.view.bottomAnchor.constraint(equalTo: pickSheetView.bottomAnchor)
         ])
     }
 }
