@@ -60,7 +60,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3jG-eE-McG" userLabel="Difficulty Stack">
-                                                        <rect key="frame" x="0.0" y="84" width="145.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="81" width="145.5" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="난이도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0P-mw-ty5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="20"/>
@@ -113,19 +113,15 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mDL-gs-UC6" userLabel="Max Stack">
-                                                        <rect key="frame" x="0.0" y="27" width="145.5" height="110"/>
-                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="eYE-LZ-uro" firstAttribute="leading" secondItem="uNC-2a-hGf" secondAttribute="leading" id="5xZ-7f-4XI"/>
                                                     <constraint firstItem="3jG-eE-McG" firstAttribute="leading" secondItem="uNC-2a-hGf" secondAttribute="leading" id="D6Z-4S-g2Y"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3jG-eE-McG" secondAttribute="bottom" constant="36" id="Kjh-as-2TS"/>
                                                     <constraint firstItem="eYE-LZ-uro" firstAttribute="top" secondItem="7Me-Ol-aeq" secondAttribute="bottom" constant="9" id="Kx7-mj-LG5"/>
                                                     <constraint firstItem="7Me-Ol-aeq" firstAttribute="top" secondItem="uNC-2a-hGf" secondAttribute="top" constant="8" id="OLi-28-D8u"/>
-                                                    <constraint firstItem="mDL-gs-UC6" firstAttribute="top" secondItem="3jG-eE-McG" secondAttribute="bottom" constant="13" id="iLq-II-Jkk"/>
                                                     <constraint firstItem="7Me-Ol-aeq" firstAttribute="leading" secondItem="uNC-2a-hGf" secondAttribute="leading" id="lNy-Ci-9TK"/>
                                                     <constraint firstItem="3jG-eE-McG" firstAttribute="top" secondItem="eYE-LZ-uro" secondAttribute="bottom" constant="23" id="rJ2-CQ-qVM"/>
-                                                    <constraint firstItem="mDL-gs-UC6" firstAttribute="leading" secondItem="uNC-2a-hGf" secondAttribute="leading" id="vpj-tU-vj2"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
