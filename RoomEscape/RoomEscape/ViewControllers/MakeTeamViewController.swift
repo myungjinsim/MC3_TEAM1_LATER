@@ -12,6 +12,12 @@ class MakeTeamViewController: UIViewController {
     @IBOutlet weak var teamNameField: CustomTextField!
     @IBOutlet weak var makeButton: UIButton!
     
+    var teams = [TeamModel]() {
+        didSet {
+            self.saveTeams()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +28,17 @@ class MakeTeamViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func saveTeams() {
+        let data = self.teams.map {
+            [
+                "teamName": $0.teamName,
+                "themeList": $0.themeList
+            ]
+        }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: "teams")
     }
 
     @objc func textFieldDidChange(sender: UITextField) {
@@ -35,6 +52,15 @@ class MakeTeamViewController: UIViewController {
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         teamNameField.resignFirstResponder()
     }
+    
+    @IBAction func makeButtonTapped(_ sender: UIButton) {
+        guard let teamName = self.teamNameField.text else { return }
+        let team = TeamModel(teamName: teamName, themeList: [Int]())
+        self.teams.append(team)
+        print(self.teams)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension MakeTeamViewController: UITextFieldDelegate {

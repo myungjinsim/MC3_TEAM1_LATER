@@ -22,7 +22,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-jm-sVX">
                                 <rect key="frame" x="17" y="15" width="287" height="137"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-fj-McN">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-fj-McN">
                                         <rect key="frame" x="0.0" y="0.5" width="107" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="107" id="dLF-f3-ZcT"/>

@@ -33,6 +33,11 @@ struct SampleRoomModel {
     let description: String
 }
 
+struct TeamModel {
+    let teamName: String
+    let themeList: [Int]
+}
+
 let sampleRoomArray: [SampleRoomModel] = [
     SampleRoomModel(
         image: "https://previews.123rf.com/images/aquir/aquir1311/aquir131100316/23569861-sample-grunge-red-round-stamp.jpg",
