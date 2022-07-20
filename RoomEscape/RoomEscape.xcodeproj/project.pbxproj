@@ -168,10 +168,10 @@
 				A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */,
 				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
 				7AEAB5FC2885764500BA2216 /* StoreData.json */,
+				C19893832887E91A0045CF40 /* PohangData.json */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
-				C19893832887E91A0045CF40 /* PohangData.json */,
 			);
 			path = RoomEscape;
 			sourceTree = "<group>";

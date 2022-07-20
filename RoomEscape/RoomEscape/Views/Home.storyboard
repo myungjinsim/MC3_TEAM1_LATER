@@ -153,7 +153,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.846153846153845" y="137.91469194312796"/>
+            <point key="canvasLocation" x="-198" y="173"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="bUz-G5-qJg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="EMR-bq-VFa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyn-AU-1ue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="174"/>
         </scene>
     </scenes>
     <resources>
