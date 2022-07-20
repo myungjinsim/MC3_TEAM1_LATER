@@ -8,80 +8,159 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var recommendTableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
+    
+    let roomDataManager = JSONDataManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // CollectionView Setting
         locationCollectionView.delegate = self
         locationCollectionView.dataSource = self
         locationCollectionView.register(UINib(nibName: "RoomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RoomCollectionViewCell")
+        locationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
         
+        // CollectionView Setting
         recommendTableView.delegate = self
         recommendTableView.dataSource = self
         recommendTableView.register(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomTableViewCell")
     }
     
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        showToast(message: "준비중입니다.")
+        UIView.animate(withDuration: 0.1,
+            animations: {
+                self.searchButton.layer.opacity = 0.5
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.searchButton.layer.opacity = 1
+                }
+            }
+        )
+    }
+    
+    private func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(
+            x: self.view.frame.size.width / 2 - 75,
+            y: self.view.frame.size.height - 750,
+            width: 150,
+            height: 35)
+        )
+        
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        
+        self.view.addSubview(toastLabel)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
 }// HomeViewController
 
 // MARK: CollectionView Delegates
-extension HomeViewController: UICollectionViewDelegate {
-    
-}// UICollectionViewDelegate
-
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sampleRoomArray.count
+        return roomDataManager.roomData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let roomInfo = roomDataManager.roomData[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCollectionViewCell", for: indexPath) as! RoomCollectionViewCell
-        let url = URL(string: sampleRoomArray[indexPath.row].image)
+        let url = URL(string: roomInfo.image)
+        
+        cell.roomName?.text = roomInfo.title
+        cell.storeName?.text = roomInfo.storeName
+        cell.roomImage?.contentMode = .scaleToFill
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         DispatchQueue.main.async {
-            let data = try? Data(contentsOf: url!)
-            cell.roomImage?.image = UIImage(data: data!)
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
         }
         
         return cell
     }
     
-}// UICollectionViewDataSource
-
-// MARK: TableView Delegates
-extension HomeViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You Tapped Me!")
-    }
-    
-}// UITableViewDelegate
-
-extension HomeViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sampleRoomArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as! RoomCell
-        let url = URL(string: sampleRoomArray[indexPath.row].image)
-
-        DispatchQueue.main.async {
-            let data = try? Data(contentsOf: url!)
-            cell.roomImage?.image = UIImage(data: data!)
-        }
-        
-        return cell
-    }
-
-}// UITableViewDataSource
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 180, height: 354)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        
+        viewController.roomIndex = indexPath.row
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
+// MARK: TableView Delegates
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return roomDataManager.roomData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let roomInfo = roomDataManager.roomData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as! RoomCell
+        let url = URL(string: roomInfo.image)
+        
+        cell.roomName?.text = roomInfo.title
+        cell.storeName?.text = roomInfo.storeName
+        cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
+        
+        DispatchQueue.main.async {
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
+        }
+        
+        return cell
+    }
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        viewController.roomIndex = indexPath.row
+        
+        recommendTableView.reloadRows(at: [indexPath], with: .automatic)
+                
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
