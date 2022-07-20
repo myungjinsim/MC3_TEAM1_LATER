@@ -13,6 +13,8 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var compareButton: UIButton!
+    
     let util: Util = Util()
     var cancelButton: UIBarButtonItem?
     var selectedThemes: [Int] = []
@@ -27,6 +29,9 @@ class TeamViewController: UIViewController {
         
         themeComparisonView.layer.cornerRadius = 5
         themeComparisonButton.layer.cornerRadius = 5
+        
+        self.compareButton.tintColor = UIColor(rgb: 0x464646)
+        self.compareButton.isHidden = true
         
         teamTableView.delegate = self
         teamTableView.dataSource = self
@@ -46,6 +51,8 @@ class TeamViewController: UIViewController {
         self.isButtonPressed = true
         self.themeComparisonButton.isHidden = true
         self.infoLabel.text = "비교해서 보고싶은 2가지 테마를 선택하세요!"
+        self.compareButton.isHidden = false
+        
     }
     
     @objc func cancelButtonTapped() {
@@ -55,8 +62,15 @@ class TeamViewController: UIViewController {
         self.themeComparisonButton.isHidden = false
         self.infoLabel.text = "테마간 차이점이 궁금하다면?"
         selectedThemes.removeAll()
+        self.compareButton.tintColor = UIColor(rgb: 0x464646)
+        self.compareButton.isHidden = true
     }
     
+    @IBAction func compareButtonTapped(_ sender: UIButton) {
+        if !compareButton.isHidden && compareButton.tintColor == UIColor.mainPurple {
+            print("Good!")
+        }
+    }
     
 }// TeamViewController
 
@@ -66,6 +80,7 @@ extension TeamViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if isButtonPressed {
             selectedThemes = selectedThemes.filter { $0 != indexPath.row }
+            self.compareButton.tintColor = UIColor(rgb: 0x464646)
         }
     }
     
@@ -78,6 +93,9 @@ extension TeamViewController: UITableViewDelegate {
                 return
             }
             selectedThemes.append(indexPath.row)
+            if selectedThemes.count == 2 {
+                self.compareButton.tintColor = UIColor.mainPurple
+            }
         } else {
             util.showToast(view: self.view, message: "테마 비교 버튼을 눌러주세요")
             self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
