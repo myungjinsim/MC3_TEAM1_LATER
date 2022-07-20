@@ -26,5 +26,6 @@ extension UIColor {
     //etc
     static let background = UIColor(named: "background")
     static let background2 = UIColor(named: "background2")
+    static let star = UIColor(named: "star")
     
 }
