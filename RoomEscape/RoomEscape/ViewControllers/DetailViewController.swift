@@ -11,9 +11,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // roomModel은 Optional이 아님
-    let roomModel: RoomModel = RoomModel(storeName: "가게 이름", phoneNumber: "전화번호", homepage: "url", image: "url", title: "테마 이름", star: 5, genre: "장르", difficulty: 5, activity: 5, horror: 5, description: "설명", recommendation: "추천")
-
+    var roomIndex: Int = 0
+    
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var roomTitle: UILabel!
     @IBOutlet weak var genre: UILabel!
@@ -26,6 +25,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let roomModel: RoomModel = JSONDataManager.shared.roomData[roomIndex]
+        
+        print("🔥🔥🔥🔥🔥🔥🔥🔥")
+        print(roomIndex)
         
         storeName.text = roomModel.storeName
         roomTitle.text = roomModel.title

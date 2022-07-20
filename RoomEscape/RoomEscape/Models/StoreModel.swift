@@ -13,11 +13,11 @@ struct RoomModel: Codable {
     let homepage: String
     let image: String
     let title: String
-    let star: Double
+    let star: Int
     let genre: String
-    let difficulty: Double
-    let activity: Double
-    let horror: Double
+    let difficulty: Int
+    let activity: Int
+    let horror: Int
     let description: String
     let recommendation: String
 }
