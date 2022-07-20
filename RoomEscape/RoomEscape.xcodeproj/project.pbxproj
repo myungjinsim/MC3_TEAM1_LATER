@@ -21,6 +21,9 @@
 		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
+		A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DF42885320600F5272F /* ThemeCompare.storyboard */; };
+		A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */; };
+		A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */; };
 		89815E7C28865FCB000C5C24 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */; };
 		89815E7E28866865000C5C24 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E7D28866865000C5C24 /* HomeTableViewCell.swift */; };
 		89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */; };
@@ -48,6 +51,9 @@
 		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
+		A0181DF42885320600F5272F /* ThemeCompare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeCompare.storyboard; sourceTree = "<group>"; };
+		A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCompareViewController.swift; sourceTree = "<group>"; };
+		A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		89815E7D28866865000C5C24 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 		7AEAB5FB2885748600BA2216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0181DF42885320600F5272F /* ThemeCompare.storyboard */,
 				89815E7B28865FCB000C5C24 /* HomeCollectionViewCell.swift */,
 				89815E7D28866865000C5C24 /* HomeTableViewCell.swift */,
 				2552F8C62886A8BA00E40599 /* Detail.storyboard */,
@@ -110,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF75C287EBDF500DA3FBE /* MainTabBarController.swift */,
+				A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */,
 				1659079428848AF100B23372 /* PickViewController.swift */,
 				165907A628870DED00B23372 /* MakeTeamViewController.swift */,
 				165907A42886EEDE00B23372 /* TeamCell.swift */,
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3D8FC6B82885339700722937 /* Extension.swift */,
+				A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */,
+				16590793288482EF00B23372 /* Pick.storyboard in Resources */,
 				16590793288482EF00B23372 /* Pick.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
@@ -238,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */,
 				2558940528878D10008E4ACC /* DetailViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
+				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
 				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
