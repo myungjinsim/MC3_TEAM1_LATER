@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dl-fK-d0z">
-                                <rect key="frame" x="0.0" y="44" width="390" height="686"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="654"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwy-kB-i95">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1042"/>
@@ -25,7 +25,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-QB-705">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1042"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-ja-Bhc">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-ja-Bhc">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
                                                         <color key="backgroundColor" name="text1"/>
                                                         <constraints>
@@ -105,7 +105,7 @@
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JOy-hX-3tq">
                                                                                         <rect key="frame" x="0.0" y="-0.33333333333333215" width="18" height="17.666666666666664"/>
-                                                                                        <color key="tintColor" name="star"/>
+                                                                                        <color key="tintColor" name="text5"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="18" id="Q2Z-xl-Sli"/>
                                                                                             <constraint firstAttribute="width" constant="18" id="Z05-BY-WBH"/>
@@ -392,7 +392,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="6vb-U3-YVW"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY5-fO-jJh">
-                                <rect key="frame" x="23" y="762" width="344" height="48"/>
+                                <rect key="frame" x="23" y="730" width="344" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
@@ -417,7 +417,7 @@
                             <constraint firstItem="JY5-fO-jJh" firstAttribute="top" secondItem="6Dl-fK-d0z" secondAttribute="bottom" constant="32" id="eiy-6g-Fig"/>
                             <constraint firstItem="6Dl-fK-d0z" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ktY-HA-mp3"/>
                             <constraint firstItem="6Dl-fK-d0z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kvg-Ln-jqU"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JY5-fO-jJh" secondAttribute="bottom" id="rbh-cr-69H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JY5-fO-jJh" secondAttribute="bottom" constant="32" id="rbh-cr-69H"/>
                         </constraints>
                     </view>
                     <connections>
@@ -425,6 +425,7 @@
                         <outlet property="difficulty" destination="eTg-S9-aTJ" id="DR8-CG-kVy"/>
                         <outlet property="genre" destination="B1S-MG-odD" id="poa-Fl-Bfv"/>
                         <outlet property="horror" destination="riH-vF-fEr" id="vVg-Mo-xOR"/>
+                        <outlet property="pickButton" destination="JY5-fO-jJh" id="mrS-fO-bP9"/>
                         <outlet property="poster" destination="WTA-ja-Bhc" id="oHk-qn-acl"/>
                         <outlet property="recommendation" destination="CJY-uv-OZy" id="vcZ-jK-gdI"/>
                         <outlet property="roomDescription" destination="kHh-V9-SM4" id="GC5-D1-hpg"/>
@@ -446,9 +447,6 @@
         </namedColor>
         <namedColor name="Main">
             <color red="0.4823529411764706" green="0.38039215686274508" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="star">
-            <color red="1" green="0.9137254901960784" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text1">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
