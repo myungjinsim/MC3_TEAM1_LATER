@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var recommendTableView: UITableView!
     
@@ -56,17 +56,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 }
             }
         }
-
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 180, height: 354)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
+        viewController.roomIndex = indexPath.row
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
 }
 
 
@@ -85,7 +89,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.roomName?.text = roomInfo.title
         cell.storeName?.text = roomInfo.storeName
         cell.roomImage?.contentMode = .scaleToFill
-
+        
         DispatchQueue.main.async {
             if let url = url {
                 if let data = try? Data(contentsOf: url) {
@@ -98,5 +102,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

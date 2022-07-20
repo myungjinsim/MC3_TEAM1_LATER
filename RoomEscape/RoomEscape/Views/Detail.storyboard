@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,7 +11,7 @@
         <!--Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DETAIL" id="Y6W-OH-hqX" userLabel="Detail View Controller" customClass="DetailViewController" customModule="RoomEscape" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewControllerRef" id="Y6W-OH-hqX" userLabel="Detail View Controller" customClass="DetailViewController" customModule="RoomEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,9 +425,11 @@
                         <outlet property="difficulty" destination="eTg-S9-aTJ" id="DR8-CG-kVy"/>
                         <outlet property="genre" destination="B1S-MG-odD" id="poa-Fl-Bfv"/>
                         <outlet property="horror" destination="riH-vF-fEr" id="vVg-Mo-xOR"/>
+                        <outlet property="poster" destination="WTA-ja-Bhc" id="oHk-qn-acl"/>
                         <outlet property="recommendation" destination="CJY-uv-OZy" id="vcZ-jK-gdI"/>
                         <outlet property="roomDescription" destination="kHh-V9-SM4" id="GC5-D1-hpg"/>
                         <outlet property="roomTitle" destination="YoH-BB-WEv" id="bzw-df-P8Z"/>
+                        <outlet property="stars" destination="MKj-5A-JNE" id="0yF-fe-s4A"/>
                         <outlet property="storeName" destination="K6p-gg-Ida" id="XJk-ga-wIX"/>
                     </connections>
                 </viewController>

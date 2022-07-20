@@ -11,11 +11,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // roomModel은 Optional이 아님
-    let roomModel: RoomModel = RoomModel(storeName: "가게 이름", phoneNumber: "전화번호", homepage: "url", image: "url", title: "테마 이름", star: 5, genre: "장르", difficulty: 5, activity: 5, horror: 5, description: "설명", recommendation: "추천")
-
+    var roomIndex: Int = 0
+    
+    @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var roomTitle: UILabel!
+    @IBOutlet weak var stars: UIStackView!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var activity: UILabel!
@@ -27,6 +28,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let roomModel: RoomModel = JSONDataManager.shared.roomData[roomIndex]
+        
+        loadPosterFrom(urlAddress: roomModel.image)
+        
+        for i in 0 ..< roomModel.star {
+            stars.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
+        
         storeName.text = roomModel.storeName
         roomTitle.text = roomModel.title
         genre.text = roomModel.genre
@@ -35,6 +44,20 @@ class DetailViewController: UIViewController {
         horror.text = String(roomModel.horror) + ".0"
         roomDescription.text = "  " + roomModel.description
         recommendation.text = roomModel.recommendation
+    }
+    
+    func loadPosterFrom(urlAddress: String) {
+        guard let url = URL(string: urlAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.poster.image = loadedImage
+                }
+            }
+        }
     }
     
 }
