@@ -290,7 +290,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LNz-f9-NC1">
-                                                                <rect key="frame" x="0.66666666666665719" y="261.33333333333337" width="343" height="198.66666666666663"/>
+                                                                <rect key="frame" x="0.0" y="261.33333333333337" width="344" height="198.66666666666663"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-Ts-Xvm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="26.666666666666668"/>
@@ -357,8 +357,10 @@
                                                             <constraint firstAttribute="trailing" secondItem="RAY-F1-u4w" secondAttribute="trailing" id="4Py-qP-ulg"/>
                                                             <constraint firstAttribute="trailing" secondItem="RGb-Ty-46R" secondAttribute="trailing" id="7xa-nq-kDA"/>
                                                             <constraint firstItem="RAY-F1-u4w" firstAttribute="leading" secondItem="nvR-BV-Fan" secondAttribute="leading" id="dr9-NX-0wA"/>
+                                                            <constraint firstItem="LNz-f9-NC1" firstAttribute="leading" secondItem="nvR-BV-Fan" secondAttribute="leading" id="dsi-9H-aQu"/>
                                                             <constraint firstItem="RGb-Ty-46R" firstAttribute="leading" secondItem="nvR-BV-Fan" secondAttribute="leading" id="qF9-S6-TUG"/>
                                                             <constraint firstItem="jWb-dE-cdC" firstAttribute="leading" secondItem="nvR-BV-Fan" secondAttribute="leading" id="vFx-Ny-C2f"/>
+                                                            <constraint firstAttribute="trailing" secondItem="LNz-f9-NC1" secondAttribute="trailing" id="vSg-d2-eBP"/>
                                                             <constraint firstAttribute="trailing" secondItem="jWb-dE-cdC" secondAttribute="trailing" id="vkj-zZ-In2"/>
                                                         </constraints>
                                                     </stackView>
