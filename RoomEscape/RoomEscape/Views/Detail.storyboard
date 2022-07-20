@@ -425,6 +425,7 @@
                         <outlet property="difficulty" destination="eTg-S9-aTJ" id="DR8-CG-kVy"/>
                         <outlet property="genre" destination="B1S-MG-odD" id="poa-Fl-Bfv"/>
                         <outlet property="horror" destination="riH-vF-fEr" id="vVg-Mo-xOR"/>
+                        <outlet property="pickButton" destination="JY5-fO-jJh" id="mrS-fO-bP9"/>
                         <outlet property="poster" destination="WTA-ja-Bhc" id="oHk-qn-acl"/>
                         <outlet property="recommendation" destination="CJY-uv-OZy" id="vcZ-jK-gdI"/>
                         <outlet property="roomDescription" destination="kHh-V9-SM4" id="GC5-D1-hpg"/>
