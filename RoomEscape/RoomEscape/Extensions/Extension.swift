@@ -21,7 +21,7 @@ extension UIColor {
     static let titleBlack = UIColor(named: "text5")
 
     // Main Color
-    static let mainPurple = UIColor(named: "main")
+    static let mainPurple = UIColor(named: "Main")
     
     //etc
     static let background = UIColor(named: "background")

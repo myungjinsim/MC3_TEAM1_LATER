@@ -8,18 +8,21 @@
 import Foundation
 
 class JSONDataManager: ObservableObject {
-    @Published var storeData: [StoreModel] = []
+    @Published var roomData: [RoomModel] = []
     static let shared = JSONDataManager()
 
     init() {
+        print("I am working now !!!!")
         loadData()
     }
     
     private func loadData() {
-        guard let path = Bundle.main.path(forResource: "StoreData", ofType: "json") else {
+        guard let path = Bundle.main.path(forResource: "PohangData", ofType: "json") else {
+            print("1")
             return
         }
         guard let storeJSON = try? String(contentsOfFile: path) else {
+            print("2")
             return
         }
         
@@ -27,10 +30,11 @@ class JSONDataManager: ObservableObject {
         let data = storeJSON.data(using: .utf8)
         
         guard let data = data,
-              let storeData = try? decoder.decode([StoreModel].self, from: data) else {
+              let response = try? decoder.decode([RoomModel].self, from: data) else {
+            print("3")
             return
         }
-        self.storeData = storeData
+        self.roomData = response
     }
     
 }// JSONDataManager
