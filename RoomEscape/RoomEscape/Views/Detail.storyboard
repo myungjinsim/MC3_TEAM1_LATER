@@ -11,7 +11,7 @@
         <!--Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DETAIL" id="Y6W-OH-hqX" userLabel="Detail View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DETAIL" id="Y6W-OH-hqX" userLabel="Detail View Controller" customClass="DetailViewController" customModule="RoomEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,6 +384,15 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JY5-fO-jJh" secondAttribute="bottom" id="rbh-cr-69H"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activity" destination="fxz-y8-HPp" id="cGu-Vx-hvx"/>
+                        <outlet property="genre" destination="B1S-MG-odD" id="dvc-D7-qQ0"/>
+                        <outlet property="maxParty" destination="eTg-S9-aTJ" id="2K3-WS-V4u"/>
+                        <outlet property="storeName" destination="K6p-gg-Ida" id="7Ls-Ng-WaE"/>
+                        <outlet property="themeDescription" destination="kHh-V9-SM4" id="YwI-4c-3kS"/>
+                        <outlet property="themeTitle" destination="YoH-BB-WEv" id="Ghf-Ug-M05"/>
+                        <outlet property="timeLimit" destination="riH-vF-fEr" id="ZK4-DI-j0B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
