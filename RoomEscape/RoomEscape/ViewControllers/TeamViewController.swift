@@ -13,11 +13,12 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
+    let util: Util = Util()
     var cancelButton: UIBarButtonItem?
-    var team: TeamModel?
-    
     var selectedThemes: [Int] = []
     var isButtonPressed: Bool = false
+    var team: TeamModel?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,11 +73,13 @@ extension TeamViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isButtonPressed {
             guard selectedThemes.count < 2 else {
+                util.showToast(view: self.view, message: "2개 이상 선택할 수 없습니다")
                 self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
                 return
             }
             selectedThemes.append(indexPath.row)
         } else {
+            util.showToast(view: self.view, message: "테마 비교 버튼을 눌러주세요")
             self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }

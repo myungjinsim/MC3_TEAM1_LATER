@@ -95,6 +95,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pMM-OO-lWn" secondAttribute="trailing" constant="23" id="pS6-R2-N2f"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="infoLabel" destination="biB-qW-063" id="igq-wK-Bap"/>
                         <outlet property="teamNameLabel" destination="rXC-AX-xhF" id="eR7-uB-5H0"/>

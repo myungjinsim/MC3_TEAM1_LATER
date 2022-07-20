@@ -17,6 +17,7 @@
 		2558940528878D10008E4ACC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558940428878D10008E4ACC /* DetailViewController.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
+		7A2CD1B6288884FE002D5950 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B5288884FD002D5950 /* Util.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
 		7A6604B128871856000DC85B /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6604B028871856000DC85B /* Team.storyboard */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
@@ -49,6 +50,7 @@
 		2558940428878D10008E4ACC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7A2CD1B5288884FD002D5950 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7A6604B028871856000DC85B /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				3D8FC6B82885339700722937 /* Extension.swift */,
 				7A2CD1B32887A29B002D5950 /* Constants.swift */,
 				A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */,
+				7A2CD1B5288884FD002D5950 /* Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */,
+				7A2CD1B6288884FE002D5950 /* Util.swift in Sources */,
 				2558940528878D10008E4ACC /* DetailViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
