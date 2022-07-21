@@ -26,6 +26,9 @@ class TeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backButtonTitle = ""
+        
         self.configureView()
         self.cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
         
