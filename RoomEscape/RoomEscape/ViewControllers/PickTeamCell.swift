@@ -21,6 +21,12 @@ class PickTeamCell: UITableViewCell {
     }
     
     @objc func toggleButtonTapped() {
+        if toggle.configuration?.baseForegroundColor?.accessibilityName == UIColor.mainPurple?.accessibilityName {
+            checked = true
+        } else {
+            checked = false
+        }
+        
         toggle.configuration?.image = checked ? UIImage(systemName: "square") : UIImage(systemName: "checkmark.square.fill")
         toggle.configuration?.baseForegroundColor = checked ? UIColor.titleWhite : UIColor.mainPurple
         checked.toggle()
