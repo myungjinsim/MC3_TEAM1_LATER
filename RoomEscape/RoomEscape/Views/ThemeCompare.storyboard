@@ -23,7 +23,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마 비교하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kny-4I-hcb">
-                                                <rect key="frame" x="30" y="15" width="354" height="103.5"/>
+                                                <rect key="frame" x="30" y="18.5" width="354" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Pin-gI-zfj"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
                                                 <color key="textColor" name="text1"/>
                                                 <nil key="highlightedColor"/>
@@ -344,6 +347,7 @@
                                             <constraint firstAttribute="trailing" secondItem="IZ8-uM-LHH" secondAttribute="trailing" id="Mdt-31-XJa"/>
                                             <constraint firstItem="7cI-mI-uQ4" firstAttribute="top" secondItem="IZ8-uM-LHH" secondAttribute="bottom" constant="8" id="MsE-VN-fKN"/>
                                             <constraint firstItem="YWv-K2-cCn" firstAttribute="leading" secondItem="Ldx-wP-cK6" secondAttribute="leading" id="OHh-JR-bIl"/>
+                                            <constraint firstItem="Kny-4I-hcb" firstAttribute="top" secondItem="Ldx-wP-cK6" secondAttribute="top" constant="18.5" id="Rpp-4U-xne"/>
                                             <constraint firstAttribute="trailing" secondItem="YWv-K2-cCn" secondAttribute="trailing" id="U53-LE-X3G"/>
                                             <constraint firstItem="YWv-K2-cCn" firstAttribute="top" secondItem="7cI-mI-uQ4" secondAttribute="bottom" constant="8" id="Zs3-kF-soA"/>
                                             <constraint firstItem="IZ8-uM-LHH" firstAttribute="top" secondItem="BQ8-bE-eME" secondAttribute="bottom" constant="15" id="cYP-4j-S4h"/>
@@ -356,7 +360,6 @@
                                             <constraint firstAttribute="trailing" secondItem="V8W-n1-Y0b" secondAttribute="trailing" id="qfO-R7-5QL"/>
                                             <constraint firstAttribute="bottom" secondItem="gJL-Aa-L1h" secondAttribute="bottom" constant="118.5" id="qrP-Tb-AC3"/>
                                             <constraint firstItem="gJL-Aa-L1h" firstAttribute="top" secondItem="YWv-K2-cCn" secondAttribute="bottom" constant="8" id="yoR-Cz-W6T"/>
-                                            <constraint firstItem="Kny-4I-hcb" firstAttribute="top" secondItem="Ldx-wP-cK6" secondAttribute="top" constant="15" id="z6a-br-1kA"/>
                                             <constraint firstItem="IZ8-uM-LHH" firstAttribute="leading" secondItem="Ldx-wP-cK6" secondAttribute="leading" id="zBB-w7-51L"/>
                                             <constraint firstAttribute="trailing" secondItem="Kny-4I-hcb" secondAttribute="trailing" constant="30" id="zKe-gB-4VO"/>
                                         </constraints>
