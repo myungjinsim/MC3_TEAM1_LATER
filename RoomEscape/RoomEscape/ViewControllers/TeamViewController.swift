@@ -70,7 +70,13 @@ class TeamViewController: UIViewController {
     
     @IBAction func compareButtonTapped(_ sender: UIButton) {
         if !compareButton.isHidden && compareButton.tintColor == UIColor.mainPurple {
-            print("Good!")
+            guard let viewController = self.storyboard?.instantiateViewController(identifier: "ThemeCompareViewControllerRef") as? ThemeCompareViewController else { return }
+            
+            viewController.firstTheme = roomDataManager.roomData[selectedThemes[0]]
+            viewController.secondTheme = roomDataManager.roomData[selectedThemes[1]]
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
         }
     }
     
@@ -81,7 +87,8 @@ extension TeamViewController: UITableViewDelegate {
     // 터치가 비활성화 되었을 경우
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if isButtonPressed {
-            selectedThemes = selectedThemes.filter { $0 != indexPath.row }
+            guard let theme = team?.themeList[indexPath.row] else { return }
+            selectedThemes = selectedThemes.filter { $0 != theme }
             self.compareButton.tintColor = UIColor(rgb: 0x464646)
         }
     }
@@ -94,7 +101,8 @@ extension TeamViewController: UITableViewDelegate {
                 self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
                 return
             }
-            selectedThemes.append(indexPath.row)
+            guard let theme = team?.themeList[indexPath.row] else { return }
+            selectedThemes.append(theme)
             if selectedThemes.count == 2 {
                 self.compareButton.tintColor = UIColor.mainPurple
             }

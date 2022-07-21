@@ -134,6 +134,14 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="137.94642857142856"/>
         </scene>
+        <!--ThemeCompare-->
+        <scene sceneID="Hzs-hf-HbS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ThemeCompareViewControllerRef" storyboardName="ThemeCompare" id="8pO-mJ-j91" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBI-OP-8lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="122"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="Background">

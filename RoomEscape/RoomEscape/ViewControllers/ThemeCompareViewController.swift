@@ -9,10 +9,9 @@ import UIKit
 
 class ThemeCompareViewController: UIViewController {
     
-    let firstTheme: SampleModel = dummys[0]
-    let secondTheme: SampleModel = dummys[1]
+    var firstTheme: RoomModel?
+    var secondTheme: RoomModel?
 
-    
     @IBOutlet weak var firstThemeImage: UIImageView!
     @IBOutlet weak var firstThemeTitle: UILabel!
     @IBOutlet weak var firstThemeStoreName: UILabel!
@@ -34,28 +33,28 @@ class ThemeCompareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchThemeData()
-        compareValue(firstValue: firstTheme.star, secondValue: secondTheme.star, firstLabel: firstThemeStar, secondLabel: secondThemeStar)
-        compareValue(firstValue: firstTheme.horror, secondValue: secondTheme.horror, firstLabel: firstThemeHorror, secondLabel: secondThemeHorror)
-        compareValue(firstValue: firstTheme.activity, secondValue: secondTheme.activity, firstLabel: firstThemeActivity, secondLabel: secondThemeActivity)
-        compareValue(firstValue: firstTheme.difficulty, secondValue: secondTheme.difficulty, firstLabel: firstThemeDifficulty, secondLabel: secondThemeDifficulty)
+        compareValue(firstValue: firstTheme?.star ?? 0, secondValue: secondTheme?.star ?? 0, firstLabel: firstThemeStar, secondLabel: secondThemeStar)
+        compareValue(firstValue: firstTheme?.horror ?? 0, secondValue: secondTheme?.horror ?? 0, firstLabel: firstThemeHorror, secondLabel: secondThemeHorror)
+        compareValue(firstValue: firstTheme?.activity ?? 0, secondValue: secondTheme?.activity ?? 0, firstLabel: firstThemeActivity, secondLabel: secondThemeActivity)
+        compareValue(firstValue: firstTheme?.difficulty ?? 0, secondValue: secondTheme?.difficulty ?? 0, firstLabel: firstThemeDifficulty, secondLabel: secondThemeDifficulty)
     }
     
     private func fetchThemeData() {
-        firstThemeTitle.text = firstTheme.title
-        firstThemeStoreName.text = firstTheme.storeName
-        firstThemeStar.text = "\(firstTheme.star)"
-        firstThemeGenre.text = firstTheme.genre
-        firstThemeDifficulty.text = "\(firstTheme.difficulty)"
-        firstThemeActivity.text = "\(firstTheme.activity)"
-        firstThemeHorror.text = "\(firstTheme.horror)"
+        firstThemeTitle.text = firstTheme?.title ?? ""
+        firstThemeStoreName.text = firstTheme?.storeName ?? ""
+        firstThemeStar.text = "\(firstTheme?.star ?? 0)"
+        firstThemeGenre.text = firstTheme?.genre ?? ""
+        firstThemeDifficulty.text = "\(firstTheme?.difficulty ?? 0)"
+        firstThemeActivity.text = "\(firstTheme?.activity ?? 0)"
+        firstThemeHorror.text = "\(firstTheme?.horror ?? 0)"
         
-        secondThemeTitle.text = secondTheme.title
-        secondThemeStoreName.text = secondTheme.storeName
-        secondThemeStar.text = "\(secondTheme.star)"
-        secondThemeGenre.text = secondTheme.genre
-        secondThemeDifficulty.text = "\(secondTheme.difficulty)"
-        secondThemeActivity.text = "\(secondTheme.activity)"
-        secondThemeHorror.text = "\(secondTheme.horror)"
+        secondThemeTitle.text = secondTheme?.title ?? ""
+        secondThemeStoreName.text = secondTheme?.storeName ?? ""
+        secondThemeStar.text = "\(secondTheme?.star ?? 0)"
+        secondThemeGenre.text = secondTheme?.genre ?? ""
+        secondThemeDifficulty.text = "\(secondTheme?.difficulty ?? 0)"
+        secondThemeActivity.text = "\(secondTheme?.activity ?? 0)"
+        secondThemeHorror.text = "\(secondTheme?.horror ?? 0)"
         
         Task {
             do {
@@ -82,14 +81,14 @@ class ThemeCompareViewController: UIViewController {
     
     private func fetchPosters() async throws -> Void {
         do {
-            firstThemeImage.image = try await requestImage(url: URL(string: firstTheme.image)!)
-            secondThemeImage.image = try await requestImage(url: URL(string: secondTheme.image)!)
+            firstThemeImage.image = try await requestImage(url: URL(string: firstTheme?.image ?? "")!)
+            secondThemeImage.image = try await requestImage(url: URL(string: secondTheme?.image ?? "")!)
         } catch {
             print("fetchPosters Error")
         }
     }
     
-    private func compareValue(firstValue: Float, secondValue: Float, firstLabel: UILabel, secondLabel: UILabel) {
+    private func compareValue(firstValue: Int, secondValue: Int, firstLabel: UILabel, secondLabel: UILabel) {
         if firstValue > secondValue {
             firstLabel.setBetter()
             secondLabel.setWorse()
@@ -174,23 +173,4 @@ class ThemeCompareViewController: UIViewController {
         }
         
     }*/
-}
-
-struct SampleModel {
-    let title: String
-    let image: String
-    let storeName: String
-    let genre: String
-    let description: String
-    let difficulty: Float
-    let activity: Float
-    let horror: Float
-    let star: Float
-}
-    
-var dummys: [SampleModel] {
-    [
-        SampleModel(title: "안개꽃", image: "https://blogfiles.pstatic.net/MjAxNzEwMDhfMjA1/MDAxNTA3NDYwODkyODM2.bTbkQeLmYyM_eo1ZB7uUusJ7o8vnxpm4ErDGMNo8oTIg.1CGn9lqXzLPBvjbwBUDeYvsZZLNvRvKZ5ABG_QdUAFUg.JPEG.theyescape/Christmas.jpg?type=w1", storeName: "C5 포항", genre: "감성", description: "안 개 꽃꼬로로롤로꽃", difficulty: 4.0, activity: 4.0, horror: 3.0, star: 4.1),
-        SampleModel(title: "크리스마스", image: "https://blogfiles.pstatic.net/MjAxNzEwMDhfMjA1/MDAxNTA3NDYwODkyODM2.bTbkQeLmYyM_eo1ZB7uUusJ7o8vnxpm4ErDGMNo8oTIg.1CGn9lqXzLPBvjbwBUDeYvsZZLNvRvKZ5ABG_QdUAFUg.JPEG.theyescape/Christmas.jpg?type=w1", storeName: "더와이빙 방탈출카페", genre: "코믹", description: "산을 타고있는 산타크로스", difficulty: 3.0, activity: 5.0, horror: 4.0, star: 4.5)
-    ]
 }
