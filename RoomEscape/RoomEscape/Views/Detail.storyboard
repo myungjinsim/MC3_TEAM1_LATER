@@ -439,6 +439,7 @@
             <point key="canvasLocation" x="130.76923076923077" y="93.127962085308056"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>

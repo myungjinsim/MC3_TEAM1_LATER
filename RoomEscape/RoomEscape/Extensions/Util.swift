@@ -13,9 +13,9 @@ struct Util {
     
     func showToast(view: UIView, message: String) {
         let toastLabel = UILabel(frame: CGRect(
-            x: view.frame.size.width / 2 - 100,
+            x: view.frame.size.width / 2 - 150,
             y: view.frame.size.height - 750,
-            width: 200,
+            width: 300,
             height: 35)
         )
         

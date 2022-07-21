@@ -12,7 +12,6 @@ class JSONDataManager: ObservableObject {
     static let shared = JSONDataManager()
 
     init() {
-        print("I am working now !!!!")
         loadData()
     }
     

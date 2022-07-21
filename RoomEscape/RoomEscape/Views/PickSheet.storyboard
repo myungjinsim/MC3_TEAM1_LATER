@@ -144,6 +144,7 @@
             <point key="canvasLocation" x="133" y="75"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
     <resources>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="Main">
