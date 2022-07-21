@@ -80,11 +80,20 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func fetchPosters() async throws -> Void {
-        do {
-            firstThemeImage.image = try await requestImage(url: URL(string: firstTheme?.image ?? "")!)
-            secondThemeImage.image = try await requestImage(url: URL(string: secondTheme?.image ?? "")!)
-        } catch {
-            print("fetchPosters Error")
+        if let firstThemeUrl = URL(string: firstTheme?.image ?? "") {
+            if let data = try? Data(contentsOf: firstThemeUrl) {
+                firstThemeImage.image = UIImage(data: data)
+            } else {
+                firstThemeImage.image = UIImage(systemName: "house")
+            }
+        }
+        
+        if let secondThemeUrl = URL(string: secondTheme?.image ?? "") {
+            if let data = try? Data(contentsOf: secondThemeUrl) {
+                secondThemeImage.image = UIImage(data: data)
+            } else {
+                secondThemeImage.image = UIImage(systemName: "house")
+            }
         }
     }
     
