@@ -9,8 +9,6 @@ import UIKit
 
 class PickTeamCell: UITableViewCell {
     
-    var checked: Bool = false
-    
     @IBOutlet weak var teamName: UILabel!
     @IBOutlet weak var toggle: UIButton!
     
@@ -20,15 +18,13 @@ class PickTeamCell: UITableViewCell {
         toggle.addTarget(self, action: #selector(toggleButtonTapped), for: .touchUpInside)
     }
     
+    func isChecked() -> Bool {
+        return toggle.configuration?.baseForegroundColor?.accessibilityName
+        == UIColor.mainPurple?.accessibilityName ? true : false
+    }
+    
     @objc func toggleButtonTapped() {
-        if toggle.configuration?.baseForegroundColor?.accessibilityName == UIColor.mainPurple?.accessibilityName {
-            checked = true
-        } else {
-            checked = false
-        }
-        
-        toggle.configuration?.image = checked ? UIImage(systemName: "square") : UIImage(systemName: "checkmark.square.fill")
-        toggle.configuration?.baseForegroundColor = checked ? UIColor.titleWhite : UIColor.mainPurple
-        checked.toggle()
+        toggle.configuration?.image = isChecked() ? UIImage(systemName: "square") : UIImage(systemName: "checkmark.square.fill")
+        toggle.configuration?.baseForegroundColor = isChecked() ? UIColor.titleWhite : UIColor.mainPurple
     }
 }

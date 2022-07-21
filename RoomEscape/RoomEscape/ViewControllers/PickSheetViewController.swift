@@ -49,7 +49,7 @@ class PickSheetViewController: UIViewController {
             for i in 0 ..< teams.count {
                 let tableViewCell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! PickTeamCell
 
-                if tableViewCell.checked {
+                if tableViewCell.isChecked() {
                     if let _ = teams[i].themeList.firstIndex(of: roomIndex) {
                         updatedTeams.insert(teams[i], at: updatedTeams.count)
                     } else {
