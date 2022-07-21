@@ -389,7 +389,9 @@
                             <constraint firstItem="cHr-Hb-bCb" firstAttribute="top" secondItem="vzy-dk-Quc" secondAttribute="top" id="rEq-11-kKb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kzM-2P-732"/>
+                    <navigationItem key="navigationItem" id="kzM-2P-732">
+                        <barButtonItem key="backBarButtonItem" title=" " id="kbO-OH-2qZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstThemeActivity" destination="peE-Xr-Zcb" id="tcr-Ij-hsJ"/>
                         <outlet property="firstThemeDifficulty" destination="tVW-9y-1Zg" id="X6T-3C-6ow"/>
@@ -414,6 +416,7 @@
             <point key="canvasLocation" x="-404.34782608695656" y="18.75"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Background">

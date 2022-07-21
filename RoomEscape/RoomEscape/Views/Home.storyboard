@@ -146,7 +146,9 @@
                             <constraint firstItem="wzs-8J-1o9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="x6t-SH-fek"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6bP-lh-PVx"/>
+                    <navigationItem key="navigationItem" id="6bP-lh-PVx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="sbt-pP-bCa"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="390" height="1300"/>
                     <connections>
@@ -188,6 +190,7 @@
             <point key="canvasLocation" x="-325" y="203"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
     <resources>
         <image name="key" catalog="system" width="86" height="128"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>

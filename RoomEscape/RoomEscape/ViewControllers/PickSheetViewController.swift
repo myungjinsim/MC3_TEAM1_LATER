@@ -48,7 +48,7 @@ class PickSheetViewController: UIViewController {
             
             for i in 0 ..< teams.count {
                 let tableViewCell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! PickTeamCell
-                
+
                 if tableViewCell.checked {
                     if let _ = teams[i].themeList.firstIndex(of: roomIndex) {
                         updatedTeams.insert(teams[i], at: updatedTeams.count)
@@ -57,6 +57,12 @@ class PickSheetViewController: UIViewController {
                         list.insert(roomIndex, at: 0)
                         updatedTeams.insert(TeamModel(teamName: teams[i].teamName, themeList: list), at: updatedTeams.count)
                     }
+                    
+                    if let parentView = self.parent {
+                        guard let text = tableViewCell.teamName.text else { return }
+                        Util.shared.showToast(view: parentView.view, message: "'\(text)'팀에 추가되었습니다")
+                    }
+                    
                 } else {
                     if let index = teams[i].themeList.firstIndex(of: roomIndex) {
                         var list = teams[i].themeList
@@ -67,6 +73,7 @@ class PickSheetViewController: UIViewController {
                     }
                 }
             }
+            
         }
         
         let data = updatedTeams.map {
@@ -76,6 +83,7 @@ class PickSheetViewController: UIViewController {
             ]
         }
         
+                
         let userDefaults = UserDefaults.standard
         userDefaults.set(data, forKey: "teams")
         

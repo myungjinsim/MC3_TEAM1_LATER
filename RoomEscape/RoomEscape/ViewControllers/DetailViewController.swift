@@ -58,6 +58,8 @@ class DetailViewController: UIViewController {
             if let imageData = try? Data(contentsOf: url) {
                 if let loadedImage = UIImage(data: imageData) {
                     self?.poster.image = loadedImage
+                    self?.poster.clipsToBounds = true
+                    self?.poster.contentMode = .scaleToFill
                 }
             }
         }

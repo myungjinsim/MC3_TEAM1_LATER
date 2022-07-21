@@ -143,6 +143,7 @@
             <point key="canvasLocation" x="714" y="122"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
     <resources>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
