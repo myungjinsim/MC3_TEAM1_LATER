@@ -15,12 +15,14 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var compareButton: UIButton!
     
+    let roomDataManager = JSONDataManager.shared
+    
     let util: Util = Util()
     var cancelButton: UIBarButtonItem?
     var selectedThemes: [Int] = []
     var isButtonPressed: Bool = false
     var team: TeamModel?
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,17 +106,40 @@ extension TeamViewController: UITableViewDelegate {
 }
 
 extension TeamViewController: UITableViewDataSource {
-
-    // Models/StoreModel 파일에 샘플 데이터 있어요
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let themes = self.team?.themeList else { return 0 }
 
-        return sampleRoomArray.count
+        return themes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomCell
 
-        cell.roomName?.text = sampleRoomArray[indexPath.row].title
+        let themes = self.team?.themeList
+        guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
+        let roomInfo = roomDataManager.roomData[themeIdx]
+        
+        cell.roomName?.text = roomInfo.title
+        let url = URL(string: roomInfo.image)
+        cell.storeName?.text = roomInfo.storeName
+        cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
+        
+        DispatchQueue.main.async {
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
+        }
         
         return cell
     }
