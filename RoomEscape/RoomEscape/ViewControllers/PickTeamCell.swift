@@ -21,7 +21,6 @@ class PickTeamCell: UITableViewCell {
     }
     
     @objc func toggleButtonTapped() {
-        
         toggle.configuration?.image = checked ? UIImage(systemName: "square") : UIImage(systemName: "checkmark.square.fill")
         toggle.configuration?.baseForegroundColor = checked ? UIColor.titleWhite : UIColor.mainPurple
         checked.toggle()
