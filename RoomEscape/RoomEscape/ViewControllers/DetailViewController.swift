@@ -11,9 +11,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // roomModel은 Optional이 아님
-    let roomModel: RoomModel = RoomModel(storeName: "가게 이름", phoneNumber: "전화번호", Homepage: "url", image: "https://blogfiles.pstatic.net/MjAxNzEwMDhfMjA1/MDAxNTA3NDYwODkyODM2.bTbkQeLmYyM_eo1ZB7uUusJ7o8vnxpm4ErDGMNo8oTIg.1CGn9lqXzLPBvjbwBUDeYvsZZLNvRvKZ5ABG_QdUAFUg.JPEG.theyescape/Christmas.jpg?type=w1", title: "테마 이름", star: 3, genre: "장르", difficulty: 5, activity: 5, horror: 5, description: "설명", recommendation: "추천")
-
+    var roomIndex: Int = 0
+    
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var roomTitle: UILabel!
@@ -25,11 +24,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var recommendation: UILabel!
 
+    @IBOutlet weak var pickButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let roomModel: RoomModel = JSONDataManager.shared.roomData[roomIndex]
+        
         loadPosterFrom(urlAddress: roomModel.image)
+        
+        for i in 0 ..< roomModel.star {
+            stars.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         storeName.text = roomModel.storeName
         roomTitle.text = roomModel.title
@@ -40,9 +46,7 @@ class DetailViewController: UIViewController {
         roomDescription.text = "  " + roomModel.description
         recommendation.text = roomModel.recommendation
         
-        for i in 0 ..< roomModel.star {
-            stars.arrangedSubviews[i].tintColor = UIColor(named: "star");
-        }
+        pickButton.addTarget(self, action: #selector(pickButtonTapped), for: .touchUpInside)
     }
     
     func loadPosterFrom(urlAddress: String) {
@@ -54,9 +58,17 @@ class DetailViewController: UIViewController {
             if let imageData = try? Data(contentsOf: url) {
                 if let loadedImage = UIImage(data: imageData) {
                     self?.poster.image = loadedImage
+                    self?.poster.clipsToBounds = true
+                    self?.poster.contentMode = .scaleToFill
                 }
             }
         }
     }
     
+    @objc func pickButtonTapped() {
+        let detailPickSheetVC = DetailPickSheetViewController(contentViewController: UIStoryboard(name: "PickSheet", bundle: nil)
+            .instantiateViewController(withIdentifier: "PickSheetViewController") as? PickSheetViewController ?? UIViewController(), roomIndex: self.roomIndex)
+        detailPickSheetVC.modalPresentationStyle = .overFullScreen
+        self.present(detailPickSheetVC, animated: false, completion: nil)
+    }
 }

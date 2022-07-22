@@ -16,7 +16,7 @@ extension UILabel {
     }
     
     func setWorse() {
-        self.font = .boldSystemFont(ofSize: 22)
+        self.font = .boldSystemFont(ofSize: 28)
         self.textColor = .titleBlack
     }
 }

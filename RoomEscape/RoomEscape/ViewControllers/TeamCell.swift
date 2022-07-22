@@ -18,7 +18,7 @@ class TeamCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cellContainer.layer.cornerRadius = cellContainer.bounds.height / 10
+        cellContainer.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

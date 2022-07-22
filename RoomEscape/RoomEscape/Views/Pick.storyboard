@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,8 +22,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="65a-sn-Wiq">
-                                <rect key="frame" x="23" y="218.5" width="368" height="643.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="65a-sn-Wiq">
+                                <rect key="frame" x="23" y="218.5" width="368" height="594.5"/>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="146" id="WPE-5j-TgT" customClass="TeamCell" customModule="RoomEscape" customModuleProvider="target">
@@ -114,7 +115,9 @@
                             <constraint firstItem="TcB-M4-XZP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="65" id="lv9-kp-oOP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yeb-4o-KRI"/>
+                    <navigationItem key="navigationItem" id="yeb-4o-KRI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LjG-wl-0Gl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="65a-sn-Wiq" id="aPR-uF-ehi"/>
                     </connections>
@@ -151,6 +154,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TEAM 이름을 입력하세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ofC-uG-pwS" customClass="CustomTextField" customModule="RoomEscape" customModuleProvider="target">
                                 <rect key="frame" x="24" y="353" width="366" height="44"/>
                                 <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.4823529411764706" green="0.38039215686274508" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="aZX-CQ-jiZ"/>
                                 </constraints>
@@ -180,6 +184,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="makeButtonTapped:" destination="sGS-XN-1h4" eventType="touchUpInside" id="Yar-Te-xoE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YJh-FQ-Opl"/>
@@ -204,11 +211,24 @@
             </objects>
             <point key="canvasLocation" x="1989.8550724637682" y="-59.598214285714285"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Team-->
+        <scene sceneID="7yC-0T-z4Q">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TeamViewControllerRef" storyboardName="Team" id="Tp0-Th-BRG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENX-IX-gKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936" y="410"/>
+        </scene>
+        <!--PICK-->
         <scene sceneID="rCg-Fz-sdr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LrS-U8-Ofi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="PICK" selectedImage="heart.text.square.fill" catalog="system" id="AY5-sM-1Vn">
+                        <imageReference key="image" image="heart.text.square.fill" catalog="system"/>
+                        <color key="badgeColor" red="0.4823529412" green="0.3803921569" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BPq-Ml-xCa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -223,4 +243,11 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="text1"/>
+    <resources>
+        <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="text1">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

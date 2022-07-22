@@ -9,44 +9,60 @@ import UIKit
 
 class ThemeCompareViewController: UIViewController {
     
-    let firstTheme: SampleModel = dummys[0]
-    let secondTheme: SampleModel = dummys[1]
+    var firstTheme: RoomModel?
+    var secondTheme: RoomModel?
 
-    @IBOutlet weak var firstThemeTitle: UILabel!
     @IBOutlet weak var firstThemeImage: UIImageView!
+    @IBOutlet weak var firstThemeTitle: UILabel!
+    @IBOutlet weak var firstThemeStoreName: UILabel!
+    @IBOutlet weak var firstThemeStar: UILabel!
     @IBOutlet weak var firstThemeGenre: UILabel!
     @IBOutlet weak var firstThemeDifficulty: UILabel!
     @IBOutlet weak var firstThemeActivity: UILabel!
-    @IBOutlet weak var firstThemeMaxParty: UILabel!
-    @IBOutlet weak var firstThemeTimeLimit: UILabel!
+    @IBOutlet weak var firstThemeHorror: UILabel!
     
-    @IBOutlet weak var secondThemeTitle: UILabel!
     @IBOutlet weak var secondThemeImage: UIImageView!
+    @IBOutlet weak var secondThemeTitle: UILabel!
+    @IBOutlet weak var secondThemeStoreName: UILabel!
+    @IBOutlet weak var secondThemeStar: UILabel!
     @IBOutlet weak var secondThemeGenre: UILabel!
     @IBOutlet weak var secondThemeDifficulty: UILabel!
     @IBOutlet weak var secondThemeActivity: UILabel!
-    @IBOutlet weak var secondThemeMaxParty: UILabel!
-    @IBOutlet weak var secondThemeTimeLimit: UILabel!
+    @IBOutlet weak var secondThemeHorror: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchLabelText()
+        fetchThemeData()
+        compareValue(firstValue: firstTheme?.star ?? 0, secondValue: secondTheme?.star ?? 0, firstLabel: firstThemeStar, secondLabel: secondThemeStar)
+        compareValue(firstValue: firstTheme?.horror ?? 0, secondValue: secondTheme?.horror ?? 0, firstLabel: firstThemeHorror, secondLabel: secondThemeHorror)
+        compareValue(firstValue: firstTheme?.activity ?? 0, secondValue: secondTheme?.activity ?? 0, firstLabel: firstThemeActivity, secondLabel: secondThemeActivity)
+        compareValue(firstValue: firstTheme?.difficulty ?? 0, secondValue: secondTheme?.difficulty ?? 0, firstLabel: firstThemeDifficulty, secondLabel: secondThemeDifficulty)
     }
     
-    private func fetchLabelText() {
-        firstThemeTitle.text = firstTheme.title
-        firstThemeGenre.text = firstTheme.genre
-        firstThemeDifficulty.text = "\(firstTheme.difficulty)"
-        firstThemeActivity.text = firstTheme.activity
-        firstThemeMaxParty.text = "\(firstTheme.maxParty)명"
-        firstThemeTimeLimit.text = "\(firstTheme.timeLimit)분"
+    private func fetchThemeData() {
+        firstThemeTitle.text = firstTheme?.title ?? ""
+        firstThemeStoreName.text = firstTheme?.storeName ?? ""
+        firstThemeStar.text = "\(firstTheme?.star ?? 0)"
+        firstThemeGenre.text = firstTheme?.genre ?? ""
+        firstThemeDifficulty.text = "\(firstTheme?.difficulty ?? 0)"
+        firstThemeActivity.text = "\(firstTheme?.activity ?? 0)"
+        firstThemeHorror.text = "\(firstTheme?.horror ?? 0)"
         
-        secondThemeTitle.text = secondTheme.title
-        secondThemeGenre.text = secondTheme.genre
-        secondThemeDifficulty.text = "\(secondTheme.difficulty)"
-        secondThemeActivity.text = secondTheme.activity
-        secondThemeMaxParty.text = "\(secondTheme.maxParty)명"
-        secondThemeTimeLimit.text = "\(secondTheme.timeLimit)분"
+        secondThemeTitle.text = secondTheme?.title ?? ""
+        secondThemeStoreName.text = secondTheme?.storeName ?? ""
+        secondThemeStar.text = "\(secondTheme?.star ?? 0)"
+        secondThemeGenre.text = secondTheme?.genre ?? ""
+        secondThemeDifficulty.text = "\(secondTheme?.difficulty ?? 0)"
+        secondThemeActivity.text = "\(secondTheme?.activity ?? 0)"
+        secondThemeHorror.text = "\(secondTheme?.horror ?? 0)"
+        
+        Task {
+            do {
+                try await fetchPosters()
+            } catch {
+                print("fetchPosters() Error")
+            }
+        }
     }
     
     private func requestImage(url: URL) async throws -> UIImage? {
@@ -64,14 +80,36 @@ class ThemeCompareViewController: UIViewController {
     }
     
     private func fetchPosters() async throws -> Void {
-        do {
-            firstThemeImage.image = try await requestImage(url: URL(string: firstTheme.image)!)
-            secondThemeImage.image = try await requestImage(url: URL(string: secondTheme.image)!)
-        } catch {
-            print("fetchPosters Error")
+        if let firstThemeUrl = URL(string: firstTheme?.image ?? "") {
+            if let data = try? Data(contentsOf: firstThemeUrl) {
+                firstThemeImage.image = UIImage(data: data)
+            } else {
+                firstThemeImage.image = UIImage(systemName: "house")
+            }
+        }
+        
+        if let secondThemeUrl = URL(string: secondTheme?.image ?? "") {
+            if let data = try? Data(contentsOf: secondThemeUrl) {
+                secondThemeImage.image = UIImage(data: data)
+            } else {
+                secondThemeImage.image = UIImage(systemName: "house")
+            }
         }
     }
     
+    private func compareValue(firstValue: Int, secondValue: Int, firstLabel: UILabel, secondLabel: UILabel) {
+        if firstValue > secondValue {
+            firstLabel.setBetter()
+            secondLabel.setWorse()
+        } else if firstValue < secondValue {
+            firstLabel.setWorse()
+            secondLabel.setBetter()
+        } else {
+            firstLabel.setBetter()
+            secondLabel.setBetter()
+        }
+    }
+   /*
     private func compareDifficulty() {
         if firstTheme.difficulty > secondTheme.difficulty {
             firstThemeDifficulty.setBetter()
@@ -143,23 +181,5 @@ class ThemeCompareViewController: UIViewController {
             secondThemeTimeLimit.setBetter()
         }
         
-    }
-}
-
-struct SampleModel {
-    let title: String
-    let image: String
-    let genre: String
-    let difficulty: Float
-    let activity: String
-    let maxParty: Int
-    let timeLimit: Int
-    let description: String
-}
-    
-var dummys: [SampleModel] {
-    [
-        SampleModel(title: "낭랑카페", image: "", genre: "미스테리", difficulty: 4.0, activity: "많음", maxParty: 6, timeLimit: 75, description: "안쓰는 디스크립션"),
-        SampleModel(title: "안개꽃", image: "", genre: "감성", difficulty: 3.0, activity: "적음", maxParty: 4, timeLimit: 60, description: "안쓰는 디스크립션")
-    ]
+    }*/
 }
