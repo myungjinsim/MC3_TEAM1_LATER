@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,16 +14,16 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="RoomEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-8J-1o9">
-                                <rect key="frame" x="0.0" y="88" width="390" height="1212"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="1112"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNA-SV-zgn">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경상남도 포항시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLj-8t-gkH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경상북도 포항시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLj-8t-gkH">
                                                 <rect key="frame" x="50" y="58" width="95" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="textColor" name="text3"/>
@@ -32,16 +33,6 @@
                                                 <rect key="frame" x="23" y="59.999999999999993" width="20" height="18.666666666666664"/>
                                                 <color key="tintColor" name="Main"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JK-A0-Adx">
-                                                <rect key="frame" x="321" y="56" width="46" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="">
-                                                    <color key="baseForegroundColor" name="text3"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="searchButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gEx-UP-KFf"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포항시 근처" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-7Y-DfM">
                                                 <rect key="frame" x="25" y="99" width="145" height="38.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
@@ -68,59 +59,64 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCollectionViewCell" id="iAz-up-8gC" customClass="HomeCollectionViewCell" customModule="RoomEscape" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="354"/>
+                                                        <rect key="frame" x="0.0" y="18" width="180" height="318"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="354"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="318"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </view>
-                                                        <size key="customSize" width="180" height="354"/>
+                                                        <size key="customSize" width="180" height="318"/>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8JI-6R-yBN">
-                                                <rect key="frame" x="0.0" y="681.33333333333337" width="390" height="500.00000000000011"/>
-                                                <color key="backgroundColor" name="Background"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="Fh5-Cx-e1q"/>
-                                                </constraints>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableView" id="0PO-QK-a4Y">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0PO-QK-a4Y" id="1nM-2S-UWj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이런 방은 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-1L-eF7">
-                                                <rect key="frame" x="25" y="612.33333333333337" width="226" height="39"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공포테마는 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-1L-eF7">
+                                                <rect key="frame" x="25.000000000000014" y="612.33333333333337" width="246.33333333333337" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                                 <color key="textColor" name="text1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kwc-OX-R76">
+                                                <rect key="frame" x="0.0" y="688.33333333333337" width="390" height="354.00000000000011"/>
+                                                <color key="backgroundColor" name="Background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="354" id="pev-aI-2hb"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VrO-V4-78s">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCollectionViewCell" id="DSN-wt-Tml">
+                                                        <rect key="frame" x="0.0" y="18" width="180" height="318"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sBI-dD-fe6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="318"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="180" height="318"/>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
                                             <constraint firstItem="tuq-Mf-jjP" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" id="2Xu-4P-lq6"/>
                                             <constraint firstItem="tuq-Mf-jjP" firstAttribute="top" secondItem="LeL-ln-7w1" secondAttribute="bottom" constant="27" id="50I-ef-kQ4"/>
-                                            <constraint firstItem="8JI-6R-yBN" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" id="6Pl-sD-kOI"/>
-                                            <constraint firstItem="5JK-A0-Adx" firstAttribute="top" secondItem="aNA-SV-zgn" secondAttribute="top" constant="56" id="6Xq-fI-M5X"/>
                                             <constraint firstItem="iC1-7Y-DfM" firstAttribute="top" secondItem="lLj-8t-gkH" secondAttribute="bottom" constant="23" id="6mB-sr-rgi"/>
-                                            <constraint firstAttribute="height" constant="1200" id="7VS-IN-gvq"/>
-                                            <constraint firstItem="8JI-6R-yBN" firstAttribute="top" secondItem="dkX-1L-eF7" secondAttribute="bottom" constant="30" id="8yb-eV-vok"/>
+                                            <constraint firstAttribute="height" constant="1100" id="7VS-IN-gvq"/>
                                             <constraint firstItem="lLj-8t-gkH" firstAttribute="leading" secondItem="erj-BC-pqA" secondAttribute="trailing" constant="7" id="9ww-EA-mYy"/>
-                                            <constraint firstAttribute="trailing" secondItem="5JK-A0-Adx" secondAttribute="trailing" constant="23" id="DPN-89-lQg"/>
                                             <constraint firstItem="iC1-7Y-DfM" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" constant="25" id="Gx7-ei-49O"/>
                                             <constraint firstItem="LeL-ln-7w1" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" constant="25" id="H9a-xZ-1BV"/>
                                             <constraint firstItem="LeL-ln-7w1" firstAttribute="top" secondItem="iC1-7Y-DfM" secondAttribute="bottom" constant="3" id="Hsy-Nh-I3o"/>
                                             <constraint firstItem="dkX-1L-eF7" firstAttribute="top" secondItem="tuq-Mf-jjP" secondAttribute="bottom" constant="52" id="Ley-cG-scq"/>
                                             <constraint firstItem="lLj-8t-gkH" firstAttribute="top" secondItem="aNA-SV-zgn" secondAttribute="top" constant="58" id="SFi-2B-4eq"/>
                                             <constraint firstItem="erj-BC-pqA" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" constant="23" id="jP3-dF-bk8"/>
+                                            <constraint firstAttribute="trailing" secondItem="kwc-OX-R76" secondAttribute="trailing" id="lpO-3G-VGf"/>
+                                            <constraint firstItem="kwc-OX-R76" firstAttribute="top" secondItem="dkX-1L-eF7" secondAttribute="bottom" constant="37" id="m5O-F1-FJS"/>
+                                            <constraint firstItem="kwc-OX-R76" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" id="poz-PO-VIX"/>
                                             <constraint firstItem="erj-BC-pqA" firstAttribute="top" secondItem="aNA-SV-zgn" secondAttribute="top" constant="59" id="uDz-zD-8mC"/>
-                                            <constraint firstAttribute="trailing" secondItem="8JI-6R-yBN" secondAttribute="trailing" id="uHr-Z7-brp"/>
                                             <constraint firstAttribute="trailing" secondItem="tuq-Mf-jjP" secondAttribute="trailing" id="xIU-EM-84r"/>
                                             <constraint firstItem="dkX-1L-eF7" firstAttribute="leading" secondItem="aNA-SV-zgn" secondAttribute="leading" constant="25" id="xty-9J-Rtx"/>
                                         </constraints>
@@ -150,16 +146,16 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="sbt-pP-bCa"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="390" height="1300"/>
+                    <size key="freeformSize" width="390" height="1200"/>
                     <connections>
+                        <outlet property="genreRecommendation" destination="dkX-1L-eF7" id="EQx-VL-OAv"/>
                         <outlet property="locationCollectionView" destination="tuq-Mf-jjP" id="rNR-XS-ABn"/>
-                        <outlet property="recommendTableView" destination="8JI-6R-yBN" id="Y1z-V0-Ale"/>
-                        <outlet property="searchButton" destination="5JK-A0-Adx" id="OxV-5M-fon"/>
+                        <outlet property="recommendationCollectionView" destination="kwc-OX-R76" id="jGv-o3-tMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786.15384615384608" y="202.60663507109004"/>
+            <point key="canvasLocation" x="784.61538461538464" y="202.60663507109004"/>
         </scene>
         <!--Detail-->
         <scene sceneID="YPL-Sr-bCJ">
@@ -194,7 +190,6 @@
     <resources>
         <image name="key" catalog="system" width="86" height="128"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

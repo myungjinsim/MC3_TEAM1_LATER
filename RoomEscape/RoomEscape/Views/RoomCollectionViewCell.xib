@@ -23,16 +23,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yzH-jJ-tXU">
                                 <rect key="frame" x="51" y="332" width="90" height="18"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MQ7-0D-56n">
-                                        <rect key="frame" x="0.0" y="-0.5" width="18" height="18"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MQ7-0D-56n">
+                                        <rect key="frame" x="0.0" y="0.5" width="18" height="16.5"/>
                                         <color key="tintColor" name="text5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="9Ih-dp-nZ5"/>
                                             <constraint firstAttribute="width" constant="18" id="rns-Xg-osq"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SWf-X0-scA">
-                                        <rect key="frame" x="18" y="-0.5" width="18" height="18"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SWf-X0-scA">
+                                        <rect key="frame" x="18" y="0.5" width="18" height="16.5"/>
                                         <color key="tintColor" name="text5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="6iH-wi-Zce"/>
@@ -41,8 +41,8 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="wEZ-43-Gym"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-vH-Hzo">
-                                        <rect key="frame" x="36" y="-0.5" width="18" height="18"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-vH-Hzo">
+                                        <rect key="frame" x="36" y="0.5" width="18" height="16.5"/>
                                         <color key="tintColor" name="text5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="2WY-Jj-6FR"/>
@@ -55,8 +55,8 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="vZA-2c-oCk"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-Fz-7cy">
-                                        <rect key="frame" x="54" y="-0.5" width="18" height="18"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-Fz-7cy">
+                                        <rect key="frame" x="54" y="0.5" width="18" height="16.5"/>
                                         <color key="tintColor" name="text5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="Bj0-dC-gey"/>
@@ -69,8 +69,8 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="tPH-HR-QUS"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g19-nw-mIk">
-                                        <rect key="frame" x="72" y="-0.5" width="18" height="18"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g19-nw-mIk">
+                                        <rect key="frame" x="72" y="0.5" width="18" height="16.5"/>
                                         <color key="tintColor" name="text5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="18" id="BP6-i0-4xF"/>
@@ -168,7 +168,7 @@
     </objects>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="lock.fill" catalog="system" width="128" height="128"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

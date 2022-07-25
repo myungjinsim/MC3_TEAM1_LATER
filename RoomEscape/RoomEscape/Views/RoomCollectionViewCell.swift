@@ -35,6 +35,7 @@ class RoomCollectionViewCell: UICollectionViewCell {
         
         selectionCover.layer.cornerRadius = 10
         selectionCover.layer.borderColor = UIColor.mainPurple?.cgColor
+        
     }
     
     private func configureSelection() {
