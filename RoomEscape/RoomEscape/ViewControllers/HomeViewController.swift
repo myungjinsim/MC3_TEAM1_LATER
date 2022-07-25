@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var recommendationCollectionView: UICollectionView!
     @IBOutlet weak var genreRecommendation: UILabel!
+    @IBOutlet weak var dimensionImageView: UIImageView!
     let roomDataManager: JSONDataManager = JSONDataManager()
     var randomRoomModels: [RoomModel] = []
 
@@ -19,7 +20,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Random genres setting
-        genreRecommendation.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
+        configureGenreRecommendation()
+
+        dimensionImageView.image = UIImage(named: Constants.mainImageArray[Int.random(in: 0..<Constants.mainImageArray.count)])
         
         randomRoomModels = roomDataManager.roomData.filter { RoomModel in
             RoomModel.genre == genreRecommendation.text!.components(separatedBy: " ")[0]
@@ -29,13 +32,11 @@ class HomeViewController: UIViewController {
         configureRecommendationCollectionView()
     }
     
-}// HomeViewController
-
-// MARK: viewDidLoad Configuration Handler
-extension HomeViewController {
+    private func configureGenreRecommendation() {
+        genreRecommendation.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
+    }
     
-    fileprivate func configureRecommendationCollectionView() {
-        
+    private func configureRecommendationCollectionView() {
         // LocationCollectionView Setting
         locationCollectionView.delegate = self
         locationCollectionView.dataSource = self
@@ -54,19 +55,15 @@ extension HomeViewController {
         )
         recommendationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
     }
+
     
-}
+}// HomeViewController
 
 // MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // Quantity of items
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        print("🔥 qty")
-        print(randomRoomModels.count)
-        print(randomRoomModels)
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
         if collectionView == self.locationCollectionView {
             return roomDataManager.roomData.count
         } else {
@@ -128,7 +125,7 @@ extension HomeViewController: UICollectionViewDataSource {
             let url = URL(string: roomInfo.image)
             
             cell.roomName?.text = roomInfo.title
-            cell.storeName?.text = roomInfo.genre
+            cell.storeName?.text = roomInfo.storeName
             cell.roomImage?.contentMode = .scaleToFill
             
             for i in 0 ..< roomInfo.star {
@@ -149,21 +146,5 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
     }// collectionView: cellForItemAt
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let roomInfo = roomDataManager.roomData[indexPath.row]
-        guard let recommendedGenre: String = genreRecommendation.text?.components(separatedBy: " ")[0] else { return }
         
-        print("🔥 roomInfo.genre")
-        print(roomInfo.genre)
-        
-//        if collectionView == self.recommendationCollectionView,
-//           roomInfo.genre != recommendedGenre {
-//            cell.isHidden = true
-//            cell.isOpaque = true
-//            cell.removeFromSuperview()
-//        }
-        
-    }
-    
 }// HomeViewController: UICollectionViewDataSource
