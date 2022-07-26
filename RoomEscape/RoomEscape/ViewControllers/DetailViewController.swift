@@ -16,13 +16,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var roomTitle: UILabel!
-    @IBOutlet weak var difficulty: UIStackView!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var activity: UILabel!
     @IBOutlet weak var horror: UILabel!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var recommendation: UILabel!
-
+    @IBOutlet weak var difficulty: UILabel!
+    
     @IBOutlet weak var pickButton: UIButton!
     
     override func viewDidLoad() {
@@ -32,17 +32,17 @@ class DetailViewController: UIViewController {
         
         loadPosterFrom(urlAddress: roomModel.image)
         
-        for i in 0 ..< roomModel.difficulty {
-            difficulty.arrangedSubviews[i].tintColor = UIColor(named: "star");
-        }
-        
-        storeName.text = roomModel.storeName
-        roomTitle.text = roomModel.title
-        genre.text = roomModel.genre
-        activity.text = String(roomModel.activity)
-        horror.text = String(roomModel.horror)
-        roomDescription.text = "  " + roomModel.description
         recommendation.text = roomModel.recommendation + "에게 추천"
+        
+        genre.text = roomModel.genre + " 테마"
+        roomTitle.text = roomModel.title
+        storeName.text = roomModel.storeName
+        
+        difficulty.text = String(roomModel.difficulty) + ".0"
+        activity.text = String(roomModel.activity) + ".0"
+        horror.text = String(roomModel.horror) + ".0"
+        
+        roomDescription.text = roomModel.description
         
         self.changeRecommendationSuffix()
         
