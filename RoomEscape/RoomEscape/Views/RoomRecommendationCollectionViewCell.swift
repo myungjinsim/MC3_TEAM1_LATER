@@ -33,9 +33,6 @@ class RoomRecommendationCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let genre = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
-        
-//        storeName.text = genre.components(separatedBy: " ")[0]
         selectionCover.layer.cornerRadius = 10
         selectionCover.layer.borderColor = UIColor.mainPurple?.cgColor
         
