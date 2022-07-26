@@ -29,10 +29,10 @@
 		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
 		7AD34A9A288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34A98288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.xib */; };
 		7AD34A9B288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34A99288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.swift */; };
-		7AD34A9E288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34A9C288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.swift */; };
-		7AD34A9F288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34A9D288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.xib */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
+		893E5260288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E525E288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.swift */; };
+		893E5261288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893E525F288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.xib */; };
 		89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */; };
 		89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */; };
 		A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DF42885320600F5272F /* ThemeCompare.storyboard */; };
@@ -70,10 +70,10 @@
 		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7AD34A98288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomRecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AD34A99288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
-		7AD34A9C288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRecommendationCollectionViewCellSecond.swift; sourceTree = "<group>"; };
-		7AD34A9D288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomRecommendationCollectionViewCellSecond.xib; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
+		893E525E288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRecommendationCollectionViewCellSecond.swift; sourceTree = "<group>"; };
+		893E525F288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomRecommendationCollectionViewCellSecond.xib; sourceTree = "<group>"; };
 		89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
 		89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionViewCell.xib; sourceTree = "<group>"; };
 		A0181DF42885320600F5272F /* ThemeCompare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeCompare.storyboard; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7AD34A99288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.swift */,
 				7AD34A98288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.xib */,
-				7AD34A9C288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.swift */,
-				7AD34A9D288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.xib */,
+				893E525E288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.swift */,
+				893E525F288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
 				25D711EB28886B02009B684A /* PickSheet.storyboard */,
 			);
@@ -275,7 +275,7 @@
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 				7AD34A9A288E3A6900E92B73 /* RoomRecommendationCollectionViewCell.xib in Resources */,
 				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
-				7AD34A9F288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.xib in Resources */,
+				893E5261288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +289,7 @@
 				A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */,
 				7A2CD1B6288884FE002D5950 /* Util.swift in Sources */,
 				2558940528878D10008E4ACC /* DetailViewController.swift in Sources */,
-				7AD34A9E288F34D900E92B73 /* RoomRecommendationCollectionViewCellSecond.swift in Sources */,
+				893E5260288FAD210027C7B4 /* RoomRecommendationCollectionViewCellSecond.swift in Sources */,
 				25D711E428885482009B684A /* DetailPickSheetViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				25D711F028887114009B684A /* PickSheetViewController.swift in Sources */,
