@@ -28,7 +28,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-ja-Bhc">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
-                                                        <color key="backgroundColor" name="text1"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="WTA-ja-Bhc" secondAttribute="height" multiplier="1:1" id="h1Z-gi-dPz"/>
                                                         </constraints>
