@@ -13,12 +13,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recommendationCollectionView: UICollectionView!
     @IBOutlet weak var recommendationCollectionViewSecond: UICollectionView!
     
-    
     @IBOutlet weak var dimensionImageView: UIImageView!
+    
     @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var currentLocationMenu: UIMenu!
+    
     @IBOutlet weak var currentLocationLabel: UILabel!
-    @IBOutlet weak var locationContainerView: UIView!
-    @IBOutlet weak var locationPickerView: UIPickerView!
     @IBOutlet weak var currentLocationHighlight: UIView!
     @IBOutlet weak var genreRecommendation: UILabel!
     @IBOutlet weak var genreRecommendationSecond: UILabel!
@@ -34,15 +34,19 @@ class HomeViewController: UIViewController {
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Random genres setting
         configureGenreRecommendation()
         
         // Delegate setting
         configureDelegateSetting()
+        
+        // Pull down setting
+        configruePulldownButton()
 
         // Configure other settings
-        currentLocationButton.setTitle(Constants.locations[0], for: .normal)
+        currentLocationButton.setTitle(Constants.locations[2], for: .normal)
+        currentLocationLabel.text = Constants.locations[2] + " 근처"
         dimensionImageView.image = UIImage(named: Constants.mainImageArray[Int.random(in: 0..<Constants.mainImageArray.count)])
         
         randomRoomModels = roomDataManager.roomData.filter { RoomModel in
@@ -92,8 +96,8 @@ class HomeViewController: UIViewController {
         recommendationCollectionView.delegate = self
         recommendationCollectionView.dataSource = self
         recommendationCollectionView.register(
-            UINib(nibName: Constants.roomRecommendationCollectionViewCell, bundle: nil),
-            forCellWithReuseIdentifier: Constants.roomRecommendationCollectionViewCell
+            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
         )
         recommendationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
 
@@ -101,41 +105,35 @@ class HomeViewController: UIViewController {
         recommendationCollectionViewSecond.delegate = self
         recommendationCollectionViewSecond.dataSource = self
         recommendationCollectionViewSecond.register(
-            UINib(nibName: Constants.roomRecommendationCollectionViewCellSecond, bundle: nil),
-            forCellWithReuseIdentifier: Constants.roomRecommendationCollectionViewCellSecond
+            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
         )
         recommendationCollectionViewSecond.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
         
-        locationPickerView.delegate = self
-        locationPickerView.dataSource = self
     }
+    
+    private func configruePulldownButton() {
+        currentLocationButton.showsMenuAsPrimaryAction = true
+        currentLocationButton.changesSelectionAsPrimaryAction = true
+        
+        let button1 = UIAction(title: "경주시", handler: { _ in self.changeCurrentLocation(location: "경주시") })
+        let button2 = UIAction(title: "대구광역시", handler: { _ in self.changeCurrentLocation(location: "대구광역시") })
+        let button3 = UIAction(title: "포항시", handler: { _ in self.changeCurrentLocation(location: "포항시") })
 
-    @IBAction func currentLocationButtonPressed(_ sender: Any) {
-        UIView.animate(withDuration: 0.05,
-            animations: {
-                self.currentLocationButton.layer.opacity = 0.6
-            },
-            completion: { _ in
-                UIView.animate(withDuration: 0.05) {
-                    self.currentLocationButton.layer.opacity = 1
-                }
-            })
+        let buttonMenu = UIMenu(children: [button1, button2, button3])
         
-        isCurrentLocationButtonPressed.toggle()
+        currentLocationButton.menu = buttonMenu
+    }
+    
+    private func changeCurrentLocation(location: String) {
+        currentLocationLabel.text = location + " 근처"
         
-        if isCurrentLocationButtonPressed == true {
-            UIView.animate(withDuration: 0.5,
-                animations: {
-                self.locationContainerView.layer.opacity = 1
-                }
-            )
+        if location.count == 3 {
+            currentLocationHighlight.frame.size.width = 84
         } else {
-            UIView.animate(withDuration: 0.5,
-                animations: {
-                self.locationContainerView.layer.opacity = 0
-                }
-            )
+            currentLocationHighlight.frame.size.width = 140
         }
+
     }
     
 }// HomeViewController
@@ -174,113 +172,37 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
+        var roomInfo: RoomModel? = nil
         
         // CollectionView setting
         if collectionView == self.locationCollectionView {
-            let roomInfo = roomDataManager.roomData[indexPath.row]
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
-            let url = URL(string: roomInfo.image)
-            
-            cell.roomName?.text = roomInfo.title
-            cell.storeName?.text = roomInfo.storeName
-            cell.roomImage?.contentMode = .scaleToFill
-            
-            for i in 0 ..< roomInfo.star {
-                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-            }
-            
-            DispatchQueue.main.async {
-                if let url = url {
-                    if let data = try? Data(contentsOf: url) {
-                        cell.roomImage?.image = UIImage(data: data)
-                    } else {
-                        cell.roomImage?.image = UIImage(systemName: "house")
-                    }
-                }
-            }
-            
-            return cell
+            roomInfo = roomDataManager.roomData[indexPath.row]
         } else if collectionView == self.recommendationCollectionView {
-            let roomInfo = randomRoomModels[indexPath.row]
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomRecommendationCollectionViewCell, for: indexPath) as! RoomRecommendationCollectionViewCell
-            let url = URL(string: roomInfo.image)
-            
-            cell.roomName?.text = roomInfo.title
-            cell.storeName?.text = roomInfo.storeName
-            cell.roomImage?.contentMode = .scaleToFill
-            
-            for i in 0 ..< roomInfo.star {
-                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-            }
-            
-            DispatchQueue.main.async {
-                if let url = url {
-                    if let data = try? Data(contentsOf: url) {
-                        cell.roomImage?.image = UIImage(data: data)
-                    } else {
-                        cell.roomImage?.image = UIImage(systemName: "house")
-                    }
-                }
-            }
-            
-            return cell
+            roomInfo = randomRoomModels[indexPath.row]
         } else {
-            let roomInfo = randomRoomModelsSecond[indexPath.row]
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomRecommendationCollectionViewCellSecond, for: indexPath) as! RoomRecommendationCollectionViewCellSecond
-            let url = URL(string: roomInfo.image)
-            
-            cell.roomName?.text = roomInfo.title
-            cell.storeName?.text = roomInfo.storeName
-            cell.roomImage?.contentMode = .scaleToFill
-            
-            for i in 0 ..< roomInfo.star {
-                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-            }
-            
-            DispatchQueue.main.async {
-                if let url = url {
-                    if let data = try? Data(contentsOf: url) {
-                        cell.roomImage?.image = UIImage(data: data)
-                    } else {
-                        cell.roomImage?.image = UIImage(systemName: "house")
-                    }
-                }
-            }
-            
-            return cell
-
+            roomInfo = randomRoomModelsSecond[indexPath.row]
         }
         
+        let url = URL(string: roomInfo!.image)
+        
+        cell.roomName?.text = roomInfo!.title
+        cell.storeName?.text = roomInfo!.storeName
+        cell.roomImage?.contentMode = .scaleToFill
+        
+        DispatchQueue.main.async {
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
+        }
+        
+        return cell
+
     }// collectionView: cellForItemAt
         
 }// HomeViewController: UICollectionViewDataSource
 
-// MARK: UIPickerViewDelegate, UIPickerViewDataSource
-extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.locations.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.locations[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedLocation: String = Constants.locations[row]
-
-        self.currentLocationButton.setTitle(selectedLocation, for: .normal)
-        self.currentLocationLabel.text = selectedLocation + " 근처"
-
-        if selectedLocation.count == 3 {
-            currentLocationHighlight.frame.size.width = 84
-        } else {
-            currentLocationHighlight.frame.size.width = 140
-        }
-    }
-
-
-}

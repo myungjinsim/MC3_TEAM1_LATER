@@ -23,10 +23,10 @@ struct Constants {
     ]
     
     static let mainImageArray: [String] = [
-        "3d-key",
-        "3d-party",
-        "3d-trophy",
-        "3d-clock"
+        "3dKey",
+        "3dParty",
+        "3dTrophy",
+        "3dClock"
     ]
     
     static let locations: [String] = [
