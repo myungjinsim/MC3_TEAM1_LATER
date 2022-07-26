@@ -20,6 +20,8 @@
 		25D711F028887114009B684A /* PickSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D711EF28887114009B684A /* PickSheetViewController.swift */; };
 		25D711F228888C97009B684A /* PickTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D711F128888C97009B684A /* PickTeamCell.swift */; };
 		3D8FC6B92885339700722937 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FC6B82885339700722937 /* Extension.swift */; };
+		3D8FF087288FE7FB0029DE1A /* SearchDetailResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8FF086288FE7FB0029DE1A /* SearchDetailResult.storyboard */; };
+		3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */; };
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
 		7A2CD1B6288884FE002D5950 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B5288884FD002D5950 /* Util.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
@@ -57,6 +59,8 @@
 		25D711EF28887114009B684A /* PickSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSheetViewController.swift; sourceTree = "<group>"; };
 		25D711F128888C97009B684A /* PickTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTeamCell.swift; sourceTree = "<group>"; };
 		3D8FC6B82885339700722937 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3D8FF086288FE7FB0029DE1A /* SearchDetailResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchDetailResult.storyboard; sourceTree = "<group>"; };
+		3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailResultViewController.swift; sourceTree = "<group>"; };
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A2CD1B5288884FD002D5950 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
 				25D711EB28886B02009B684A /* PickSheet.storyboard */,
+				3D8FF086288FE7FB0029DE1A /* SearchDetailResult.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				25D711E328885481009B684A /* DetailPickSheetViewController.swift */,
 				25D711EF28887114009B684A /* PickSheetViewController.swift */,
 				25D711F128888C97009B684A /* PickTeamCell.swift */,
+				3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				C19893842887E91A0045CF40 /* PohangData.json in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
+				3D8FF087288FE7FB0029DE1A /* SearchDetailResult.storyboard in Resources */,
 				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +297,7 @@
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 				7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */,
 				165907A52886EEDE00B23372 /* TeamCell.swift in Sources */,
+				3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */,
 				89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */,
 				7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */,
 				25D711F228888C97009B684A /* PickTeamCell.swift in Sources */,
