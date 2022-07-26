@@ -33,6 +33,8 @@
 		89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */; };
 		A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DF42885320600F5272F /* ThemeCompare.storyboard */; };
 		A0181DF9288532D700F5272F /* ThemeCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */; };
+		A04A77942890018D00D728A9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04A77932890018D00D728A9 /* Search.storyboard */; };
+		A04A7796289002F800D728A9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A7795289002F800D728A9 /* SearchViewController.swift */; };
 		A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */; };
 		A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */; };
 		A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */; };
@@ -70,6 +72,8 @@
 		89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionViewCell.xib; sourceTree = "<group>"; };
 		A0181DF42885320600F5272F /* ThemeCompare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeCompare.storyboard; sourceTree = "<group>"; };
 		A0181DF8288532D700F5272F /* ThemeCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCompareViewController.swift; sourceTree = "<group>"; };
+		A04A77932890018D00D728A9 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		A04A7795289002F800D728A9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A0E3E04328877A5B00919B92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		A0FEF755287EBDF500DA3FBE /* RoomEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FEF758287EBDF500DA3FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
 				25D711EB28886B02009B684A /* PickSheet.storyboard */,
+				A04A77932890018D00D728A9 /* Search.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				25D711E328885481009B684A /* DetailPickSheetViewController.swift */,
 				25D711EF28887114009B684A /* PickSheetViewController.swift */,
 				25D711F128888C97009B684A /* PickTeamCell.swift */,
+				A04A7795289002F800D728A9 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
+				A04A77942890018D00D728A9 /* Search.storyboard in Resources */,
 				7A6604B128871856000DC85B /* Team.storyboard in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				25D711EC28886B02009B684A /* PickSheet.storyboard in Resources */,
@@ -284,6 +291,7 @@
 				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
+				A04A7796289002F800D728A9 /* SearchViewController.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
 				1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */,
 				165907A728870DED00B23372 /* MakeTeamViewController.swift in Sources */,
