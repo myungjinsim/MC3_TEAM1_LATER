@@ -195,7 +195,15 @@
                                     <constraint firstAttribute="height" constant="50" id="WbZ-Z8-uov"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="검색하기"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="검색하기">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="AppleSDGothicNeo-SemiBold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
