@@ -112,7 +112,7 @@
                                                 <constraint firstItem="lLW-3I-2F4" firstAttribute="leading" secondItem="VC9-Sg-fVo" secondAttribute="leading" id="c6x-p1-NB6"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addImage" destination="5QK-uW-e6p" id="qR8-Df-aOc"/>
                                             <outlet property="addLabel" destination="rJF-BL-odP" id="Byh-hM-XCr"/>
