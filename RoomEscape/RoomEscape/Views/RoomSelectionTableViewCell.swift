@@ -19,20 +19,21 @@ class RoomSelectionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionCover.layer.borderWidth = 1
         selectionCover.layer.cornerRadius = 10
         roomImage.layer.cornerRadius = 10
-        selectionCover.layer.borderColor = UIColor.mainPurple?.cgColor
+        selectionCover.layer.borderColor = UIColor.background2?.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         if selected {
-            selectionCover.layer.borderWidth = 1
-            selectionCover.backgroundColor = UIColor(rgb: 0x242424)
+            selectionCover.backgroundColor = UIColor.background2
+            selectionCover.layer.borderColor = UIColor.mainPurple?.cgColor
         } else {
-            selectionCover.layer.borderWidth = 0
             selectionCover.backgroundColor = UIColor.background
+            selectionCover.layer.borderColor = UIColor.background2?.cgColor
         }
     }
     
