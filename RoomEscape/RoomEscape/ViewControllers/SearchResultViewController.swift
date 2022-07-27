@@ -9,9 +9,10 @@ import UIKit
 
 class SearchResultViewController: UIViewController, UITableViewDelegate {
     
+    @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemOrange
     }
 }

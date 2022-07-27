@@ -25,8 +25,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else {
             return
         }
-      //  let vc = searchController.searchResultsController as? SearchResultViewController
-     //   vc?.view.backgroundColor = .yellow
-        print(text)
+        let vc = searchController.searchResultsController as? SearchResultViewController
+        vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾았어요!"
     }
 }
