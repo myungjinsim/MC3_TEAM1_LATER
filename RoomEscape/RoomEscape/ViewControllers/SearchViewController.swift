@@ -7,14 +7,6 @@
 
 import UIKit
 
-// MARK: - SearchResultView 작업 시 폴더 이동 시킬 예정
-class SearchResultViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
-    }
-}
-
 class SearchViewController: UIViewController, UISearchResultsUpdating {
 
     let searchController = UISearchController(searchResultsController: SearchResultViewController())
