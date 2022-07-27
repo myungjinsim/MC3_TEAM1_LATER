@@ -159,6 +159,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3dRocket" translatesAutoresizingMaskIntoConstraints="NO" id="rWS-pY-wFL">
                                 <rect key="frame" x="67.333333333333343" y="46" width="401.66666666666663" height="401"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-14-ub1">
+                                <rect key="frame" x="23" y="259.66666666666669" width="123" height="15"/>
+                                <color key="backgroundColor" name="Main"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="B8l-gO-glL"/>
+                                    <constraint firstAttribute="width" constant="123" id="gY0-ja-Qye"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-kO-5Dp">
                                 <rect key="frame" x="25" y="241.00000000000003" width="147.33333333333334" height="82.333333333333343"/>
                                 <subviews>
@@ -218,11 +226,13 @@
                         <color key="backgroundColor" red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rWS-pY-wFL" secondAttribute="trailing" constant="-79" id="1af-uO-QtU"/>
+                            <constraint firstItem="ngc-14-ub1" firstAttribute="bottom" secondItem="A9l-qP-xaq" secondAttribute="bottom" constant="-5" id="5Vy-F2-g6O"/>
                             <constraint firstItem="ofC-uG-pwS" firstAttribute="leading" secondItem="YJh-FQ-Opl" secondAttribute="leading" constant="24" id="ADV-OY-Qvl"/>
                             <constraint firstItem="bhl-kO-5Dp" firstAttribute="leading" secondItem="YJh-FQ-Opl" secondAttribute="leading" constant="25" id="CHC-us-XMa"/>
                             <constraint firstItem="bhl-kO-5Dp" firstAttribute="top" secondItem="YJh-FQ-Opl" secondAttribute="top" constant="197" id="Emc-B5-NWi"/>
                             <constraint firstItem="YJh-FQ-Opl" firstAttribute="bottom" secondItem="NAt-5s-teZ" secondAttribute="bottom" constant="42" id="Sp5-E1-BK6"/>
                             <constraint firstItem="rWS-pY-wFL" firstAttribute="top" secondItem="r3B-Dz-3nq" secondAttribute="top" constant="46" id="Uhb-Bc-jLQ"/>
+                            <constraint firstItem="ngc-14-ub1" firstAttribute="leading" secondItem="A9l-qP-xaq" secondAttribute="leading" constant="-2" id="cXu-kZ-MLc"/>
                             <constraint firstItem="ofC-uG-pwS" firstAttribute="top" secondItem="bhl-kO-5Dp" secondAttribute="bottom" constant="30" id="eEt-Jb-XD4"/>
                             <constraint firstItem="YJh-FQ-Opl" firstAttribute="trailing" secondItem="ofC-uG-pwS" secondAttribute="trailing" constant="24" id="eGa-IA-PXL"/>
                             <constraint firstItem="NAt-5s-teZ" firstAttribute="leading" secondItem="YJh-FQ-Opl" secondAttribute="leading" constant="23" id="nwx-kh-EAH"/>
@@ -236,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghk-yQ-NrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989.8550724637682" y="-59.598214285714285"/>
+            <point key="canvasLocation" x="1989.2307692307691" y="-59.715639810426538"/>
         </scene>
         <!--Team-->
         <scene sceneID="7yC-0T-z4Q">

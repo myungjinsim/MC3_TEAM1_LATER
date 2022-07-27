@@ -33,7 +33,7 @@ class TeamViewController: UIViewController {
         self.cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
         
         themeComparisonView.layer.cornerRadius = 5
-        themeComparisonButton.layer.cornerRadius = 5
+        themeComparisonButton.layer.cornerRadius = 10
         
         self.compareButton.tintColor = UIColor(rgb: 0x464646)
         self.compareButton.isHidden = true
@@ -66,7 +66,7 @@ class TeamViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = .none
         self.isButtonPressed = false
         self.themeComparisonButton.isHidden = false
-        self.infoLabel.text = "테마간 차이점이 궁금하다면?"
+        self.infoLabel.text = "원하는 2개의 테마를 비교해요!"
         selectedThemes.removeAll()
         self.compareButton.tintColor = UIColor(rgb: 0x464646)
         self.compareButton.isHidden = true
