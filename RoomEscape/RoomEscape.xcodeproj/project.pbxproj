@@ -117,13 +117,13 @@
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
 				7ABEE2B92885CE3200C2C020 /* Home.storyboard */,
 				16590792288482EF00B23372 /* Pick.storyboard */,
+				A04A77932890018D00D728A9 /* Search.storyboard */,
 				1659079C2885B4E800B23372 /* RoomTableViewCell.swift */,
 				1659079D2885B4E800B23372 /* RoomTableViewCell.xib */,
 				89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */,
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
 				25D711EB28886B02009B684A /* PickSheet.storyboard */,
-				A04A77932890018D00D728A9 /* Search.storyboard */,
 				A04A77972890EC6300D728A9 /* SearchResult.storyboard */,
 			);
 			path = Views;

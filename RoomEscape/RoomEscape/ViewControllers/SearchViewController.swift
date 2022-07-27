@@ -8,12 +8,14 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
-
-    let searchController = UISearchController(searchResultsController: SearchResultViewController())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let storyboard = UIStoryboard(name: "SearchResult", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "SearchResultViewController") as? SearchResultViewController
+        let searchController = UISearchController(searchResultsController: viewController)
+        
         title = "테마 찾기"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController

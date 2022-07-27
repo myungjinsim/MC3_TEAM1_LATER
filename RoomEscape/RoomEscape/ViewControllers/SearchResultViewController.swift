@@ -7,10 +7,11 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
-
+class SearchResultViewController: UIViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemOrange
     }
 }
