@@ -79,16 +79,27 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH0-iv-2MI">
+                                                            <rect key="frame" x="308" y="21" width="17" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="17" id="SZN-zg-aVo"/>
+                                                                <constraint firstAttribute="height" constant="17" id="T6H-OB-aNA"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="mmu-n9-XSb" secondAttribute="bottom" constant="36" id="1Tm-Qc-Pa7"/>
                                                         <constraint firstItem="mmu-n9-XSb" firstAttribute="leading" secondItem="lLW-3I-2F4" secondAttribute="leading" constant="25" id="4tn-pi-dk9"/>
                                                         <constraint firstItem="mmu-n9-XSb" firstAttribute="top" secondItem="lLW-3I-2F4" secondAttribute="top" constant="32" id="JdP-AM-irP"/>
+                                                        <constraint firstItem="fH0-iv-2MI" firstAttribute="top" secondItem="lLW-3I-2F4" secondAttribute="top" constant="21" id="LZo-O6-xDT"/>
                                                         <constraint firstItem="q5N-cF-yLk" firstAttribute="top" secondItem="lLW-3I-2F4" secondAttribute="top" constant="46" id="R3s-kL-kKw"/>
                                                         <constraint firstAttribute="height" constant="127" id="RzQ-tX-8DX"/>
                                                         <constraint firstAttribute="bottom" secondItem="q5N-cF-yLk" secondAttribute="bottom" constant="47" id="WNX-bd-wf3"/>
                                                         <constraint firstItem="q5N-cF-yLk" firstAttribute="leading" secondItem="lLW-3I-2F4" secondAttribute="leading" constant="26" id="ZLZ-qj-XT1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fH0-iv-2MI" secondAttribute="trailing" constant="19" id="aKH-LU-gcK"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -105,6 +116,7 @@
                                             <outlet property="addLabel" destination="rJF-BL-odP" id="Byh-hM-XCr"/>
                                             <outlet property="cellContainer" destination="lLW-3I-2F4" id="NaF-8q-ycI"/>
                                             <outlet property="descriptionLabel" destination="hUj-65-Orh" id="Wa9-Pz-OuY"/>
+                                            <outlet property="gearIcon" destination="fH0-iv-2MI" id="uNY-J0-IZi"/>
                                             <outlet property="teamName" destination="43j-JG-QZM" id="eKx-OS-6ed"/>
                                         </connections>
                                     </tableViewCell>
@@ -134,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1047.6923076923076" y="137.91469194312796"/>
         </scene>
         <!--Make Team View Controller-->
         <scene sceneID="Iyk-zE-ZaX">
