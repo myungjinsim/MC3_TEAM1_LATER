@@ -29,8 +29,18 @@
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
 		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
 		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
+		7AD34ACC2890D78100E92B73 /* GBZGAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */; };
+		7AD34ACE2890D78100E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34ACD2890D78100E92B73 /* ContentView.swift */; };
+		7AD34AD02890D78300E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34ACF2890D78300E92B73 /* Assets.xcassets */; };
+		7AD34AD32890D78300E92B73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */; };
+		7AD34AD82890D78300E92B73 /* GBZGAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 7AD34AC92890D78100E92B73 /* GBZGAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7AD34ADF2890F42E00E92B73 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
+		7AD34AE02890F49000E92B73 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
+		7AD34AE12890F4DB00E92B73 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
+		893E5263288FE3C20027C7B4 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */; };
+		893E5265288FE3D10027C7B4 /* SearchDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893E5264288FE3D10027C7B4 /* SearchDetail.storyboard */; };
 		89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */; };
 		89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */; };
 		A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DF42885320600F5272F /* ThemeCompare.storyboard */; };
@@ -44,6 +54,30 @@
 		A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */; };
 		C19893842887E91A0045CF40 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AD34AD62890D78300E92B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0FEF74D287EBDF500DA3FBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AD34AC82890D78100E92B73;
+			remoteInfo = GBZGAppClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AD34ADC2890D78300E92B73 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				7AD34AD82890D78300E92B73 /* GBZGAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		16590792288482EF00B23372 /* Pick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pick.storyboard; sourceTree = "<group>"; };
@@ -68,8 +102,17 @@
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
 		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7AD34AC92890D78100E92B73 /* GBZGAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBZGAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBZGAppClipApp.swift; sourceTree = "<group>"; };
+		7AD34ACD2890D78100E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AD34ACF2890D78300E92B73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7AD34AD42890D78300E92B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD34AD52890D78300E92B73 /* GBZGAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GBZGAppClip.entitlements; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
+		893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		893E5264288FE3D10027C7B4 /* SearchDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchDetail.storyboard; sourceTree = "<group>"; };
 		89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
 		89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionViewCell.xib; sourceTree = "<group>"; };
 		A0181DF42885320600F5272F /* ThemeCompare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeCompare.storyboard; sourceTree = "<group>"; };
@@ -87,6 +130,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7AD34AC62890D78100E92B73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0FEF752287EBDF500DA3FBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,6 +155,27 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		7AD34ACA2890D78100E92B73 /* GBZGAppClip */ = {
+			isa = PBXGroup;
+			children = (
+				7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */,
+				7AD34ACD2890D78100E92B73 /* ContentView.swift */,
+				7AD34ACF2890D78300E92B73 /* Assets.xcassets */,
+				7AD34AD42890D78300E92B73 /* Info.plist */,
+				7AD34AD52890D78300E92B73 /* GBZGAppClip.entitlements */,
+				7AD34AD12890D78300E92B73 /* Preview Content */,
+			);
+			path = GBZGAppClip;
+			sourceTree = "<group>";
+		};
+		7AD34AD12890D78300E92B73 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		7AEAB5FB2885748600BA2216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +192,7 @@
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
 				25D711EB28886B02009B684A /* PickSheet.storyboard */,
+				893E5264288FE3D10027C7B4 /* SearchDetail.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +219,7 @@
 				25D711E328885481009B684A /* DetailPickSheetViewController.swift */,
 				25D711EF28887114009B684A /* PickSheetViewController.swift */,
 				25D711F128888C97009B684A /* PickTeamCell.swift */,
+				893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF757287EBDF500DA3FBE /* RoomEscape */,
+				7AD34ACA2890D78100E92B73 /* GBZGAppClip */,
 				A0FEF756287EBDF500DA3FBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF755287EBDF500DA3FBE /* RoomEscape.app */,
+				7AD34AC92890D78100E92B73 /* GBZGAppClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +275,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7AD34AC82890D78100E92B73 /* GBZGAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AD34AD92890D78300E92B73 /* Build configuration list for PBXNativeTarget "GBZGAppClip" */;
+			buildPhases = (
+				7AD34AC52890D78100E92B73 /* Sources */,
+				7AD34AC62890D78100E92B73 /* Frameworks */,
+				7AD34AC72890D78100E92B73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GBZGAppClip;
+			productName = GBZGAppClip;
+			productReference = 7AD34AC92890D78100E92B73 /* GBZGAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		A0FEF754287EBDF500DA3FBE /* RoomEscape */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0FEF769287EBDF600DA3FBE /* Build configuration list for PBXNativeTarget "RoomEscape" */;
@@ -207,10 +299,12 @@
 				A0FEF751287EBDF500DA3FBE /* Sources */,
 				A0FEF752287EBDF500DA3FBE /* Frameworks */,
 				A0FEF753287EBDF500DA3FBE /* Resources */,
+				7AD34ADC2890D78300E92B73 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7AD34AD72890D78300E92B73 /* PBXTargetDependency */,
 			);
 			name = RoomEscape;
 			productName = RoomEscape;
@@ -224,9 +318,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					7AD34AC82890D78100E92B73 = {
+						CreatedOnToolsVersion = 13.4;
+					};
 					A0FEF754287EBDF500DA3FBE = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -246,11 +343,22 @@
 			projectRoot = "";
 			targets = (
 				A0FEF754287EBDF500DA3FBE /* RoomEscape */,
+				7AD34AC82890D78100E92B73 /* GBZGAppClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7AD34AC72890D78100E92B73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD34AD32890D78300E92B73 /* Preview Assets.xcassets in Resources */,
+				7AD34AE12890F4DB00E92B73 /* PohangData.json in Resources */,
+				7AD34AD02890D78300E92B73 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0FEF753287EBDF500DA3FBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +368,7 @@
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				166DF9132890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib in Resources */,
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
+				893E5265288FE3D10027C7B4 /* SearchDetail.storyboard in Resources */,
 				7A6604B128871856000DC85B /* Team.storyboard in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
 				25D711EC28886B02009B684A /* PickSheet.storyboard in Resources */,
@@ -275,6 +384,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7AD34AC52890D78100E92B73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD34ACE2890D78100E92B73 /* ContentView.swift in Sources */,
+				7AD34AE02890F49000E92B73 /* StoreModel.swift in Sources */,
+				7AD34ACC2890D78100E92B73 /* GBZGAppClipApp.swift in Sources */,
+				7AD34ADF2890F42E00E92B73 /* JSONDataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0FEF751287EBDF500DA3FBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +414,7 @@
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
 				A0FEF759287EBDF500DA3FBE /* AppDelegate.swift in Sources */,
 				1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */,
+				893E5263288FE3C20027C7B4 /* SearchDetailViewController.swift in Sources */,
 				165907A728870DED00B23372 /* MakeTeamViewController.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 				7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */,
@@ -305,6 +426,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AD34AD72890D78300E92B73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AD34AC82890D78100E92B73 /* GBZGAppClip */;
+			targetProxy = 7AD34AD62890D78300E92B73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0FEF75E287EBDF500DA3FBE /* Main.storyboard */ = {
@@ -326,6 +455,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7AD34ADA2890D78300E92B73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GBZGAppClip/GBZGAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GBZGAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = DL9N9GFVMW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GBZGAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RoomEscape;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.later.RoomEscape.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7AD34ADB2890D78300E92B73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GBZGAppClip/GBZGAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GBZGAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = DL9N9GFVMW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GBZGAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RoomEscape;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.later.RoomEscape.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A0FEF767287EBDF600DA3FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -443,17 +638,21 @@
 		A0FEF76A287EBDF600DA3FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL9N9GFVMW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gabozago;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,17 +669,21 @@
 		A0FEF76B287EBDF600DA3FBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL9N9GFVMW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gabozago;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +700,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7AD34AD92890D78300E92B73 /* Build configuration list for PBXNativeTarget "GBZGAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD34ADA2890D78300E92B73 /* Debug */,
+				7AD34ADB2890D78300E92B73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0FEF750287EBDF500DA3FBE /* Build configuration list for PBXProject "RoomEscape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RoomModel: Codable {
+struct RoomModel: Codable, Hashable {
     let storeName: String
     let phoneNumber: String
     let homepage: String

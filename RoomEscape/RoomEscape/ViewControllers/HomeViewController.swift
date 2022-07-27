@@ -8,82 +8,151 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    // IBOutlet Variables
+    @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var currentLocationMenu: UIMenu!
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    @IBOutlet weak var currentLocationHighlight: UIView!
+    @IBOutlet weak var dimensionImageView: UIImageView!
+    @IBOutlet weak var firstRecommendationHighlight: UIView!
+    @IBOutlet weak var genreRecommendation: UILabel!
+    @IBOutlet weak var genreRecommendationSecond: UILabel!
     @IBOutlet weak var locationCollectionView: UICollectionView!
-    @IBOutlet weak var recommendTableView: UITableView!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var recommendationCollectionView: UICollectionView!
+    @IBOutlet weak var recommendationCollectionViewSecond: UICollectionView!
+    @IBOutlet weak var secondRecommendationHighlight: UIView!
     
-    let roomDataManager = JSONDataManager.shared
+    // Variables
+    var isCurrentLocationButtonPressed: Bool = false
+    var randomRoomModels: [RoomModel] = []
+    var randomRoomModelsSecond: [RoomModel] = []
+    let roomDataManager: JSONDataManager = JSONDataManager()
     
+    // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // CollectionView Setting
-        locationCollectionView.delegate = self
-        locationCollectionView.dataSource = self
-        locationCollectionView.register(UINib(nibName: "RoomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RoomCollectionViewCell")
-        locationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
+        // Random genres setting
+        configureGenreRecommendation()
         
-        // CollectionView Setting
-        recommendTableView.delegate = self
-        recommendTableView.dataSource = self
-        recommendTableView.register(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomTableViewCell")
+        // Delegate setting
+        configureDelegateSetting()
+        
+        // Pull down setting
+        configruePulldownButton()
+
+        // Configure other settings
+        currentLocationButton.setTitle(Constants.locations[2], for: .normal)
+        currentLocationLabel.text = Constants.locations[2] + " 근처"
+        dimensionImageView.image = UIImage(named: Constants.mainImageArray[Int.random(in: 0..<Constants.mainImageArray.count)])
+        
+        randomRoomModels = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.genre == genreRecommendation.text!.components(separatedBy: " ")[0]
+        }
+        randomRoomModelsSecond = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.genre == genreRecommendationSecond.text!.components(separatedBy: " ")[0]
+        }
+
     }
     
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        Util.shared.showToast(view: self.view, message: "준비중입니다")
+    // Handling functions
+    private func configureGenreRecommendation() {
+        genreRecommendation.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
+        genreRecommendationSecond.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
         
-        UIView.animate(withDuration: 0.1,
-            animations: {
-                self.searchButton.layer.opacity = 0.5
-            },
-            completion: { _ in
-                UIView.animate(withDuration: 0.1) {
-                    self.searchButton.layer.opacity = 1
-                }
-            }
+        while genreRecommendation.text == genreRecommendationSecond.text {
+            genreRecommendation.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
+            genreRecommendationSecond.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
+        }
+        
+        if genreRecommendation.text!.count == 2 {
+            firstRecommendationHighlight.frame.size.width = 112
+        } else {
+            firstRecommendationHighlight.frame.size.width = 140
+        }
+        
+        if genreRecommendationSecond.text!.count == 2 {
+            secondRecommendationHighlight.frame.size.width = 112
+        } else {
+            secondRecommendationHighlight.frame.size.width = 140
+        }
+
+    }
+    
+    private func configureDelegateSetting() {
+        // LocationCollectionView Setting
+        locationCollectionView.delegate = self
+        locationCollectionView.dataSource = self
+        locationCollectionView.register(
+            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
         )
+        locationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
+        
+        // RecommendationCollectionView Setting
+        recommendationCollectionView.delegate = self
+        recommendationCollectionView.dataSource = self
+        recommendationCollectionView.register(
+            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
+        )
+        recommendationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
+
+        // RecommendationCollectionViewSecond Setting
+        recommendationCollectionViewSecond.delegate = self
+        recommendationCollectionViewSecond.dataSource = self
+        recommendationCollectionViewSecond.register(
+            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
+        )
+        recommendationCollectionViewSecond.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
+    }
+    
+    private func configruePulldownButton() {
+        currentLocationButton.showsMenuAsPrimaryAction = true
+        currentLocationButton.changesSelectionAsPrimaryAction = true
+        
+        let button1 = UIAction(title: "경주시", handler: { _ in self.changeCurrentLocation(location: "경주시") })
+        let button2 = UIAction(title: "대구광역시", handler: { _ in self.changeCurrentLocation(location: "대구광역시") })
+        let button3 = UIAction(title: "포항시", handler: { _ in self.changeCurrentLocation(location: "포항시") })
+
+        let buttonMenu = UIMenu(children: [button1, button2, button3])
+        
+        currentLocationButton.menu = buttonMenu
+    }
+    
+    private func changeCurrentLocation(location: String) {
+        currentLocationLabel.text = location + " 근처"
+        
+        if location.count == 3 {
+            currentLocationHighlight.frame.size.width = 84
+        } else {
+            currentLocationHighlight.frame.size.width = 140
+        }
     }
     
 }// HomeViewController
 
-// MARK: CollectionView Delegates
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return roomDataManager.roomData.count
+    // Quantity of items
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
+        if collectionView == self.locationCollectionView {
+            return roomDataManager.roomData.count
+        } else if collectionView == self.recommendationCollectionView {
+            return randomRoomModels.count
+        } else {
+            return randomRoomModelsSecond.count
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let roomInfo = roomDataManager.roomData[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCollectionViewCell", for: indexPath) as! RoomCollectionViewCell
-        let url = URL(string: roomInfo.image)
-        
-        cell.roomName?.text = roomInfo.title
-        cell.storeName?.text = roomInfo.storeName
-        cell.roomImage?.contentMode = .scaleToFill
-        
-        for i in 0 ..< roomInfo.star {
-            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-        }
-        
-        DispatchQueue.main.async {
-            if let url = url {
-                if let data = try? Data(contentsOf: url) {
-                    cell.roomImage?.image = UIImage(data: data)
-                } else {
-                    cell.roomImage?.image = UIImage(systemName: "house")
-                }
-            }
-        }
-        
-        return cell
-    }
-    
+    // Size of layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 180, height: 354)
     }
     
+    // Navigation control to the DetailView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
@@ -92,29 +161,29 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-}
+}// HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
-
-// MARK: TableView Delegates
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return roomDataManager.roomData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let roomInfo = roomDataManager.roomData[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as! RoomTableViewCell
-        let url = URL(string: roomInfo.image)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
+        var roomInfo: RoomModel? = nil
         
-        cell.roomName?.text = roomInfo.title
-        cell.storeName?.text = roomInfo.storeName
-        cell.roomImage?.contentMode = .scaleToFill
-        cell.roomImage?.clipsToBounds = true
-        
-        for i in 0 ..< roomInfo.star {
-            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        // CollectionView setting
+        if collectionView == self.locationCollectionView {
+            roomInfo = roomDataManager.roomData[indexPath.row]
+        } else if collectionView == self.recommendationCollectionView {
+            roomInfo = randomRoomModels[indexPath.row]
+        } else {
+            roomInfo = randomRoomModelsSecond[indexPath.row]
         }
+        
+        let url = URL(string: roomInfo!.image)
+        
+        cell.roomName?.text = roomInfo!.title
+        cell.storeName?.text = roomInfo!.storeName
+        cell.roomImage?.contentMode = .scaleToFill
         
         DispatchQueue.main.async {
             if let url = url {
@@ -128,14 +197,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
- 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
-        viewController.roomIndex = indexPath.row
         
-        recommendTableView.reloadRows(at: [indexPath], with: .automatic)
-                
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-}
+}// HomeViewController: UICollectionViewDataSource
+
