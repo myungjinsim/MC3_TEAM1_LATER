@@ -9,27 +9,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // IBOutlet Variables
+    @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var currentLocationMenu: UIMenu!
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    @IBOutlet weak var currentLocationHighlight: UIView!
+    @IBOutlet weak var dimensionImageView: UIImageView!
+    @IBOutlet weak var firstRecommendationHighlight: UIView!
+    @IBOutlet weak var genreRecommendation: UILabel!
+    @IBOutlet weak var genreRecommendationSecond: UILabel!
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var recommendationCollectionView: UICollectionView!
     @IBOutlet weak var recommendationCollectionViewSecond: UICollectionView!
-    
-    @IBOutlet weak var dimensionImageView: UIImageView!
-    
-    @IBOutlet weak var currentLocationButton: UIButton!
-    @IBOutlet weak var currentLocationMenu: UIMenu!
-    
-    @IBOutlet weak var currentLocationLabel: UILabel!
-    @IBOutlet weak var currentLocationHighlight: UIView!
-    @IBOutlet weak var genreRecommendation: UILabel!
-    @IBOutlet weak var genreRecommendationSecond: UILabel!
-    @IBOutlet weak var firstRecommendationHighlight: UIView!
     @IBOutlet weak var secondRecommendationHighlight: UIView!
     
     // Variables
-    let roomDataManager: JSONDataManager = JSONDataManager()
+    var isCurrentLocationButtonPressed: Bool = false
     var randomRoomModels: [RoomModel] = []
     var randomRoomModelsSecond: [RoomModel] = []
-    var isCurrentLocationButtonPressed: Bool = false
+    let roomDataManager: JSONDataManager = JSONDataManager()
     
     // viewDidLoad
     override func viewDidLoad() {
@@ -109,7 +106,6 @@ class HomeViewController: UIViewController {
             forCellWithReuseIdentifier: Constants.roomCollectionViewCell
         )
         recommendationCollectionViewSecond.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
-        
     }
     
     private func configruePulldownButton() {
@@ -133,7 +129,6 @@ class HomeViewController: UIViewController {
         } else {
             currentLocationHighlight.frame.size.width = 140
         }
-
     }
     
 }// HomeViewController
@@ -201,8 +196,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
         return cell
-
-    }// collectionView: cellForItemAt
+    }
         
 }// HomeViewController: UICollectionViewDataSource
 
