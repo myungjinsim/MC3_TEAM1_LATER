@@ -7,23 +7,32 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+// MARK: - SearchResultView 작업 시 폴더 이동 시킬 예정
+class SearchResultViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBlue
+    }
+}
 
+class SearchViewController: UIViewController, UISearchResultsUpdating {
+
+    let searchController = UISearchController(searchResultsController: SearchResultViewController())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "테마 찾기"
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+      //  let vc = searchController.searchResultsController as? SearchResultViewController
+     //   vc?.view.backgroundColor = .yellow
+        print(text)
     }
-    */
-
 }
