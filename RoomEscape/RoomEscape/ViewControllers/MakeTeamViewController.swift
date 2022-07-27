@@ -22,7 +22,7 @@ class MakeTeamViewController: UIViewController {
         super.viewDidLoad()
         
         self.teamNameField.delegate = self
-        self.makeButton.tintColor = UIColor(rgb: 0x464646)
+        self.makeButton.tintColor = UIColor.background2
         
         self.teamNameField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         
