@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3dRocket" translatesAutoresizingMaskIntoConstraints="NO" id="rWS-pY-wFL">
-                                <rect key="frame" x="67" y="46" width="402" height="401"/>
+                                <rect key="frame" x="67.333333333333343" y="46" width="401.66666666666663" height="401"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-kO-5Dp">
                                 <rect key="frame" x="25" y="241.00000000000003" width="147.33333333333334" height="82.333333333333343"/>
@@ -246,11 +246,11 @@
             </objects>
             <point key="canvasLocation" x="1936" y="410"/>
         </scene>
-        <!--PICK-->
+        <!--마이픽-->
         <scene sceneID="rCg-Fz-sdr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LrS-U8-Ofi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PICK" selectedImage="heart.text.square.fill" catalog="system" id="AY5-sM-1Vn">
+                    <tabBarItem key="tabBarItem" title="마이픽" selectedImage="heart.text.square" catalog="system" id="AY5-sM-1Vn">
                         <imageReference key="image" image="heart.text.square.fill" catalog="system"/>
                         <color key="badgeColor" red="0.4823529412" green="0.3803921569" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
@@ -274,6 +274,7 @@
     <resources>
         <image name="3dPick" width="187" height="190"/>
         <image name="3dRocket" width="401.66665649414062" height="401"/>
+        <image name="heart.text.square" catalog="system" width="128" height="114"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
