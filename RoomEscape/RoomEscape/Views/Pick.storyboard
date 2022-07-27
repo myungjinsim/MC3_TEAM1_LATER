@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="190" id="vmd-PH-vYq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이 픽" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcB-M4-XZP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같이가자" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcB-M4-XZP">
                                 <rect key="frame" x="30" y="153" width="330" height="38.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,9 @@
                                                                 <constraint firstAttribute="height" constant="17" id="T6H-OB-aNA"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system">
+                                                                <color key="baseForegroundColor" name="text4"/>
+                                                            </buttonConfiguration>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -284,6 +286,7 @@
     <resources>
         <image name="3dPick" width="187" height="190"/>
         <image name="3dRocket" width="401.66665649414062" height="401"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="heart.text.square" catalog="system" width="128" height="114"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="Background">

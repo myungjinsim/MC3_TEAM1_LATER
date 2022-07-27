@@ -13,6 +13,8 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var emptyLabel: UIStackView!
+    @IBOutlet weak var emptyButton: UIButton!
     
     let roomDataManager = JSONDataManager.shared
     
@@ -62,6 +64,24 @@ class TeamViewController: UIViewController {
         teamTableView.allowsMultipleSelection = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if team?.themeList.isEmpty ?? true {
+            teamTableView.isHidden = true
+            themeComparisonView.isHidden = true
+            emptyLabel.isHidden = false
+            emptyButton.isHidden = false
+        } else {
+            teamTableView.isHidden = false
+            themeComparisonView.isHidden = false
+            emptyLabel.isHidden = true
+            emptyButton.isHidden = true
+        }
+        
+        teamTableView.reloadData()
+    }
+    
     private func configureView() {
         guard let team = self.team else { return }
         self.teamNameLabel.text = team.teamName
@@ -98,6 +118,10 @@ class TeamViewController: UIViewController {
         self.infoLabel.text = "테마간 차이점이 궁금하다면?"
         selectedThemes.removeAll()
         self.teamTableView.reloadData()
+    }
+    
+    @IBAction func findThemeButtonTapped(_ sender: UIButton) {
+        self.tabBarController?.selectedIndex = 0
     }
     
 }// TeamViewController

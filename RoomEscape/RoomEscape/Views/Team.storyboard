@@ -75,6 +75,43 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Sex-qZ-7vd">
+                                <rect key="frame" x="0.0" y="346" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 추가된 방이 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qih-hW-aKa">
+                                        <rect key="frame" x="124.5" y="0.0" width="165" height="17.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" name="text3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나에게 맞는 테마를 검색해보세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FT-oC-sFk">
+                                        <rect key="frame" x="97.5" y="19.5" width="219.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" name="text3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="R4M-RQ-W5u"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-NZ-5nP">
+                                <rect key="frame" x="109" y="421" width="196" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="QbY-Ce-Uvk"/>
+                                    <constraint firstAttribute="height" constant="50" id="jdk-ZN-pc2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="맞춤 테마 찾기">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                    <color key="baseForegroundColor" name="text1"/>
+                                    <color key="baseBackgroundColor" name="Main"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="findThemeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CxG-NY-NmF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Background"/>
@@ -85,13 +122,20 @@
                             <constraint firstItem="rXC-AX-xhF" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="21" id="COf-9g-HUA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Rqd-UZ-UjU" secondAttribute="bottom" constant="10" id="D5w-Ue-mDJ"/>
                             <constraint firstItem="Rqd-UZ-UjU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="MTq-p7-6ip"/>
+                            <constraint firstItem="1qh-NZ-5nP" firstAttribute="top" secondItem="Sex-qZ-7vd" secondAttribute="bottom" constant="35" id="UVY-Z8-r02"/>
+                            <constraint firstItem="1qh-NZ-5nP" firstAttribute="centerX" secondItem="Sex-qZ-7vd" secondAttribute="centerX" id="Vdq-sO-ngy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Rqd-UZ-UjU" secondAttribute="trailing" constant="23" id="Vn1-ck-ea4"/>
+                            <constraint firstItem="Sex-qZ-7vd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="302" id="WMe-yX-Qrw"/>
                             <constraint firstItem="pMM-OO-lWn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="ZTn-7p-rlT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Sex-qZ-7vd" secondAttribute="trailing" id="itS-XA-k5n"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pMM-OO-lWn" secondAttribute="trailing" constant="23" id="pS6-R2-N2f"/>
+                            <constraint firstItem="Sex-qZ-7vd" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="uiZ-8c-LiJ"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="emptyButton" destination="1qh-NZ-5nP" id="Rcn-SF-NA5"/>
+                        <outlet property="emptyLabel" destination="Sex-qZ-7vd" id="NDd-U6-EeA"/>
                         <outlet property="infoLabel" destination="biB-qW-063" id="igq-wK-Bap"/>
                         <outlet property="teamNameLabel" destination="rXC-AX-xhF" id="eR7-uB-5H0"/>
                         <outlet property="teamTableView" destination="Rqd-UZ-UjU" id="77p-2M-JW9"/>

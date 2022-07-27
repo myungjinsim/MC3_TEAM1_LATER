@@ -79,14 +79,13 @@ extension PickViewController: UITableViewDataSource {
             cell.descriptionLabel.text = ""
             cell.addImage.image = UIImage(systemName: "plus")
             cell.addLabel.text = "새로운 팀 만들기"
-            cell.gearIcon.setImage(.none, for: .disabled)
+            cell.gearIcon.isHidden = true
         } else {
             cell.teamName.text = teams[indexPath.row].teamName
             cell.descriptionLabel.text = "\(teams[indexPath.row].themeList.count)개의 방탈출 테마"
             cell.addImage.image = .none
             cell.addLabel.text = ""
-            cell.gearIcon.setImage(UIImage(systemName: "gearshape"), for: .normal)
-            cell.gearIcon.tintColor = UIColor.titleDarkGray
+            cell.gearIcon.isHidden = false
             cell.gearIcon.tag = indexPath.row
             cell.gearIcon.addTarget(self, action: #selector(gearTapped(sender:)), for: .touchUpInside)
         }
