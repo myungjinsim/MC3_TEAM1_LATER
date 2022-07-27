@@ -41,6 +41,7 @@ class TeamViewController: UIViewController {
         teamTableView.delegate = self
         teamTableView.dataSource = self
         teamTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
+        teamTableView.register(UINib(nibName: Constants.roomSelectionTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomSelectionTableViewCell)
         teamTableView.allowsMultipleSelection = false
     }
     
@@ -57,7 +58,7 @@ class TeamViewController: UIViewController {
         self.themeComparisonButton.isHidden = true
         self.infoLabel.text = "비교해서 보고싶은 2가지 테마를 선택하세요!"
         self.compareButton.isHidden = false
-        
+        self.teamTableView.reloadData()
     }
     
     @objc func cancelButtonTapped() {
@@ -69,6 +70,7 @@ class TeamViewController: UIViewController {
         selectedThemes.removeAll()
         self.compareButton.tintColor = UIColor(rgb: 0x464646)
         self.compareButton.isHidden = true
+        self.teamTableView.reloadData()
     }
     
     @IBAction func compareButtonTapped(_ sender: UIButton) {
@@ -79,7 +81,6 @@ class TeamViewController: UIViewController {
             viewController.secondTheme = roomDataManager.roomData[selectedThemes[1]]
             
             self.navigationController?.pushViewController(viewController, animated: true)
-            
         }
     }
     
@@ -126,33 +127,63 @@ extension TeamViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomTableViewCell
-
-        let themes = self.team?.themeList
-        guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
-        let roomInfo = roomDataManager.roomData[themeIdx]
         
-        cell.roomName?.text = roomInfo.title
-        let url = URL(string: roomInfo.image)
-        cell.storeName?.text = roomInfo.storeName
-        cell.roomImage?.contentMode = .scaleToFill
-        cell.roomImage?.clipsToBounds = true
-        
-        for i in 0 ..< roomInfo.star {
-            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-        }
-        
-        DispatchQueue.main.async {
-            if let url = url {
-                if let data = try? Data(contentsOf: url) {
-                    cell.roomImage?.image = UIImage(data: data)
-                } else {
-                    cell.roomImage?.image = UIImage(systemName: "house")
+        if isButtonPressed {
+            let selectionCell = tableView.dequeueReusableCell(withIdentifier: Constants.roomSelectionTableViewCell, for: indexPath) as! RoomSelectionTableViewCell
+            
+            let themes = self.team?.themeList
+            guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
+            let roomInfo = roomDataManager.roomData[themeIdx]
+            
+            selectionCell.roomName?.text = roomInfo.title
+            let url = URL(string: roomInfo.image)
+            selectionCell.storeName?.text = roomInfo.storeName
+            selectionCell.roomImage?.contentMode = .scaleToFill
+            selectionCell.roomImage?.clipsToBounds = true
+            
+            for i in 0 ..< roomInfo.star {
+                selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+            }
+            
+            DispatchQueue.main.async {
+                if let url = url {
+                    if let data = try? Data(contentsOf: url) {
+                        selectionCell.roomImage?.image = UIImage(data: data)
+                    } else {
+                        selectionCell.roomImage?.image = UIImage(systemName: "house")
+                    }
                 }
             }
+            
+            return selectionCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomTableViewCell
+            
+            let themes = self.team?.themeList
+            guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
+            let roomInfo = roomDataManager.roomData[themeIdx]
+            
+            cell.roomName?.text = roomInfo.title
+            let url = URL(string: roomInfo.image)
+            cell.storeName?.text = roomInfo.storeName
+            cell.roomImage?.contentMode = .scaleToFill
+            cell.roomImage?.clipsToBounds = true
+            
+            for i in 0 ..< roomInfo.star {
+                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+            }
+            
+            DispatchQueue.main.async {
+                if let url = url {
+                    if let data = try? Data(contentsOf: url) {
+                        cell.roomImage?.image = UIImage(data: data)
+                    } else {
+                        cell.roomImage?.image = UIImage(systemName: "house")
+                    }
+                }
+            }
+            return cell
         }
-        
-        return cell
     }
     
 }

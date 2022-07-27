@@ -9,5 +9,6 @@ import Foundation
 
 struct Constants {
     static let roomTableViewCell = "RoomTableViewCell"
+    static let roomSelectionTableViewCell = "RoomSelectionTableViewCell"
     static let roomCollectionViewCell = "RoomCollectionViewCell"
 }
