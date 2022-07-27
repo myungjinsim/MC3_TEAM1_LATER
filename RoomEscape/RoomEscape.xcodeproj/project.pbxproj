@@ -12,6 +12,8 @@
 		1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1659079D2885B4E800B23372 /* RoomTableViewCell.xib */; };
 		165907A52886EEDE00B23372 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165907A42886EEDE00B23372 /* TeamCell.swift */; };
 		165907A728870DED00B23372 /* MakeTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165907A628870DED00B23372 /* MakeTeamViewController.swift */; };
+		166DF9122890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DF9102890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift */; };
+		166DF9132890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166DF9112890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib */; };
 		16AAC4C628889AE2003D8FEF /* Pick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16590792288482EF00B23372 /* Pick.storyboard */; };
 		2552F8C72886A8BA00E40599 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2552F8C62886A8BA00E40599 /* Detail.storyboard */; };
 		2558940528878D10008E4ACC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558940428878D10008E4ACC /* DetailViewController.swift */; };
@@ -50,6 +52,8 @@
 		1659079D2885B4E800B23372 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
 		165907A42886EEDE00B23372 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		165907A628870DED00B23372 /* MakeTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamViewController.swift; sourceTree = "<group>"; };
+		166DF9102890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		166DF9112890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomSelectionTableViewCell.xib; sourceTree = "<group>"; };
 		2552F8C62886A8BA00E40599 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		2558940428878D10008E4ACC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		25D711E328885481009B684A /* DetailPickSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickSheetViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				16590792288482EF00B23372 /* Pick.storyboard */,
 				1659079C2885B4E800B23372 /* RoomTableViewCell.swift */,
 				1659079D2885B4E800B23372 /* RoomTableViewCell.xib */,
+				166DF9102890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift */,
+				166DF9112890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib */,
 				89815E832886A84A000C5C24 /* RoomCollectionViewCell.swift */,
 				89815E842886A84A000C5C24 /* RoomCollectionViewCell.xib */,
 				7A6604B028871856000DC85B /* Team.storyboard */,
@@ -252,6 +258,7 @@
 				16AAC4C628889AE2003D8FEF /* Pick.storyboard in Resources */,
 				A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
+				166DF9132890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib in Resources */,
 				1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */,
 				7A6604B128871856000DC85B /* Team.storyboard in Resources */,
 				A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */,
@@ -278,6 +285,7 @@
 				25D711E428885482009B684A /* DetailPickSheetViewController.swift in Sources */,
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				25D711F028887114009B684A /* PickSheetViewController.swift in Sources */,
+				166DF9122890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift in Sources */,
 				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
