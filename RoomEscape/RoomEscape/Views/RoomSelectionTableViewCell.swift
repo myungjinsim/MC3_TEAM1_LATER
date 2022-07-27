@@ -20,6 +20,7 @@ class RoomSelectionTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionCover.layer.cornerRadius = 10
+        roomImage.layer.cornerRadius = 10
         selectionCover.layer.borderColor = UIColor.mainPurple?.cgColor
     }
 
