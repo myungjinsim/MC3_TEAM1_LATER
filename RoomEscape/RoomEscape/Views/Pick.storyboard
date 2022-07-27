@@ -242,7 +242,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstLabel" destination="A9l-qP-xaq" id="ymi-7e-jp1"/>
+                        <outlet property="highlight" destination="ngc-14-ub1" id="ViH-R4-fJ8"/>
                         <outlet property="makeButton" destination="NAt-5s-teZ" id="e8V-bX-m8R"/>
+                        <outlet property="secondLabel" destination="cdy-UI-t4a" id="xyg-CQ-d2S"/>
                         <outlet property="teamNameField" destination="ofC-uG-pwS" id="O9u-ak-XbN"/>
                     </connections>
                 </viewController>

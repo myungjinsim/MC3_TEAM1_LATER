@@ -96,11 +96,14 @@ extension PickViewController: UITableViewDataSource {
     @objc func gearTapped(sender: UIButton) {
         let alert = UIAlertController(title: "팀 편집", message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "팀 이름 수정", style: .default , handler:{ (UIAlertAction)in
-            print("User click Edit button")
+        alert.addAction(UIAlertAction(title: "팀 이름 수정", style: .default , handler:{ (UIAlertAction) in
+            guard let viewController = self.storyboard?.instantiateViewController(identifier: "MakeTeamViewController") as? MakeTeamViewController else { return }
+            viewController.teams = self.teams
+            viewController.editorMode = .edit(sender.tag)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: "팀 삭제", style: .destructive , handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: "팀 삭제", style: .destructive , handler:{ (UIAlertAction) in
             self.deleteTeams(sender.tag)
         }))
         
