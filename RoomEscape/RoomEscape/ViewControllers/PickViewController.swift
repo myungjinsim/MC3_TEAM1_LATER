@@ -78,7 +78,7 @@ extension PickViewController: UITableViewDataSource {
             cell.teamName.text = ""
             cell.descriptionLabel.text = ""
             cell.addImage.image = UIImage(systemName: "plus")
-            cell.addLabel.text = "새로운 팀 만들기"
+            cell.addLabel.text = "테마 컬렉션 만들기"
             cell.gearIcon.isHidden = true
         } else {
             cell.teamName.text = teams[indexPath.row].teamName
