@@ -135,10 +135,14 @@ class SearchDetailViewController: UIViewController {
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
-        print(selectedLocation)
-        print(selectedDifficulty)
-        print(selectedGenre)
-        print(selectedCompanion)
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "SearchDetailResultRef") as? SearchDetailResultViewController else { return }
+
+        viewController.selectedLocation = selectedLocation
+        viewController.selectedDifficulty = selectedDifficulty
+        viewController.selectedTheme = selectedGenre
+        viewController.selectedWith = selectedCompanion
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }// SearchDetailViewController

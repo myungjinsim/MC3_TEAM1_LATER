@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oYR-AN-Jld">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -231,7 +231,9 @@
                             <constraint firstItem="UDm-8H-yZs" firstAttribute="top" secondItem="yMH-la-2xO" secondAttribute="bottom" constant="28" id="wWi-56-0rG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wSW-uX-sji"/>
+                    <navigationItem key="navigationItem" id="wSW-uX-sji">
+                        <barButtonItem key="backBarButtonItem" title=" " id="lky-1u-F2v"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="companionPulldownButton" destination="NJi-hj-uQ2" id="985-gc-bBi"/>
                         <outlet property="difficultyPulldownButton" destination="AtV-YJ-D4N" id="9bi-7Z-ro6"/>
@@ -244,6 +246,14 @@
             </objects>
             <point key="canvasLocation" x="981.15942028985512" y="137.94642857142856"/>
         </scene>
+        <!--SearchDetailResult-->
+        <scene sceneID="Eal-li-oNl">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchDetailResultRef" storyboardName="SearchDetailResult" id="rIf-eX-2te" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmQ-of-kUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="-87"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xak-1p-mL4">
             <objects>
@@ -252,6 +262,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Are-U1-Xve">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="text1"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
