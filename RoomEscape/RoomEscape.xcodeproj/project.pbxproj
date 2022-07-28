@@ -58,6 +58,7 @@
 		A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF75E287EBDF500DA3FBE /* Main.storyboard */; };
 		A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF761287EBDF600DA3FBE /* Assets.xcassets */; };
 		A0FEF765287EBDF600DA3FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */; };
+		C10902192892755A00D97D50 /* StoreDataDaeguGyeongjuPohang.json in Resources */ = {isa = PBXBuildFile; fileRef = C10902182892755A00D97D50 /* StoreDataDaeguGyeongjuPohang.json */; };
 		C19893842887E91A0045CF40 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		A0FEF761287EBDF600DA3FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FEF764287EBDF600DA3FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0FEF766287EBDF600DA3FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C10902182892755A00D97D50 /* StoreDataDaeguGyeongjuPohang.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoreDataDaeguGyeongjuPohang.json; sourceTree = "<group>"; };
 		C19893832887E91A0045CF40 /* PohangData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PohangData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +285,7 @@
 				A0FEF75A287EBDF500DA3FBE /* SceneDelegate.swift */,
 				7AEAB5FC2885764500BA2216 /* StoreData.json */,
 				C19893832887E91A0045CF40 /* PohangData.json */,
+				C10902182892755A00D97D50 /* StoreDataDaeguGyeongjuPohang.json */,
 				A0FEF761287EBDF600DA3FBE /* Assets.xcassets */,
 				A0FEF763287EBDF600DA3FBE /* LaunchScreen.storyboard */,
 				A0FEF766287EBDF600DA3FBE /* Info.plist */,
@@ -396,6 +399,7 @@
 				A04A77982890EC6300D728A9 /* SearchResult.storyboard in Resources */,
 				C19893842887E91A0045CF40 /* PohangData.json in Resources */,
 				A0FEF762287EBDF600DA3FBE /* Assets.xcassets in Resources */,
+				C10902192892755A00D97D50 /* StoreDataDaeguGyeongjuPohang.json in Resources */,
 				A0FEF760287EBDF500DA3FBE /* Main.storyboard in Resources */,
 				3D8FF087288FE7FB0029DE1A /* SearchDetailResult.storyboard in Resources */,
 				89815E862886A84A000C5C24 /* RoomCollectionViewCell.xib in Resources */,
