@@ -10,11 +10,55 @@ import UIKit
 class SearchResultViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var searchLabel: UILabel!
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    var resultRoom: [RoomModel] = []
+    var resultRooms: [RoomModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tableViewCellNib = UINib(nibName: Constants.roomTableViewCell, bundle: nil)
+        tableView.register(tableViewCellNib, forCellReuseIdentifier: Constants.roomTableViewCell)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func update(newResult: [RoomModel]) {
+        resultRooms = newResult
+        tableView.reloadData()
+    }
+}
+
+extension SearchResultViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return resultRooms.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as? RoomTableViewCell else { return UITableViewCell() }
+        
+        let roomInfo = resultRooms[indexPath.row]
+        
+        cell.roomName?.text = roomInfo.title
+        let url = URL(string: roomInfo.image)
+        cell.storeName?.text = roomInfo.storeName
+        cell.genre.text = roomInfo.genre
+        cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.star {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
+        
+        DispatchQueue.main.async {
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
+        }
+        return cell
     }
 }

@@ -26,15 +26,13 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        var result: [RoomModel] = []
+        guard let text = searchController.searchBar.text else { return }
+        
         let vc = searchController.searchResultsController as? SearchResultViewController
+        var result: [RoomModel] = []
         
         for item in roomData {
             if item.title.uppercased().contains(text.uppercased()) {
-          //      print(item.title)
                 result.append(item)
             }
         }
@@ -44,6 +42,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         } else {
             vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾지 못했어요!"
         }
-        vc?.resultRoom = result
+        vc?.update(newResult: result)
     }
 }
