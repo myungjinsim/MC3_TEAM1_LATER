@@ -22,6 +22,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         
         title = "테마 찾기"
         searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "원하는 방탈출을 찾아보세요"
         navigationItem.searchController = searchController
     }
 

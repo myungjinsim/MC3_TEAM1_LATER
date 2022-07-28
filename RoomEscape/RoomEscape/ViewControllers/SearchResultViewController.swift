@@ -29,6 +29,24 @@ class SearchResultViewController: UIViewController, UITableViewDelegate {
             tableView.reloadData()
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        
+        detailViewController.roomIndex = indexPath.row
+        /*
+         MARK: 현재 SearchResultViewController가 UINavigationController(navigationController?)가 비어있는 값을 반환해 pushViewController가 안되는 것으로 보임(아마도???)
+         */
+        /*
+        let rootVC = self
+        let navCV = UINavigationController(rootViewController: rootVC)
+        navCV.pushViewController(detailViewController, animated: true)
+         */
+  //      self.navigationController?.pushViewController(detailViewController, animated: true)
+     //   self.navigationController?.present(detailViewController, animated: true)
+        self.present(detailViewController, animated: true)
+    }
 }
 
 extension SearchResultViewController: UITableViewDataSource {
@@ -41,9 +59,9 @@ extension SearchResultViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell", for: indexPath) as? RoomTableViewCell else { return UITableViewCell() }
         
         let roomInfo = resultRooms[indexPath.row]
+        let url = URL(string: roomInfo.image)
         
         cell.roomName?.text = roomInfo.title
-        let url = URL(string: roomInfo.image)
         cell.storeName?.text = roomInfo.storeName
         cell.genre.text = roomInfo.genre
         cell.roomImage?.contentMode = .scaleToFill
