@@ -7,10 +7,20 @@
 
 import UIKit
 
+enum EditorMode {
+    case new
+    case edit(Int)
+}
+
 class MakeTeamViewController: UIViewController {
     
     @IBOutlet weak var teamNameField: CustomTextField!
     @IBOutlet weak var makeButton: UIButton!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var highlight: UIView!
+    
+    var editorMode: EditorMode = .new
     
     var teams = [TeamModel]() {
         didSet {
@@ -22,12 +32,22 @@ class MakeTeamViewController: UIViewController {
         super.viewDidLoad()
         
         self.teamNameField.delegate = self
-        self.makeButton.tintColor = UIColor(rgb: 0x464646)
+        self.makeButton.tintColor = UIColor.background2
         
         self.teamNameField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        switch self.editorMode {
+        case let .edit(index):
+            self.teamNameField.text = teams[index].teamName
+            self.makeButton.setTitle("수정하기", for: .normal)
+            firstLabel.text = "컬렉션 이름을"
+            secondLabel.text = "수정해주세요!"
+        default:
+            break
+        }
     }
     
     func saveTeams() {
@@ -57,9 +77,14 @@ class MakeTeamViewController: UIViewController {
     @IBAction func makeButtonTapped(_ sender: UIButton) {
         if makeButton.tintColor == UIColor.mainPurple {
             guard let teamName = self.teamNameField.text else { return }
-            let team = TeamModel(teamName: teamName, themeList: [Int]())
-            self.teams.append(team)
-            print(self.teams)
+            switch self.editorMode {
+            case let .edit(index):
+                teams[index].teamName = teamName
+            default:
+                let team = TeamModel(teamName: teamName, themeList: [Int]())
+                self.teams.append(team)
+            }
+            
             self.navigationController?.popViewController(animated: true)
         }
     }
