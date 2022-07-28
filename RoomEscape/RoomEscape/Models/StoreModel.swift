@@ -34,7 +34,7 @@ struct SampleRoomModel {
 }
 
 struct TeamModel {
-    let teamName: String
+    var teamName: String
     let themeList: [Int]
 }
 
