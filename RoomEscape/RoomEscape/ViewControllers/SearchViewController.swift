@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
+    
+    let roomData = JSONDataManager.shared.roomData
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,21 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else {
             return
         }
+        var result: [RoomModel] = []
         let vc = searchController.searchResultsController as? SearchResultViewController
-        vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾았어요!"
+        
+        for item in roomData {
+            if item.title.uppercased().contains(text.uppercased()) {
+          //      print(item.title)
+                result.append(item)
+            }
+        }
+        
+        if result.count > 0 {
+            vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾았어요!"
+        } else {
+            vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾지 못했어요!"
+        }
+        vc?.resultRoom = result
     }
 }

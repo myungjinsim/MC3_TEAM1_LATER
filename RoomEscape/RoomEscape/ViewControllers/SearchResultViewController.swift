@@ -12,6 +12,8 @@ class SearchResultViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var table: UITableView!
     
+    var resultRoom: [RoomModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
