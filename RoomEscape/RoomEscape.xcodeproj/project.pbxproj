@@ -26,6 +26,7 @@
 		3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */; };
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
 		7A2CD1B6288884FE002D5950 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B5288884FD002D5950 /* Util.swift */; };
+		7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30AF782892BD5200796D3A /* TeamModel.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
 		7A6604B128871856000DC85B /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6604B028871856000DC85B /* Team.storyboard */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
@@ -86,6 +87,7 @@
 		3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailResultViewController.swift; sourceTree = "<group>"; };
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A2CD1B5288884FD002D5950 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		7A30AF782892BD5200796D3A /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7A6604B028871856000DC85B /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				7AEAB5F92885746400BA2216 /* StoreModel.swift */,
+				7A30AF782892BD5200796D3A /* TeamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
+				7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */,
 				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,

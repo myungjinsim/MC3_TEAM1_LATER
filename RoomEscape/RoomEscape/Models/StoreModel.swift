@@ -39,8 +39,3 @@ struct RoomModel: Codable, Hashable {
     let description: String
     let recommendation: String
 }
-
-struct TeamModel {
-    var teamName: String
-    let themeList: [Int]
-}
