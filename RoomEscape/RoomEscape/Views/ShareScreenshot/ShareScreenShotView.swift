@@ -10,6 +10,7 @@ import SwiftUI
 struct ShareScreenShotView: View {
     let forWhom: String
     let rooms: [RoomModel]
+    let images: [UIImage?]
     
     var body: some View {
         ScrollView {
@@ -21,10 +22,10 @@ struct ShareScreenShotView: View {
                     .font(.custom("AppleSDGothicNeo-Bold", size: 32))
                 Spacer()
             }
-            ForEach(rooms, id: \.self) { room in
+            ForEach(Array(rooms.enumerated()), id: \.offset) { idx, room in
                 VStack (alignment: .leading) {
                     ThemePoster(
-                        imageUrl: room.image,
+                        image: images[idx],
                         genre: room.genre,
                         title: room.title,
                         storeName: room.storeName
@@ -36,6 +37,7 @@ struct ShareScreenShotView: View {
             .padding(.horizontal, 27)
             .padding(.vertical, 40)
         }
+        .background(Color("Background"))
     }
 }
 
@@ -72,6 +74,10 @@ struct ShareScreenShotView_Previews: PreviewProvider {
                     description: "당신은 인공지능 연구소장, 오래전 사고로 가족을 잃고 AI강아지 '네모'를 가족 삼아 지냈다. 그런데 어느날 강아지 '네모'가 실종되었다. AI에 반대하는 테러조직 Anti - Science의 납치가 유력하다. 조직의 본거지에 침투하여 '네모'를 되찾기로 결심한 당신! 과연 무사히 구출할 수 있을 것인가?",
                     recommendation: "전자장비를 이용해 문제를 풀고 싶으신 분, SF물을 좋아하시는 분"
                 )
+            ],
+            images: [
+                UIImage(systemName: "house"),
+                UIImage(systemName: "house.fill")
             ]
         )
     }

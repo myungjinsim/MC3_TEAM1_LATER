@@ -42,7 +42,7 @@ class TeamViewController: UIViewController {
         shareButton = UIBarButtonItem(
             barButtonSystemItem: .action,
             target: self,
-            action: nil
+            action: #selector(shareButtonTapped)
         )
         editButton = UIBarButtonItem(
             barButtonSystemItem: .compose,
@@ -118,6 +118,41 @@ class TeamViewController: UIViewController {
         self.infoLabel.text = "테마간 차이점이 궁금하다면?"
         selectedThemes.removeAll()
         self.teamTableView.reloadData()
+    }
+    
+    @objc func shareButtonTapped() {
+        guard let teamInfo = self.team else { return }
+        
+        let rooms = teamInfo.themeList.map { roomDataManager.roomData[$0] }
+        let images = rooms.map { (room) -> UIImage in
+            if let url = URL(string: room.image) {
+                if let data = try? Data(contentsOf: url ) {
+                    return UIImage(data: data)!
+                } else {
+                    return UIImage(systemName: "house")!
+                }
+            } else {
+                return UIImage(systemName: "house")!
+            }
+        }
+        
+        // image to share
+        let image = ShareScreenShotView(
+            forWhom: teamInfo.teamName,
+            rooms: rooms,
+            images: images
+        ).asUiImage()
+        
+        // set up activity view controller
+        let imageToShare = [ image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func findThemeButtonTapped(_ sender: UIButton) {

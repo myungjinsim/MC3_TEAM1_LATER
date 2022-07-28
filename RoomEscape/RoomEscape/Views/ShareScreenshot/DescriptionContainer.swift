@@ -20,6 +20,7 @@ struct DescriptionContainer: View {
                 RoundedRectangle(cornerRadius: 13)
                     .fill(Color("Background2"))
             )
+            .frame(maxWidth: 400)
     }
 }
 
