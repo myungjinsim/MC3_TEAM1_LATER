@@ -329,9 +329,10 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                                                     <attributedString key="attributedTitle">
-                                                                        <fragment content="PICK">
+                                                                        <fragment content="같이 갈래?">
                                                                             <attributes>
                                                                                 <font key="NSFont" size="17" name="AppleSDGothicNeo-SemiBold"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
