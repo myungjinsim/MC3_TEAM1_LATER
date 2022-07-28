@@ -86,7 +86,7 @@
                                                                 <constraint firstAttribute="height" constant="17" id="T6H-OB-aNA"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system">
+                                                            <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system">
                                                                 <color key="baseForegroundColor" name="text4"/>
                                                             </buttonConfiguration>
                                                         </button>
@@ -289,7 +289,7 @@
     <resources>
         <image name="3dPick" width="187" height="190"/>
         <image name="3dRocket" width="401.66665649414062" height="401"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="heart.text.square" catalog="system" width="128" height="114"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="Background">
