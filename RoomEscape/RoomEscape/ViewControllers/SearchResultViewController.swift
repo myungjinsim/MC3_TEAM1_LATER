@@ -23,8 +23,11 @@ class SearchResultViewController: UIViewController, UITableViewDelegate {
     }
     
     func update(newResult: [RoomModel]) {
-        resultRooms = newResult
-        tableView.reloadData()
+        if resultRooms == newResult {
+        } else {
+            resultRooms = newResult
+            tableView.reloadData()
+        }
     }
 }
 
