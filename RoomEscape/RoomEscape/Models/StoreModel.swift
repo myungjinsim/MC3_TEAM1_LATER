@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RoomModel: Codable {
+struct RoomModel: Codable, Hashable {
     let storeName: String
     let phoneNumber: String
     let homepage: String
@@ -34,7 +34,7 @@ struct SampleRoomModel {
 }
 
 struct TeamModel {
-    let teamName: String
+    var teamName: String
     let themeList: [Int]
 }
 
