@@ -275,11 +275,11 @@
             </objects>
             <point key="canvasLocation" x="1615" y="-28"/>
         </scene>
-        <!--테마-->
+        <!--어떤테마-->
         <scene sceneID="nZA-QA-yPH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jg9-qt-82N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="테마" image="key" catalog="system" id="Ur5-cR-6oE" userLabel="테마"/>
+                    <tabBarItem key="tabBarItem" title="어떤테마" image="key.fill" catalog="system" id="Ur5-cR-6oE" userLabel="테마"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ccB-GW-NFV">
@@ -298,7 +298,7 @@
     </scenes>
     <color key="tintColor" name="text1"/>
     <resources>
-        <image name="key" catalog="system" width="86" height="128"/>
+        <image name="key.fill" catalog="system" width="83" height="128"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
