@@ -21,9 +21,9 @@
                                 <rect key="frame" x="23" y="23" width="368" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMV-I5-lh7">
-                                        <rect key="frame" x="0.0" y="3" width="90.5" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="3" width="91.5" height="26.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="테마 PICK">
+                                            <fragment content="같이 갈래?">
                                                 <attributes>
                                                     <color key="NSColor" name="text1"/>
                                                     <font key="NSFont" size="22" name="AppleSDGothicNeo-Bold"/>
