@@ -13,15 +13,19 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var themeComparisonButton: UIButton!
     @IBOutlet weak var themeComparisonView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var compareButton: UIButton!
+    @IBOutlet weak var emptyLabel: UIStackView!
+    @IBOutlet weak var emptyButton: UIButton!
     
     let roomDataManager = JSONDataManager.shared
     
     let util: Util = Util()
-    var cancelButton: UIBarButtonItem?
     var selectedThemes: [Int] = []
     var isButtonPressed: Bool = false
     var team: TeamModel?
+    
+    var cancelButton : UIBarButtonItem?
+    var shareButton : UIBarButtonItem?
+    var editButton : UIBarButtonItem?
     
     
     override func viewDidLoad() {
@@ -29,19 +33,53 @@ class TeamViewController: UIViewController {
         
         navigationItem.backButtonTitle = ""
         
+        cancelButton = UIBarButtonItem(
+            title: "취소",
+            style: .plain,
+            target: self,
+            action: #selector(cancelButtonTapped)
+        )
+        shareButton = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: nil
+        )
+        editButton = UIBarButtonItem(
+            barButtonSystemItem: .compose,
+            target: self,
+            action: nil
+        )
+        
         self.configureView()
-        self.cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
+        
+        navigationItem.rightBarButtonItems = [ self.editButton!, self.shareButton!]
         
         themeComparisonView.layer.cornerRadius = 5
-        themeComparisonButton.layer.cornerRadius = 5
-        
-        self.compareButton.tintColor = UIColor(rgb: 0x464646)
-        self.compareButton.isHidden = true
+        themeComparisonButton.layer.cornerRadius = 10
         
         teamTableView.delegate = self
         teamTableView.dataSource = self
         teamTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
+        teamTableView.register(UINib(nibName: Constants.roomSelectionTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomSelectionTableViewCell)
         teamTableView.allowsMultipleSelection = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if team?.themeList.isEmpty ?? true {
+            teamTableView.isHidden = true
+            themeComparisonView.isHidden = true
+            emptyLabel.isHidden = false
+            emptyButton.isHidden = false
+        } else {
+            teamTableView.isHidden = false
+            themeComparisonView.isHidden = false
+            emptyLabel.isHidden = true
+            emptyButton.isHidden = true
+        }
+        
+        teamTableView.reloadData()
     }
     
     private func configureView() {
@@ -51,36 +89,39 @@ class TeamViewController: UIViewController {
     
     // Make the themeComparisonView disappear when this button is pressed
     @IBAction func themeComparisonButtonPressed(_ sender: UIButton) {
-        teamTableView.allowsMultipleSelection = true
-        self.navigationItem.rightBarButtonItem = self.cancelButton
-        self.isButtonPressed = true
-        self.themeComparisonButton.isHidden = true
-        self.infoLabel.text = "비교해서 보고싶은 2가지 테마를 선택하세요!"
-        self.compareButton.isHidden = false
-        
+        if isButtonPressed {
+            if themeComparisonButton.backgroundColor == UIColor.mainPurple {
+                guard let viewController = self.storyboard?.instantiateViewController(identifier: "ThemeCompareViewControllerRef") as? ThemeCompareViewController else { return }
+                
+                viewController.firstTheme = roomDataManager.roomData[selectedThemes[0]]
+                viewController.secondTheme = roomDataManager.roomData[selectedThemes[1]]
+                
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } else {
+            teamTableView.allowsMultipleSelection = true
+            navigationItem.rightBarButtonItems = [ self.cancelButton!]
+            self.isButtonPressed = true
+            self.themeComparisonButton.setTitle("비교하기", for: .normal)
+            self.themeComparisonButton.backgroundColor = UIColor.titleBlack
+            self.infoLabel.text = "원하는 2개의 테마를 비교해요!"
+            self.teamTableView.reloadData()
+        }
     }
     
     @objc func cancelButtonTapped() {
+        navigationItem.rightBarButtonItems = [ self.editButton!, self.shareButton!]
         teamTableView.allowsMultipleSelection = false
-        self.navigationItem.rightBarButtonItem = .none
         self.isButtonPressed = false
-        self.themeComparisonButton.isHidden = false
+        self.themeComparisonButton.setTitle("테마 비교", for: .normal)
+        self.themeComparisonButton.backgroundColor = UIColor.mainPurple
         self.infoLabel.text = "테마간 차이점이 궁금하다면?"
         selectedThemes.removeAll()
-        self.compareButton.tintColor = UIColor(rgb: 0x464646)
-        self.compareButton.isHidden = true
+        self.teamTableView.reloadData()
     }
     
-    @IBAction func compareButtonTapped(_ sender: UIButton) {
-        if !compareButton.isHidden && compareButton.tintColor == UIColor.mainPurple {
-            guard let viewController = self.storyboard?.instantiateViewController(identifier: "ThemeCompareViewControllerRef") as? ThemeCompareViewController else { return }
-            
-            viewController.firstTheme = roomDataManager.roomData[selectedThemes[0]]
-            viewController.secondTheme = roomDataManager.roomData[selectedThemes[1]]
-            
-            self.navigationController?.pushViewController(viewController, animated: true)
-            
-        }
+    @IBAction func findThemeButtonTapped(_ sender: UIButton) {
+        self.tabBarController?.selectedIndex = 0
     }
     
 }// TeamViewController
@@ -92,7 +133,7 @@ extension TeamViewController: UITableViewDelegate {
         if isButtonPressed {
             guard let theme = team?.themeList[indexPath.row] else { return }
             selectedThemes = selectedThemes.filter { $0 != theme }
-            self.compareButton.tintColor = UIColor(rgb: 0x464646)
+            self.themeComparisonButton.backgroundColor = UIColor.titleBlack
         }
     }
     
@@ -107,11 +148,15 @@ extension TeamViewController: UITableViewDelegate {
             guard let theme = team?.themeList[indexPath.row] else { return }
             selectedThemes.append(theme)
             if selectedThemes.count == 2 {
-                self.compareButton.tintColor = UIColor.mainPurple
+                self.themeComparisonButton.backgroundColor = UIColor.mainPurple
             }
         } else {
-            util.showToast(view: self.view, message: "테마 비교 버튼을 눌러주세요")
-            self.teamTableView.reloadRows(at: [indexPath], with: .automatic)
+            guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+            
+            guard let theme = team?.themeList[indexPath.row] else { return }
+            viewController.roomIndex = theme
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
@@ -126,33 +171,65 @@ extension TeamViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomCell
-
-        let themes = self.team?.themeList
-        guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
-        let roomInfo = roomDataManager.roomData[themeIdx]
         
-        cell.roomName?.text = roomInfo.title
-        let url = URL(string: roomInfo.image)
-        cell.storeName?.text = roomInfo.storeName
-        cell.roomImage?.contentMode = .scaleToFill
-        cell.roomImage?.clipsToBounds = true
-        
-        for i in 0 ..< roomInfo.star {
-            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-        }
-        
-        DispatchQueue.main.async {
-            if let url = url {
-                if let data = try? Data(contentsOf: url) {
-                    cell.roomImage?.image = UIImage(data: data)
-                } else {
-                    cell.roomImage?.image = UIImage(systemName: "house")
+        if isButtonPressed {
+            let selectionCell = tableView.dequeueReusableCell(withIdentifier: Constants.roomSelectionTableViewCell, for: indexPath) as! RoomSelectionTableViewCell
+            
+            let themes = self.team?.themeList
+            guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
+            let roomInfo = roomDataManager.roomData[themeIdx]
+            
+            selectionCell.roomName?.text = roomInfo.title
+            let url = URL(string: roomInfo.image)
+            selectionCell.storeName?.text = roomInfo.storeName
+            selectionCell.genre.text = roomInfo.genre
+            selectionCell.roomImage?.contentMode = .scaleToFill
+            selectionCell.roomImage?.clipsToBounds = true
+            
+            for i in 0 ..< roomInfo.star {
+                selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+            }
+            
+            DispatchQueue.main.async {
+                if let url = url {
+                    if let data = try? Data(contentsOf: url) {
+                        selectionCell.roomImage?.image = UIImage(data: data)
+                    } else {
+                        selectionCell.roomImage?.image = UIImage(systemName: "house")
+                    }
                 }
             }
+            
+            return selectionCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomTableViewCell
+            
+            let themes = self.team?.themeList
+            guard let themeIdx = themes?[indexPath.row] else { return UITableViewCell() }
+            let roomInfo = roomDataManager.roomData[themeIdx]
+            
+            cell.roomName?.text = roomInfo.title
+            let url = URL(string: roomInfo.image)
+            cell.storeName?.text = roomInfo.storeName
+            cell.genre.text = roomInfo.genre
+            cell.roomImage?.contentMode = .scaleToFill
+            cell.roomImage?.clipsToBounds = true
+            
+            for i in 0 ..< roomInfo.star {
+                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+            }
+            
+            DispatchQueue.main.async {
+                if let url = url {
+                    if let data = try? Data(contentsOf: url) {
+                        cell.roomImage?.image = UIImage(data: data)
+                    } else {
+                        cell.roomImage?.image = UIImage(systemName: "house")
+                    }
+                }
+            }
+            return cell
         }
-        
-        return cell
     }
     
 }
