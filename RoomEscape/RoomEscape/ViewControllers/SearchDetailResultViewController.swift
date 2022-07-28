@@ -9,8 +9,15 @@ import UIKit
 
 class SearchDetailResultViewController: UIViewController {
 
+    @IBOutlet var locationLabel : UILabel!
+    @IBOutlet var difficultyLabel : UILabel!
+    @IBOutlet var themeLabel : UILabel!
+    @IBOutlet var withLabel : UILabel!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
