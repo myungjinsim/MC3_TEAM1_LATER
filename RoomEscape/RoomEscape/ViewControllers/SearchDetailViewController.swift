@@ -22,14 +22,13 @@ class SearchDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Pulldown buttons setting
         configurePulldownButtons()
         
         // Button status setting
         configureSearchButtonStatus()
         
-
     }
     
     private func configureSearchButtonStatus() {

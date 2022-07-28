@@ -186,9 +186,9 @@ extension TeamViewController: UITableViewDataSource {
             selectionCell.roomImage?.contentMode = .scaleToFill
             selectionCell.roomImage?.clipsToBounds = true
             
-            for i in 0 ..< roomInfo.star {
-                selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-            }
+//            for i in 0 ..< roomInfo.star {
+//                selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+//            }
             
             DispatchQueue.main.async {
                 if let url = url {
@@ -215,9 +215,9 @@ extension TeamViewController: UITableViewDataSource {
             cell.roomImage?.contentMode = .scaleToFill
             cell.roomImage?.clipsToBounds = true
             
-            for i in 0 ..< roomInfo.star {
-                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
-            }
+//            for i in 0 ..< roomInfo.star {
+//                cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+//            }
             
             DispatchQueue.main.async {
                 if let url = url {

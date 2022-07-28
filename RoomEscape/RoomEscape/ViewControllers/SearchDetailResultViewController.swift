@@ -73,9 +73,9 @@ extension SearchDetailResultViewController: UICollectionViewDelegate, UICollecti
 extension SearchDetailResultViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
+        let cell: RoomCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
         let roomInfo: RoomModel = searchResultRoomModels[indexPath.row]
-        let url = URL(string: roomInfo.image)
+        let url: URL? = URL(string: roomInfo.image)
         
         cell.roomName?.text = roomInfo.title
         cell.storeName?.text = roomInfo.storeName

@@ -27,6 +27,8 @@
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
 		7A2CD1B6288884FE002D5950 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B5288884FD002D5950 /* Util.swift */; };
 		7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30AF782892BD5200796D3A /* TeamModel.swift */; };
+		7A30AF7B2892D77B00796D3A /* AllTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */; };
+		7A30AF7D2892D78C00796D3A /* AllThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
 		7A6604B128871856000DC85B /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6604B028871856000DC85B /* Team.storyboard */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
@@ -88,6 +90,8 @@
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A2CD1B5288884FD002D5950 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7A30AF782892BD5200796D3A /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTheme.storyboard; sourceTree = "<group>"; };
+		7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllThemeViewController.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7A6604B028871856000DC85B /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				3D8FF086288FE7FB0029DE1A /* SearchDetailResult.storyboard */,
 				A04A77972890EC6300D728A9 /* SearchResult.storyboard */,
 				893E5264288FE3D10027C7B4 /* SearchDetail.storyboard */,
+				7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				A04A7795289002F800D728A9 /* SearchViewController.swift */,
 				A04A77992890EC8100D728A9 /* SearchResultViewController.swift */,
 				893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */,
+				7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AAC4C628889AE2003D8FEF /* Pick.storyboard in Resources */,
+				7A30AF7B2892D77B00796D3A /* AllTheme.storyboard in Resources */,
 				A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				166DF9132890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib in Resources */,
@@ -346,6 +353,7 @@
 				165907A728870DED00B23372 /* MakeTeamViewController.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 				7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */,
+				7A30AF7D2892D78C00796D3A /* AllThemeViewController.swift in Sources */,
 				165907A52886EEDE00B23372 /* TeamCell.swift in Sources */,
 				3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */,
 				89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */,
