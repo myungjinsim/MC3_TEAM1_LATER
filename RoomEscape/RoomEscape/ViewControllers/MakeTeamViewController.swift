@@ -43,9 +43,8 @@ class MakeTeamViewController: UIViewController {
         case let .edit(index):
             self.teamNameField.text = teams[index].teamName
             self.makeButton.setTitle("수정하기", for: .normal)
-            firstLabel.text = "팀 이름을"
+            firstLabel.text = "컬렉션 이름을"
             secondLabel.text = "수정해주세요!"
-            highlight.frame.size.width = 95
         default:
             break
         }

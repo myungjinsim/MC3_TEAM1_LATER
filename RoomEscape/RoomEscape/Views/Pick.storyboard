@@ -162,18 +162,18 @@
                                 <rect key="frame" x="67.333333333333343" y="46" width="401.66666666666663" height="401"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-14-ub1">
-                                <rect key="frame" x="23" y="259.66666666666669" width="123" height="15"/>
+                                <rect key="frame" x="23" y="259.66666666666669" width="152" height="15"/>
                                 <color key="backgroundColor" name="Main"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="B8l-gO-glL"/>
-                                    <constraint firstAttribute="width" constant="123" id="gY0-ja-Qye"/>
+                                    <constraint firstAttribute="width" constant="152" id="gY0-ja-Qye"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-kO-5Dp">
-                                <rect key="frame" x="25" y="241.00000000000003" width="147.33333333333334" height="82.333333333333343"/>
+                                <rect key="frame" x="25" y="241.00000000000003" width="174.66666666666666" height="82.333333333333343"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 팀을" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9l-qP-xaq">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="38.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마 컬렉션을" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9l-qP-xaq">
+                                        <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="38.666666666666664"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
