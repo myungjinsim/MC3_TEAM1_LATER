@@ -29,19 +29,14 @@
 		3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */; };
 		7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B32887A29B002D5950 /* Constants.swift */; };
 		7A2CD1B6288884FE002D5950 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CD1B5288884FD002D5950 /* Util.swift */; };
+		7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30AF782892BD5200796D3A /* TeamModel.swift */; };
+		7A30AF7B2892D77B00796D3A /* AllTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */; };
+		7A30AF7D2892D78C00796D3A /* AllThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */; };
 		7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6604AE28871835000DC85B /* TeamViewController.swift */; };
 		7A6604B128871856000DC85B /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6604B028871856000DC85B /* Team.storyboard */; };
 		7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
 		7ABEE2BA2885CE3200C2C020 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B92885CE3200C2C020 /* Home.storyboard */; };
 		7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */; };
-		7AD34ACC2890D78100E92B73 /* GBZGAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */; };
-		7AD34ACE2890D78100E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34ACD2890D78100E92B73 /* ContentView.swift */; };
-		7AD34AD02890D78300E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34ACF2890D78300E92B73 /* Assets.xcassets */; };
-		7AD34AD32890D78300E92B73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */; };
-		7AD34AD82890D78300E92B73 /* GBZGAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 7AD34AC92890D78100E92B73 /* GBZGAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7AD34ADF2890F42E00E92B73 /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */; };
-		7AD34AE02890F49000E92B73 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
-		7AD34AE12890F4DB00E92B73 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 		7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEAB5F92885746400BA2216 /* StoreModel.swift */; };
 		7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB5FC2885764500BA2216 /* StoreData.json */; };
 		893E5263288FE3C20027C7B4 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */; };
@@ -64,16 +59,6 @@
 		C19893842887E91A0045CF40 /* PohangData.json in Resources */ = {isa = PBXBuildFile; fileRef = C19893832887E91A0045CF40 /* PohangData.json */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7AD34AD62890D78300E92B73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0FEF74D287EBDF500DA3FBE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7AD34AC82890D78100E92B73;
-			remoteInfo = GBZGAppClip;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		7AD34ADC2890D78300E92B73 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -81,7 +66,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
 			dstSubfolderSpec = 16;
 			files = (
-				7AD34AD82890D78300E92B73 /* GBZGAppClip.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,18 +95,14 @@
 		3D8FF088288FE8630029DE1A /* SearchDetailResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailResultViewController.swift; sourceTree = "<group>"; };
 		7A2CD1B32887A29B002D5950 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A2CD1B5288884FD002D5950 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		7A30AF782892BD5200796D3A /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTheme.storyboard; sourceTree = "<group>"; };
+		7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllThemeViewController.swift; sourceTree = "<group>"; };
 		7A6604AE28871835000DC85B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7A6604B028871856000DC85B /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		7ABEE2B0288577C100C2C020 /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
 		7ABEE2B92885CE3200C2C020 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7ABEE2BB2885CE5B00C2C020 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7AD34AC92890D78100E92B73 /* GBZGAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBZGAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBZGAppClipApp.swift; sourceTree = "<group>"; };
-		7AD34ACD2890D78100E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7AD34ACF2890D78300E92B73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7AD34AD42890D78300E92B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AD34AD52890D78300E92B73 /* GBZGAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GBZGAppClip.entitlements; sourceTree = "<group>"; };
 		7AEAB5F92885746400BA2216 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7AEAB5FC2885764500BA2216 /* StoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoreData.json; sourceTree = "<group>"; };
 		893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
@@ -148,13 +128,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7AD34AC62890D78100E92B73 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0FEF752287EBDF500DA3FBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,27 +156,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		7AD34ACA2890D78100E92B73 /* GBZGAppClip */ = {
-			isa = PBXGroup;
-			children = (
-				7AD34ACB2890D78100E92B73 /* GBZGAppClipApp.swift */,
-				7AD34ACD2890D78100E92B73 /* ContentView.swift */,
-				7AD34ACF2890D78300E92B73 /* Assets.xcassets */,
-				7AD34AD42890D78300E92B73 /* Info.plist */,
-				7AD34AD52890D78300E92B73 /* GBZGAppClip.entitlements */,
-				7AD34AD12890D78300E92B73 /* Preview Content */,
-			);
-			path = GBZGAppClip;
-			sourceTree = "<group>";
-		};
-		7AD34AD12890D78300E92B73 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				7AD34AD22890D78300E92B73 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		7AEAB5FB2885748600BA2216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +177,7 @@
 				3D8FF086288FE7FB0029DE1A /* SearchDetailResult.storyboard */,
 				A04A77972890EC6300D728A9 /* SearchResult.storyboard */,
 				893E5264288FE3D10027C7B4 /* SearchDetail.storyboard */,
+				7A30AF7A2892D77B00796D3A /* AllTheme.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7AEAB5F92885746400BA2216 /* StoreModel.swift */,
+				7A30AF782892BD5200796D3A /* TeamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +209,7 @@
 				A04A7795289002F800D728A9 /* SearchViewController.swift */,
 				A04A77992890EC8100D728A9 /* SearchResultViewController.swift */,
 				893E5262288FE3C20027C7B4 /* SearchDetailViewController.swift */,
+				7A30AF7C2892D78C00796D3A /* AllThemeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -274,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF757287EBDF500DA3FBE /* RoomEscape */,
-				7AD34ACA2890D78100E92B73 /* GBZGAppClip */,
 				A0FEF756287EBDF500DA3FBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				A0FEF755287EBDF500DA3FBE /* RoomEscape.app */,
-				7AD34AC92890D78100E92B73 /* GBZGAppClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,23 +263,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AD34AC82890D78100E92B73 /* GBZGAppClip */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7AD34AD92890D78300E92B73 /* Build configuration list for PBXNativeTarget "GBZGAppClip" */;
-			buildPhases = (
-				7AD34AC52890D78100E92B73 /* Sources */,
-				7AD34AC62890D78100E92B73 /* Frameworks */,
-				7AD34AC72890D78100E92B73 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GBZGAppClip;
-			productName = GBZGAppClip;
-			productReference = 7AD34AC92890D78100E92B73 /* GBZGAppClip.app */;
-			productType = "com.apple.product-type.application.on-demand-install-capable";
-		};
 		A0FEF754287EBDF500DA3FBE /* RoomEscape */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0FEF769287EBDF600DA3FBE /* Build configuration list for PBXNativeTarget "RoomEscape" */;
@@ -339,7 +275,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7AD34AD72890D78300E92B73 /* PBXTargetDependency */,
 			);
 			name = RoomEscape;
 			productName = RoomEscape;
@@ -353,12 +288,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					7AD34AC82890D78100E92B73 = {
-						CreatedOnToolsVersion = 13.4;
-					};
 					A0FEF754287EBDF500DA3FBE = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -378,27 +310,17 @@
 			projectRoot = "";
 			targets = (
 				A0FEF754287EBDF500DA3FBE /* RoomEscape */,
-				7AD34AC82890D78100E92B73 /* GBZGAppClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7AD34AC72890D78100E92B73 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AD34AD32890D78300E92B73 /* Preview Assets.xcassets in Resources */,
-				7AD34AE12890F4DB00E92B73 /* PohangData.json in Resources */,
-				7AD34AD02890D78300E92B73 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0FEF753287EBDF500DA3FBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				16AAC4C628889AE2003D8FEF /* Pick.storyboard in Resources */,
+				7A30AF7B2892D77B00796D3A /* AllTheme.storyboard in Resources */,
 				A0181DF52885320600F5272F /* ThemeCompare.storyboard in Resources */,
 				7AEAB5FD2885764500BA2216 /* StoreData.json in Resources */,
 				166DF9132890AD3F0051BAD6 /* RoomSelectionTableViewCell.xib in Resources */,
@@ -422,17 +344,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7AD34AC52890D78100E92B73 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AD34ACE2890D78100E92B73 /* ContentView.swift in Sources */,
-				7AD34AE02890F49000E92B73 /* StoreModel.swift in Sources */,
-				7AD34ACC2890D78100E92B73 /* GBZGAppClipApp.swift in Sources */,
-				7AD34ADF2890F42E00E92B73 /* JSONDataManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0FEF751287EBDF500DA3FBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,6 +361,7 @@
 				160F901328926C6B006CE34A /* ThemePoster.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
+				7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */,
 				7ABEE2BC2885CE5B00C2C020 /* HomeViewController.swift in Sources */,
 				7AEAB5FA2885746400BA2216 /* StoreModel.swift in Sources */,
 				3D8FC6B92885339700722937 /* Extension.swift in Sources */,
@@ -460,6 +372,7 @@
 				165907A728870DED00B23372 /* MakeTeamViewController.swift in Sources */,
 				A0FEF75B287EBDF500DA3FBE /* SceneDelegate.swift in Sources */,
 				7A6604AF28871835000DC85B /* TeamViewController.swift in Sources */,
+				7A30AF7D2892D78C00796D3A /* AllThemeViewController.swift in Sources */,
 				165907A52886EEDE00B23372 /* TeamCell.swift in Sources */,
 				3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */,
 				89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */,
@@ -470,14 +383,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7AD34AD72890D78300E92B73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7AD34AC82890D78100E92B73 /* GBZGAppClip */;
-			targetProxy = 7AD34AD62890D78300E92B73 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0FEF75E287EBDF500DA3FBE /* Main.storyboard */ = {
@@ -499,72 +404,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7AD34ADA2890D78300E92B73 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GBZGAppClip/GBZGAppClip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GBZGAppClip/Preview Content\"";
-				DEVELOPMENT_TEAM = DL9N9GFVMW;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GBZGAppClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RoomEscape;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.later.RoomEscape.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7AD34ADB2890D78300E92B73 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GBZGAppClip/GBZGAppClip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GBZGAppClip/Preview Content\"";
-				DEVELOPMENT_TEAM = DL9N9GFVMW;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GBZGAppClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RoomEscape;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.later.RoomEscape.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		A0FEF767287EBDF600DA3FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -690,7 +529,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Gabozago;
+				INFOPLIST_KEY_CFBundleDisplayName = "가보자고";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -721,7 +560,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Gabozago;
+				INFOPLIST_KEY_CFBundleDisplayName = "가보자고";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -744,15 +583,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AD34AD92890D78300E92B73 /* Build configuration list for PBXNativeTarget "GBZGAppClip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7AD34ADA2890D78300E92B73 /* Debug */,
-				7AD34ADB2890D78300E92B73 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A0FEF750287EBDF500DA3FBE /* Build configuration list for PBXProject "RoomEscape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
