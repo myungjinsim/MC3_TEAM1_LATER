@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160F901128926A65006CE34A /* ShareScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F901028926A65006CE34A /* ShareScreenShotView.swift */; };
+		160F901328926C6B006CE34A /* ThemePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F901228926C6B006CE34A /* ThemePoster.swift */; };
+		160F9031289304A9006CE34A /* DescriptionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F9030289304A9006CE34A /* DescriptionContainer.swift */; };
 		1659079528848AF100B23372 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079428848AF100B23372 /* PickViewController.swift */; };
 		1659079E2885B4E800B23372 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659079C2885B4E800B23372 /* RoomTableViewCell.swift */; };
 		1659079F2885B4E800B23372 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1659079D2885B4E800B23372 /* RoomTableViewCell.xib */; };
@@ -70,6 +73,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		160F901028926A65006CE34A /* ShareScreenShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScreenShotView.swift; sourceTree = "<group>"; };
+		160F901228926C6B006CE34A /* ThemePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePoster.swift; sourceTree = "<group>"; };
+		160F9030289304A9006CE34A /* DescriptionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionContainer.swift; sourceTree = "<group>"; };
 		16590792288482EF00B23372 /* Pick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pick.storyboard; sourceTree = "<group>"; };
 		1659079428848AF100B23372 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		1659079C2885B4E800B23372 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -132,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160F900F28926A3F006CE34A /* ShareScreenshot */ = {
+			isa = PBXGroup;
+			children = (
+				160F901028926A65006CE34A /* ShareScreenShotView.swift */,
+				160F901228926C6B006CE34A /* ThemePoster.swift */,
+				160F9030289304A9006CE34A /* DescriptionContainer.swift */,
+			);
+			path = ShareScreenshot;
+			sourceTree = "<group>";
+		};
 		7ABEE2AF288577A400C2C020 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +159,7 @@
 		7AEAB5FB2885748600BA2216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				160F900F28926A3F006CE34A /* ShareScreenshot */,
 				A0181DF42885320600F5272F /* ThemeCompare.storyboard */,
 				2552F8C62886A8BA00E40599 /* Detail.storyboard */,
 				A0FEF75E287EBDF500DA3FBE /* Main.storyboard */,
@@ -339,7 +356,9 @@
 				1659079528848AF100B23372 /* PickViewController.swift in Sources */,
 				25D711F028887114009B684A /* PickSheetViewController.swift in Sources */,
 				166DF9122890AD3F0051BAD6 /* RoomSelectionTableViewCell.swift in Sources */,
+				160F9031289304A9006CE34A /* DescriptionContainer.swift in Sources */,
 				A0E3E04428877A5B00919B92 /* UILabel+Extension.swift in Sources */,
+				160F901328926C6B006CE34A /* ThemePoster.swift in Sources */,
 				A0FEF75D287EBDF500DA3FBE /* MainTabBarController.swift in Sources */,
 				7ABEE2B1288577C100C2C020 /* JSONDataManager.swift in Sources */,
 				7A30AF792892BD5200796D3A /* TeamModel.swift in Sources */,
@@ -358,6 +377,7 @@
 				3D8FF089288FE8630029DE1A /* SearchDetailResultViewController.swift in Sources */,
 				89815E852886A84A000C5C24 /* RoomCollectionViewCell.swift in Sources */,
 				7A2CD1B42887A29B002D5950 /* Constants.swift in Sources */,
+				160F901128926A65006CE34A /* ShareScreenShotView.swift in Sources */,
 				25D711F228888C97009B684A /* PickTeamCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +526,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DL9N9GFVMW;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "가보자고";
@@ -537,7 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DL9N9GFVMW;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomEscape/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "가보자고";
