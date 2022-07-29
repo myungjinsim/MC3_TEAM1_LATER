@@ -11,10 +11,13 @@ import SwiftUI
 class SearchViewController: UIViewController, UISearchResultsUpdating {
     
     let roomData = JSONDataManager.shared.roomData
+    @IBOutlet weak var searchIconImage: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchIconImage.image = UIImage(named: "3dMagnifyingglass")
         
         let storyboard = UIStoryboard(name: "SearchResult", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "SearchResultViewController") as? SearchResultViewController

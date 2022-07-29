@@ -67,6 +67,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3c8-By-Gjs"/>
+                    <connections>
+                        <outlet property="searchIconImage" destination="MAj-Bk-5Mk" id="YuZ-aP-ErT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
