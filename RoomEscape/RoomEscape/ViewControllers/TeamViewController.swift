@@ -221,7 +221,7 @@ extension TeamViewController: UITableViewDataSource {
             selectionCell.roomImage?.contentMode = .scaleToFill
             selectionCell.roomImage?.clipsToBounds = true
             
-            for i in 0 ..< roomInfo.star {
+            for i in 0 ..< roomInfo.difficulty {
                 selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
             }
             
@@ -250,7 +250,7 @@ extension TeamViewController: UITableViewDataSource {
             cell.roomImage?.contentMode = .scaleToFill
             cell.roomImage?.clipsToBounds = true
             
-            for i in 0 ..< roomInfo.star {
+            for i in 0 ..< roomInfo.difficulty {
                 cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
             }
             

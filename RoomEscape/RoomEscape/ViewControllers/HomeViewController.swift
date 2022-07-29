@@ -21,9 +21,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recommendationCollectionView: UICollectionView!
     @IBOutlet weak var recommendationCollectionViewSecond: UICollectionView!
     @IBOutlet weak var secondRecommendationHighlight: UIView!
+    @IBOutlet weak var allViewButton: UIButton!
+    @IBOutlet weak var locationAllViewButton: UIButton!
+    @IBOutlet weak var firstGenreAllViewButton: UIButton!
+    @IBOutlet weak var secondGenreAllViewButton: UIButton!
     
     // Variables
     var isCurrentLocationButtonPressed: Bool = false
+    var locationRoomModels: [RoomModel] = []
     var randomRoomModels: [RoomModel] = []
     var randomRoomModelsSecond: [RoomModel] = []
     let roomDataManager: JSONDataManager = JSONDataManager()
@@ -40,23 +45,27 @@ class HomeViewController: UIViewController {
         
         // Pull down setting
         configruePulldownButton()
-
-        // Configure other settings
-        currentLocationButton.setTitle(Constants.locations[2], for: .normal)
-        currentLocationLabel.text = Constants.locations[2] + " 근처"
-        dimensionImageView.image = UIImage(named: Constants.mainImageArray[Int.random(in: 0..<Constants.mainImageArray.count)])
         
-        randomRoomModels = roomDataManager.roomData.filter { RoomModel in
-            RoomModel.genre == genreRecommendation.text!.components(separatedBy: " ")[0]
-        }
-        randomRoomModelsSecond = roomDataManager.roomData.filter { RoomModel in
-            RoomModel.genre == genreRecommendationSecond.text!.components(separatedBy: " ")[0]
-        }
-
+        // ✅ Primary Location Setting
+        // TODO: Remove this handler by setting current location reading logic
+        configurePrimaryLocation()
+        
+        // Configure other settings
+        dimensionImageView.image = UIImage(named: Constants.mainImageArray[Int.random(in: 0..<Constants.mainImageArray.count)])
     }
     
     // Handling functions
+    private func configurePrimaryLocation() {
+        currentLocationButton.setTitle(Constants.locations[2], for: .normal)
+        currentLocationLabel.text = Constants.locations[2] + " 근처"
+        locationRoomModels = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.location == Constants.locations[2]
+        }
+    }
+    
     private func configureGenreRecommendation() {
+        let introLabel: String = "테마는 어때요?"
+        
         genreRecommendation.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
         genreRecommendationSecond.text = Constants.genreCategories[Int.random(in: 0..<Constants.genreCategories.count)]
         
@@ -76,7 +85,17 @@ class HomeViewController: UIViewController {
         } else {
             secondRecommendationHighlight.frame.size.width = 140
         }
-
+        
+        randomRoomModels = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.genre == genreRecommendation.text!.components(separatedBy: " ")[0]
+        }
+        randomRoomModelsSecond = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.genre == genreRecommendationSecond.text!.components(separatedBy: " ")[0]
+        }
+        
+        genreRecommendation.text = genreRecommendation.text! + introLabel
+        genreRecommendationSecond.text = genreRecommendationSecond.text! + introLabel
+        
     }
     
     private func configureDelegateSetting() {
@@ -97,7 +116,7 @@ class HomeViewController: UIViewController {
             forCellWithReuseIdentifier: Constants.roomCollectionViewCell
         )
         recommendationCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
-
+        
         // RecommendationCollectionViewSecond Setting
         recommendationCollectionViewSecond.delegate = self
         recommendationCollectionViewSecond.dataSource = self
@@ -115,7 +134,7 @@ class HomeViewController: UIViewController {
         let button1 = UIAction(title: "경주시", handler: { _ in self.changeCurrentLocation(location: "경주시") })
         let button2 = UIAction(title: "대구광역시", handler: { _ in self.changeCurrentLocation(location: "대구광역시") })
         let button3 = UIAction(title: "포항시", handler: { _ in self.changeCurrentLocation(location: "포항시") })
-
+        
         let buttonMenu = UIMenu(children: [button1, button2, button3])
         
         currentLocationButton.menu = buttonMenu
@@ -129,6 +148,73 @@ class HomeViewController: UIViewController {
         } else {
             currentLocationHighlight.frame.size.width = 140
         }
+        
+        arrangeThemeListWithLocationData(location: location)
+    }
+    
+    private func arrangeThemeListWithLocationData(location: String) {
+        locationRoomModels = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.location == location
+        }
+        
+        locationCollectionView.reloadData()
+    }
+    
+    @IBAction func locationAllViewButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            self.locationAllViewButton.layer.opacity = 0.5
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.locationAllViewButton.layer.opacity = 1
+            }
+        })
+        
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "AllThemeRef") as? AllThemeViewController else { return }
+        guard let currentTitle = currentLocationButton.currentTitle else { return }
+        
+        viewController.themeByLocation = currentTitle
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func firstGenreAllViewButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            self.firstGenreAllViewButton.layer.opacity = 0.5
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.firstGenreAllViewButton.layer.opacity = 1
+            }
+        })
+        
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "AllThemeRef") as? AllThemeViewController else { return }
+        guard let genreRecommendation = genreRecommendation.text else { return }
+        
+        viewController.themeByRecommendation = genreRecommendation
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func secondGenreAllViewButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            self.secondGenreAllViewButton.layer.opacity = 0.5
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.secondGenreAllViewButton.layer.opacity = 1
+            }
+        })
+        
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "AllThemeRef") as? AllThemeViewController else { return }
+        guard let genreRecommendation = genreRecommendationSecond.text else { return }
+        
+        viewController.themeByRecommendation = genreRecommendation
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }// HomeViewController
@@ -137,9 +223,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // Quantity of items
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.locationCollectionView {
-            return roomDataManager.roomData.count
+            return locationRoomModels.count
         } else if collectionView == self.recommendationCollectionView {
             return randomRoomModels.count
         } else {
@@ -172,7 +258,7 @@ extension HomeViewController: UICollectionViewDataSource {
         
         // CollectionView setting
         if collectionView == self.locationCollectionView {
-            roomInfo = roomDataManager.roomData[indexPath.row]
+            roomInfo = locationRoomModels[indexPath.row]
         } else if collectionView == self.recommendationCollectionView {
             roomInfo = randomRoomModels[indexPath.row]
         } else {
@@ -197,6 +283,6 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return cell
     }
-        
+    
 }// HomeViewController: UICollectionViewDataSource
 
