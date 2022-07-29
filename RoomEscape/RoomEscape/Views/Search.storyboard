@@ -72,11 +72,11 @@
             </objects>
             <point key="canvasLocation" x="3672.4637681159425" y="84.375"/>
         </scene>
-        <!--Search-->
+        <!--어디갈래-->
         <scene sceneID="DRk-P6-fDT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gri-00-Ffo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Br7-wH-vm7"/>
+                    <tabBarItem key="tabBarItem" title="어디갈래" image="magnifyingglass" catalog="system" id="Br7-wH-vm7"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ojY-2f-3Wp">
