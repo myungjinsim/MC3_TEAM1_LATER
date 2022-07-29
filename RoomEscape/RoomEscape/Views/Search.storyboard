@@ -41,7 +41,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="맞춤 테마 찾기">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <font key="NSFont" size="15" name="AppleSDGothicNeo-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
