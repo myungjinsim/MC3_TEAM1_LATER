@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension UIColor {
     // 피그마에 등록된 색상 보시고, 사용하시면 됩니다!
@@ -47,4 +48,23 @@ extension UIColor {
            blue: rgb & 0xFF
        )
    }
+}
+
+extension View {
+    func asUiImage() -> UIImage {
+        var uiImage = UIImage(systemName: "exclamationmark.triangle.fill")!
+        let controller = UIHostingController(rootView: self)
+       
+        if let view = controller.view {
+            let contentSize = controller.view.intrinsicContentSize
+            view.bounds = CGRect(origin: .zero, size: contentSize)
+            view.backgroundColor = .clear
+
+            let renderer = UIGraphicsImageRenderer(size: contentSize)
+            uiImage = renderer.image { _ in
+                view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+            }
+        }
+        return uiImage
+    }
 }
