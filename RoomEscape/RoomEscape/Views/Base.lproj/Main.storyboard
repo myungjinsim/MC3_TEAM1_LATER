@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-542" y="81"/>
         </scene>
-        <!--SearchDetail-->
+        <!--Search-->
         <scene sceneID="eNF-Z3-ep9">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchDetail" id="rrH-bc-Jso" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Search" id="rrH-bc-Jso" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="odz-Nv-uOl"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUe-7B-SJZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
