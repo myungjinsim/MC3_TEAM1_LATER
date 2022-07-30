@@ -44,8 +44,31 @@
                                                                     <constraint firstAttribute="height" constant="200" id="o9v-4d-RyY"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThemeTitle1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-sX-Erj">
-                                                                <rect key="frame" x="0.0" y="207" width="150" height="46.5"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKA-oo-ax4">
+                                                                <rect key="frame" x="0.0" y="207" width="150" height="20"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="룸즈에이 대구라라포항" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-7G-jlV">
+                                                                        <rect key="frame" x="20.5" y="0.0" width="129.5" height="20"/>
+                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                                        <color key="textColor" name="text4"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oe4-e3-bGh">
+                                                                        <rect key="frame" x="0.0" y="1" width="19.5" height="18.5"/>
+                                                                        <color key="tintColor" name="Main"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="TfC-7G-jlV" secondAttribute="trailing" id="QmN-mE-0c8"/>
+                                                                    <constraint firstItem="TfC-7G-jlV" firstAttribute="top" secondItem="pKA-oo-ax4" secondAttribute="top" id="YPl-JK-9KL"/>
+                                                                    <constraint firstItem="oe4-e3-bGh" firstAttribute="leading" secondItem="pKA-oo-ax4" secondAttribute="leading" id="Z3k-hL-4oj"/>
+                                                                    <constraint firstItem="TfC-7G-jlV" firstAttribute="centerY" secondItem="pKA-oo-ax4" secondAttribute="centerY" id="Z57-ZN-JMG"/>
+                                                                    <constraint firstItem="TfC-7G-jlV" firstAttribute="leading" secondItem="oe4-e3-bGh" secondAttribute="trailing" constant="1" id="bFA-Nd-YS5"/>
+                                                                    <constraint firstItem="oe4-e3-bGh" firstAttribute="top" secondItem="pKA-oo-ax4" secondAttribute="top" id="gnw-mv-fd8"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThemeTitle1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-sX-Erj">
+                                                                <rect key="frame" x="0.0" y="234" width="150" height="46.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46.5" id="enI-fs-hKU"/>
                                                                 </constraints>
@@ -53,34 +76,13 @@
                                                                 <color key="textColor" name="text1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zBv-nP-aUn">
-                                                                <rect key="frame" x="0.0" y="260.5" width="150" height="20"/>
-                                                                <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oe4-e3-bGh">
-                                                                        <rect key="frame" x="0.0" y="1" width="19.5" height="18.5"/>
-                                                                        <color key="tintColor" name="Main"/>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="룸즈에이 포항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-7G-jlV">
-                                                                        <rect key="frame" x="20.5" y="0.0" width="129.5" height="20"/>
-                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                                        <color key="textColor" name="text4"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="8PF-XN-ilv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="zBv-nP-aUn" secondAttribute="bottom" id="Hq8-KK-g4Z"/>
-                                                            <constraint firstItem="3DA-sX-Erj" firstAttribute="leading" secondItem="7S5-rj-F9M" secondAttribute="leading" id="JOZ-0i-FmD"/>
-                                                            <constraint firstItem="zBv-nP-aUn" firstAttribute="top" secondItem="3DA-sX-Erj" secondAttribute="bottom" constant="7" id="MES-2g-efa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="3DA-sX-Erj" secondAttribute="trailing" id="aHg-V7-gOl"/>
-                                                            <constraint firstItem="3DA-sX-Erj" firstAttribute="top" secondItem="hcS-yM-5vO" secondAttribute="bottom" constant="7" id="bbv-O4-Cp6"/>
-                                                            <constraint firstItem="hcS-yM-5vO" firstAttribute="top" secondItem="7S5-rj-F9M" secondAttribute="top" id="bxN-0w-Xeu"/>
-                                                            <constraint firstItem="zBv-nP-aUn" firstAttribute="leading" secondItem="7S5-rj-F9M" secondAttribute="leading" id="shZ-TO-aFl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="zBv-nP-aUn" secondAttribute="trailing" id="sq8-mS-SaJ"/>
-                                                            <constraint firstItem="hcS-yM-5vO" firstAttribute="leading" secondItem="7S5-rj-F9M" secondAttribute="leading" id="tpD-ik-Q6o"/>
-                                                            <constraint firstAttribute="trailing" secondItem="hcS-yM-5vO" secondAttribute="trailing" id="yhd-zX-zGl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3DA-sX-Erj" secondAttribute="trailing" id="Hzu-Op-AZq"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3DA-sX-Erj" secondAttribute="bottom" id="WWK-Ix-zMG"/>
+                                                            <constraint firstItem="pKA-oo-ax4" firstAttribute="leading" secondItem="7S5-rj-F9M" secondAttribute="leading" id="c3l-z5-zVI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="pKA-oo-ax4" secondAttribute="trailing" id="lKQ-ZJ-XOb"/>
+                                                            <constraint firstItem="3DA-sX-Erj" firstAttribute="leading" secondItem="7S5-rj-F9M" secondAttribute="leading" id="mx6-Ix-QFK"/>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fzQ-Zx-eKE">
@@ -99,8 +101,31 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62U-o2-Wvn">
+                                                                <rect key="frame" x="0.0" y="206" width="150" height="20"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="룸즈에이 포항" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2i-7c-HOK">
+                                                                        <rect key="frame" x="20.5" y="2" width="129.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                                        <color key="textColor" name="text4"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-4U-Kra">
+                                                                        <rect key="frame" x="0.0" y="1" width="19.5" height="18.5"/>
+                                                                        <color key="tintColor" name="Main"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="5Ve-4U-Kra" firstAttribute="leading" secondItem="62U-o2-Wvn" secondAttribute="leading" id="EJD-SY-phk"/>
+                                                                    <constraint firstItem="5Ve-4U-Kra" firstAttribute="top" secondItem="62U-o2-Wvn" secondAttribute="top" id="NQk-1Y-aF6"/>
+                                                                    <constraint firstItem="r2i-7c-HOK" firstAttribute="centerY" secondItem="62U-o2-Wvn" secondAttribute="centerY" id="NmR-eU-xCD"/>
+                                                                    <constraint firstItem="r2i-7c-HOK" firstAttribute="leading" secondItem="5Ve-4U-Kra" secondAttribute="trailing" constant="1" id="Uzw-CX-pRR"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="r2i-7c-HOK" secondAttribute="trailing" id="pXb-X3-yRK"/>
+                                                                    <constraint firstItem="r2i-7c-HOK" firstAttribute="leading" secondItem="5Ve-4U-Kra" secondAttribute="trailing" constant="1" id="ugn-Sq-B82"/>
+                                                                </constraints>
+                                                            </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThemeTitle2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyL-qs-uze">
-                                                                <rect key="frame" x="0.0" y="206" width="150" height="46.5"/>
+                                                                <rect key="frame" x="0.0" y="232" width="150" height="46.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46.5" id="sCL-J6-1Vv"/>
                                                                 </constraints>
@@ -108,33 +133,18 @@
                                                                 <color key="textColor" name="text1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OT5-ED-08k">
-                                                                <rect key="frame" x="0.0" y="258.5" width="150" height="20"/>
-                                                                <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-4U-Kra">
-                                                                        <rect key="frame" x="0.0" y="1" width="19.5" height="18.5"/>
-                                                                        <color key="tintColor" name="Main"/>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="룸즈에이 포항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2i-7c-HOK">
-                                                                        <rect key="frame" x="19.5" y="0.0" width="130.5" height="20"/>
-                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                                        <color key="textColor" name="text4"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="32E-tg-GRL" firstAttribute="top" secondItem="fzQ-Zx-eKE" secondAttribute="top" id="FO0-rF-RLD"/>
-                                                            <constraint firstAttribute="width" constant="150" id="IUv-LR-hlm"/>
-                                                            <constraint firstAttribute="trailing" secondItem="IyL-qs-uze" secondAttribute="trailing" id="MSn-qD-8C5"/>
-                                                            <constraint firstItem="OT5-ED-08k" firstAttribute="top" secondItem="IyL-qs-uze" secondAttribute="bottom" constant="6" id="SK4-F9-eI8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="OT5-ED-08k" secondAttribute="trailing" id="Va5-Yu-ZJw"/>
-                                                            <constraint firstAttribute="trailing" secondItem="32E-tg-GRL" secondAttribute="trailing" id="W68-vE-AyU"/>
-                                                            <constraint firstItem="32E-tg-GRL" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="dSv-Wm-7vB"/>
-                                                            <constraint firstItem="IyL-qs-uze" firstAttribute="top" secondItem="32E-tg-GRL" secondAttribute="bottom" constant="6" id="jX2-2i-v6c"/>
-                                                            <constraint firstItem="OT5-ED-08k" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="lmW-mh-vGD"/>
-                                                            <constraint firstItem="IyL-qs-uze" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="ywi-AM-QnO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="32E-tg-GRL" secondAttribute="trailing" id="2oo-WU-h5g"/>
+                                                            <constraint firstItem="62U-o2-Wvn" firstAttribute="top" secondItem="32E-tg-GRL" secondAttribute="bottom" constant="6" id="Iv5-rc-1kW"/>
+                                                            <constraint firstItem="32E-tg-GRL" firstAttribute="top" secondItem="fzQ-Zx-eKE" secondAttribute="top" id="PFg-QX-ooq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="62U-o2-Wvn" secondAttribute="trailing" id="UD7-TB-NQf"/>
+                                                            <constraint firstAttribute="bottom" secondItem="IyL-qs-uze" secondAttribute="bottom" id="V3u-bE-NYa"/>
+                                                            <constraint firstItem="IyL-qs-uze" firstAttribute="top" secondItem="62U-o2-Wvn" secondAttribute="bottom" constant="6" id="Vrs-1w-geO"/>
+                                                            <constraint firstItem="62U-o2-Wvn" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="W9p-hG-VJo"/>
+                                                            <constraint firstItem="32E-tg-GRL" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="eHE-8e-iii"/>
+                                                            <constraint firstItem="IyL-qs-uze" firstAttribute="leading" secondItem="fzQ-Zx-eKE" secondAttribute="leading" id="gRL-q8-dlV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="IyL-qs-uze" secondAttribute="trailing" id="gtb-RS-0lf"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
