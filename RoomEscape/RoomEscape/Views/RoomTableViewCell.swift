@@ -12,7 +12,7 @@ class RoomTableViewCell: UITableViewCell {
     @IBOutlet weak var roomImage: UIImageView!
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var storeName: UILabel!
-    @IBOutlet weak var stars: UIStackView!
+    @IBOutlet weak var difficulties: UIStackView!
     @IBOutlet weak var selectionCover: UIView!
     @IBOutlet weak var genre: UILabel!
     
@@ -25,5 +25,4 @@ class RoomTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
