@@ -82,7 +82,7 @@ extension SearchDetailResultViewController: UITableViewDataSource {
         cell.roomImage?.clipsToBounds = true
         
         for i in 0 ..< roomInfo.difficulty {
-            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+            cell.difficulties?.arrangedSubviews[i].tintColor = UIColor(named: "star");
         }
         
         DispatchQueue.main.async {
