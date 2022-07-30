@@ -41,7 +41,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="맞춤 테마 찾기">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <font key="NSFont" size="15" name="AppleSDGothicNeo-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -49,6 +49,9 @@
                                             <color key="baseForegroundColor" name="text1"/>
                                             <color key="baseBackgroundColor" name="Main"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="themeSearchButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IrR-bR-cOh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -66,7 +69,13 @@
                             <constraint firstItem="g5F-Ln-7rk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SxY-M8-gk0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3c8-By-Gjs"/>
+                    <navigationItem key="navigationItem" id="3c8-By-Gjs">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pDx-ec-uKC"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchIconImage" destination="MAj-Bk-5Mk" id="YuZ-aP-ErT"/>
+                        <outlet property="themeSearchButton" destination="JfW-Eg-CzR" id="OPZ-iD-M5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +84,7 @@
         <!--SearchDetail-->
         <scene sceneID="zpV-sb-tUN">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchDetail" id="cXQ-h9-zCm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SearchDetailRef" storyboardName="SearchDetail" id="cXQ-h9-zCm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WJ-Yo-D6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4636" y="-55"/>
@@ -92,6 +101,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ojY-2f-3Wp">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="text1"/>
+                        <color key="barTintColor" name="text1"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="text1"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -302,7 +302,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="kHh-V9-SM4">
-                                                                        <rect key="frame" x="0.0" y="36.666666666666629" width="343" height="156"/>
+                                                                        <rect key="frame" x="0.0" y="36.666666666666629" width="344" height="156"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
                                                                                 <string key="content">  화가인 그가 내게서 떠나간지 어느덧 한 달, 나는 여전히 그와의 시간 속에 머물러 있다. 그리움과 원망을 가득 안고 골목길을 걷던 어느 날, 밤공기를 들이마시며 한 걸음씩 내딛던 나는 작은 골목길과는 어울리지 않는 전시관을 보게 되었다. 처음 보는 전시관이었지만 어디선가 그의 향기가 흘러나오는 듯 했고, 그 추억 속의 향기에 이끌려 전시회장 안으로 들어서게 되었다.</string>
@@ -316,6 +316,10 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="kHh-V9-SM4" secondAttribute="trailing" id="0Xo-YG-7k1"/>
+                                                                    <constraint firstItem="kHh-V9-SM4" firstAttribute="leading" secondItem="LNz-f9-NC1" secondAttribute="leading" id="auD-br-bCg"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbB-xP-NQJ">
                                                                 <rect key="frame" x="0.0" y="525" width="240" height="0.0"/>

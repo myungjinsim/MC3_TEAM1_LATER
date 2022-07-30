@@ -11,6 +11,7 @@ class AllThemeViewController: UIViewController {
     
     @IBOutlet weak var criterionLabel: UILabel!
     @IBOutlet weak var allThemeTableView: UITableView!
+    @IBOutlet weak var highlight: UIView!
     
     var themeByLocation: String = ""
     var themeByRecommendation: String = ""
@@ -50,6 +51,32 @@ class AllThemeViewController: UIViewController {
                 RoomModel.genre == recommendationLabel
             }
         }
+        
+        if themeByLocation != "" {
+            criterionLabel.text = themeByLocation + "의 방탈출이에요"
+            if themeByLocation.count == 3 {
+                highlight.frame.size.width = 88
+            } else if themeByLocation.count == 4 {
+                highlight.frame.size.width = 103
+            } else {
+                highlight.frame.size.width = 143
+            }
+            
+        } else if themeByRecommendation != "" {
+//            if themeByRecommendation.count == 2 {
+//                highlight.frame.size.width = 88
+//            } else if themeByRecommendation.count == 3 {
+//                highlight.frame.size.width = 103
+//            } else {
+//                highlight.frame.size.width = 143
+//            }
+
+            let firstSpace = criterionLabel.text!.firstIndex(of: "는") ?? criterionLabel.text!.endIndex
+            let recommendationLabel = criterionLabel.text![..<firstSpace]
+
+            criterionLabel.text = recommendationLabel + "에요"
+        }
+
     }
 }
 
@@ -79,6 +106,10 @@ extension AllThemeViewController: UITableViewDataSource {
         cell.genre.text = roomInfo.genre
         cell.roomImage?.contentMode = .scaleToFill
         cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.difficulty {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         DispatchQueue.main.async {
             if let url = url {

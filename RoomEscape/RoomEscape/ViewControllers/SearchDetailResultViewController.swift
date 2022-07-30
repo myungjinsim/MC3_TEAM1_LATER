@@ -13,7 +13,7 @@ class SearchDetailResultViewController: UIViewController {
     @IBOutlet var difficultyLabel : UILabel!
     @IBOutlet var themeLabel : UILabel!
     @IBOutlet var withLabel : UILabel!
-    @IBOutlet weak var searchResultCollectionView: UICollectionView!
+    @IBOutlet weak var resultTableView: UITableView!
     
     let roomDataManager: JSONDataManager = JSONDataManager()
     var searchResultRoomModels: [RoomModel] = []
@@ -31,36 +31,38 @@ class SearchDetailResultViewController: UIViewController {
         themeLabel.text = selectedTheme
         withLabel.text = selectedWith
         
-        searchResultCollectionView.delegate = self
-        searchResultCollectionView.dataSource = self
-        searchResultCollectionView.register(
-            UINib(nibName: Constants.roomCollectionViewCell, bundle: nil),
-            forCellWithReuseIdentifier: Constants.roomCollectionViewCell
-        )
-        searchResultCollectionView.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
+        resultTableView.dataSource = self
+        resultTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
 
+        configureSearchResult()
         
+    }
+    
+    private func configureSearchResult() {
         searchResultRoomModels = roomDataManager.roomData.filter { RoomModel in
-            RoomModel.storeName == "더패닉 방탈출카페"
+            RoomModel.location == selectedLocation &&
+            RoomModel.genre == selectedTheme
+//            RoomModel.difficulty == (selectedDifficulty == "쉬운(1~2)"
+//                                     ? 2
+//                                     : selectedDifficulty == "보통(3~4)"
+//                                        ? 4
+//                                        : selectedDifficulty == "어려움(5)"
+//                                        ? 5
+//                                        : 1
+//            )
+            
         }
-        
+        print(searchResultRoomModels)
     }
 }
 
-extension SearchDetailResultViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    // Quantity of items
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension SearchDetailResultViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultRoomModels.count
     }
-    
-    // Size of layout
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 354)
-    }
-    
-    // Navigation control to the DetailView
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
         viewController.roomIndex = indexPath.row
@@ -68,18 +70,20 @@ extension SearchDetailResultViewController: UICollectionViewDelegate, UICollecti
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomTableViewCell
+        let roomInfo = searchResultRoomModels[indexPath.row]
+        let url = URL(string: roomInfo.image)
 
-extension SearchDetailResultViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RoomCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.roomCollectionViewCell, for: indexPath) as! RoomCollectionViewCell
-        let roomInfo: RoomModel = searchResultRoomModels[indexPath.row]
-        let url: URL? = URL(string: roomInfo.image)
-        
         cell.roomName?.text = roomInfo.title
         cell.storeName?.text = roomInfo.storeName
+        cell.genre.text = roomInfo.genre
         cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        
+        for i in 0 ..< roomInfo.difficulty {
+            cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
         
         DispatchQueue.main.async {
             if let url = url {
@@ -93,5 +97,5 @@ extension SearchDetailResultViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
 }
+    

@@ -17,14 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-is-Np1">
+                                <rect key="frame" x="20" y="130" width="143" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Main"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uud-dO-djz">
                                 <rect key="frame" x="23" y="65" width="139" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
                                 <color key="textColor" name="text1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xOh-93-Xre">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xOh-93-Xre">
+                                <rect key="frame" x="23" y="140" width="391" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -33,8 +38,8 @@
                         <constraints>
                             <constraint firstItem="uud-dO-djz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="21" id="9iK-Rv-ahl"/>
                             <constraint firstItem="xOh-93-Xre" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="9nD-ls-OV7"/>
+                            <constraint firstItem="xOh-93-Xre" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="Ac5-az-YSO"/>
                             <constraint firstItem="xOh-93-Xre" firstAttribute="top" secondItem="uud-dO-djz" secondAttribute="bottom" constant="36" id="GN4-pO-ny9"/>
-                            <constraint firstItem="xOh-93-Xre" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MUo-uu-gea"/>
                             <constraint firstAttribute="bottom" secondItem="xOh-93-Xre" secondAttribute="bottom" id="Zk4-hU-yMq"/>
                             <constraint firstItem="uud-dO-djz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="tO5-8J-QyB"/>
                         </constraints>
@@ -43,6 +48,7 @@
                     <connections>
                         <outlet property="allThemeTableView" destination="xOh-93-Xre" id="moP-MS-7IT"/>
                         <outlet property="criterionLabel" destination="uud-dO-djz" id="2fb-M9-zBv"/>
+                        <outlet property="highlight" destination="bxn-is-Np1" id="UGa-0G-5jx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,6 +67,9 @@
     <resources>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main">
+            <color red="0.4823529411764706" green="0.38039215686274508" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text1">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
