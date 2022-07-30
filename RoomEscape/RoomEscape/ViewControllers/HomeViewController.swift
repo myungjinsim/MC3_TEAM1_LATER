@@ -240,9 +240,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
     
     // Navigation control to the DetailView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? RoomCollectionViewCell else { return }
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
-        viewController.roomIndex = indexPath.row
+        viewController.roomIndex = cell.index - 1
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -270,6 +271,7 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.roomName?.text = roomInfo!.title
         cell.storeName?.text = roomInfo!.storeName
         cell.roomImage?.contentMode = .scaleToFill
+        cell.index = roomInfo!.id
         
         DispatchQueue.main.async {
             if let url = url {
