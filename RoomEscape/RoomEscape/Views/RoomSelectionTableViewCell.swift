@@ -10,7 +10,7 @@ import UIKit
 class RoomSelectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var roomImage: UIImageView!
-    @IBOutlet weak var roomName: UILabel!
+    @IBOutlet weak var roomName: UITextView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var stars: UIStackView!
@@ -22,6 +22,9 @@ class RoomSelectionTableViewCell: UITableViewCell {
         selectionCover.layer.borderWidth = 1
         selectionCover.layer.cornerRadius = 10
         roomImage.layer.cornerRadius = 10
+        roomName.textContainerInset = .zero
+        roomName.textContainer.maximumNumberOfLines = 2
+        roomName.textContainer.lineBreakMode = .byTruncatingTail
         selectionCover.layer.borderColor = UIColor.background2?.cgColor
     }
 
