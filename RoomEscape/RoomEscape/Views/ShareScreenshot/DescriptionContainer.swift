@@ -14,6 +14,7 @@ struct DescriptionContainer: View {
         Text(description)
             .foregroundColor(Color("text2"))
             .multilineTextAlignment(.leading)
+            .lineSpacing(10)
             .padding(.vertical, 21)
             .padding(.horizontal, 16)
             .background(
