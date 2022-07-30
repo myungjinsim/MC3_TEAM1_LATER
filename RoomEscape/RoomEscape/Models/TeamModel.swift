@@ -9,5 +9,5 @@ import Foundation
 
 struct TeamModel {
     var teamName: String
-    let themeList: [Int]
+    var themeList: [Int]
 }

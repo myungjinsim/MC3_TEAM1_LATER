@@ -10,7 +10,7 @@ import UIKit
 class RoomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var roomImage: UIImageView!
-    @IBOutlet weak var roomName: UILabel!
+    @IBOutlet weak var roomName: UITextView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var difficulties: UIStackView!
     @IBOutlet weak var selectionCover: UIView!
@@ -20,6 +20,9 @@ class RoomTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         roomImage.layer.cornerRadius = 10
+        roomName.textContainerInset = .zero
+        roomName.textContainer.maximumNumberOfLines = 2
+        roomName.textContainer.lineBreakMode = .byTruncatingTail
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

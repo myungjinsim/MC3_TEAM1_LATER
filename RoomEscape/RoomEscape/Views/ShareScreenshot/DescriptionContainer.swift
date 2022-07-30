@@ -17,11 +17,11 @@ struct DescriptionContainer: View {
             .lineSpacing(10)
             .padding(.vertical, 21)
             .padding(.horizontal, 16)
+            .frame(width: 400)
             .background(
                 RoundedRectangle(cornerRadius: 13)
                     .fill(Color("Background2"))
             )
-            .frame(maxWidth: 400)
     }
 }
 

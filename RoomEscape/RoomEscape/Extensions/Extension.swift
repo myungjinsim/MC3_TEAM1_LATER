@@ -52,19 +52,24 @@ extension UIColor {
 
 extension View {
     func asUiImage() -> UIImage {
-        var uiImage = UIImage(systemName: "exclamationmark.triangle.fill")!
         let controller = UIHostingController(rootView: self)
-       
-        if let view = controller.view {
-            let contentSize = controller.view.intrinsicContentSize
-            view.bounds = CGRect(origin: .zero, size: contentSize)
-            view.backgroundColor = .clear
-
-            let renderer = UIGraphicsImageRenderer(size: contentSize)
-            uiImage = renderer.image { _ in
-                view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-            }
+        let view = controller.view
+        
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = true
+        
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+        
+        let window = UIWindow(frame: view!.bounds)
+        window.addSubview(controller.view)
+        window.makeKeyAndVisible()
+        
+        let renderer = UIGraphicsImageRenderer(bounds: view!.bounds, format: format)
+        return renderer.image { rendererContext in
+            view?.layer.render(in: rendererContext.cgContext)
         }
-        return uiImage
     }
 }

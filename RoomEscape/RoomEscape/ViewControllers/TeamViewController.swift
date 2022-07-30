@@ -189,7 +189,47 @@ class TeamViewController: UIViewController {
     }
     
     @objc func deleteButtonTapped() {
+        let sheet = UIAlertController(title: "테마 삭제", message: "정말 삭제하겠습니까?", preferredStyle: .alert)
         
+        sheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            guard let preThemes = self.team?.themeList else { return }
+            let curThemes = Array(Set(preThemes).subtracting(Set(self.selectedThemes)))
+            
+            let userDefaults = UserDefaults.standard
+            guard let tmpData = userDefaults.object(forKey: "teams") as? [[String: Any]] else { return }
+            var teams : [TeamModel] = tmpData.compactMap {
+                guard let title = $0["teamName"] as? String else { return nil }
+                guard let themeList = $0["themeList"] as? [Int] else { return nil }
+                return TeamModel(teamName: title, themeList: themeList)
+            }
+            guard let index = teams.firstIndex(where: {$0.teamName == self.team?.teamName }) else { return }
+            teams.remove(at: index)
+            let newTeam = TeamModel(teamName: self.team?.teamName ?? "", themeList: curThemes)
+            teams.append(newTeam)
+            let data = teams.map {
+                [
+                    "teamName": $0.teamName,
+                    "themeList": $0.themeList
+                ]
+            }
+            userDefaults.set(data, forKey: "teams")
+            
+            self.team?.themeList = curThemes
+            
+            self.navigationItem.rightBarButtonItems = [ self.editButton!, self.shareButton!]
+            self.teamTableView.allowsMultipleSelection = false
+            self.viewMode = .standard
+            self.themeComparisonButton.isHidden = false
+            self.themeComparisonButton.setTitle("테마 비교", for: .normal)
+            self.themeComparisonButton.backgroundColor = UIColor.mainPurple
+            self.infoLabel.text = "테마간 차이점이 궁금하다면?"
+            self.selectedThemes.removeAll()
+            self.teamTableView.reloadData()
+        }))
+                
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil ))
+        
+        present(sheet, animated: true)
     }
     
     @IBAction func findThemeButtonTapped(_ sender: UIButton) {
@@ -234,7 +274,8 @@ extension TeamViewController: UITableViewDelegate {
                 self.themeComparisonButton.backgroundColor = UIColor.mainPurple
             }
         case .edit:
-            break
+            guard let theme = team?.themeList[indexPath.row] else { return }
+            selectedThemes.append(theme)
         }
     }
 }
