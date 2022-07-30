@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oYR-AN-Jld">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1g-ZA-d49" userLabel="IntroMessageStackView">
-                                <rect key="frame" x="23" y="166" width="173.5" height="38.5"/>
+                                <rect key="frame" x="23" y="52" width="173.5" height="38.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4B-LH-H6u">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="38.5"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMH-la-2xO" userLabel="LocationStackView">
-                                <rect key="frame" x="23" y="235.5" width="250" height="50"/>
+                                <rect key="frame" x="23" y="121.5" width="250" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-Ye-2QQ">
                                         <rect key="frame" x="0.0" y="0.0" width="153.5" height="50"/>
@@ -84,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDm-8H-yZs" userLabel="DifficultyStackView">
-                                <rect key="frame" x="23" y="313.5" width="260" height="50"/>
+                                <rect key="frame" x="23" y="199.5" width="260" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtV-YJ-D4N">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
@@ -119,7 +119,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98M-EV-bZD" userLabel="GenreStackView">
-                                <rect key="frame" x="23" y="391.5" width="220" height="50"/>
+                                <rect key="frame" x="23" y="277.5" width="220" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QH-Hs-ggh">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
@@ -154,7 +154,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-q3-m4s" userLabel="CompanionStackView">
-                                <rect key="frame" x="23" y="469.5" width="270" height="50"/>
+                                <rect key="frame" x="23" y="355.5" width="270" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJi-hj-uQ2">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -221,7 +221,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yhb-SS-GGW" secondAttribute="bottom" constant="46" id="EYn-2J-jbY"/>
                             <constraint firstItem="X1g-ZA-d49" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="LhW-hX-ZUN"/>
                             <constraint firstItem="98M-EV-bZD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="RpH-pm-VHl"/>
-                            <constraint firstItem="X1g-ZA-d49" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="78" id="T4s-Pa-S1A"/>
+                            <constraint firstItem="X1g-ZA-d49" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="T4s-Pa-S1A"/>
                             <constraint firstItem="yqx-q3-m4s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="TKA-p4-FcN"/>
                             <constraint firstItem="yqx-q3-m4s" firstAttribute="top" secondItem="98M-EV-bZD" secondAttribute="bottom" constant="28" id="ezB-EG-D9s"/>
                             <constraint firstItem="yMH-la-2xO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="iku-eh-vBu"/>
@@ -261,25 +261,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qH-ar-6qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2029" y="146"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Xak-1p-mL4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oYR-AN-Jld" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Are-U1-Xve">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="text1"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="or2-iK-iFg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F9p-AC-M83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-9" y="153"/>
         </scene>
     </scenes>
     <resources>
