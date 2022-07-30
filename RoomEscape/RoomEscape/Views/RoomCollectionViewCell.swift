@@ -13,6 +13,7 @@ class RoomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var selectionCover: UIView!
+    var index: Int = 0
     
     override var isSelected: Bool {
         didSet {
