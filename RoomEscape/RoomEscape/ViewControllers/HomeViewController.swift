@@ -75,15 +75,15 @@ class HomeViewController: UIViewController {
         }
         
         if genreRecommendation.text!.count == 2 {
-            firstRecommendationHighlight.frame.size.width = 112
+            firstRecommendationHighlight.frame.size.width = 102
         } else {
-            firstRecommendationHighlight.frame.size.width = 140
+            firstRecommendationHighlight.frame.size.width = 130
         }
         
         if genreRecommendationSecond.text!.count == 2 {
-            secondRecommendationHighlight.frame.size.width = 112
+            secondRecommendationHighlight.frame.size.width = 102
         } else {
-            secondRecommendationHighlight.frame.size.width = 140
+            secondRecommendationHighlight.frame.size.width = 130
         }
         
         randomRoomModels = roomDataManager.roomData.filter { RoomModel in
