@@ -30,22 +30,14 @@ class SearchResultViewController: UIViewController, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        guard let cell = tableView.cellForRow(at: indexPath) as? RoomTableViewCell else { return }
         guard let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
-        
-        detailViewController.roomIndex = indexPath.row
-        /*
-         MARK: 현재 SearchResultViewController가 UINavigationController(navigationController?)가 비어있는 값을 반환해 pushViewController가 안되는 것으로 보임(아마도???)
-         */
-        /*
-        let rootVC = self
-        let navCV = UINavigationController(rootViewController: rootVC)
-        navCV.pushViewController(detailViewController, animated: true)
-         */
-  //      self.navigationController?.pushViewController(detailViewController, animated: true)
-     //   self.navigationController?.present(detailViewController, animated: true)
+
+        detailViewController.roomIndex = cell.index - 1
+
         self.present(detailViewController, animated: true)
+        
     }
 }
 
@@ -66,6 +58,9 @@ extension SearchResultViewController: UITableViewDataSource {
         cell.genre.text = roomInfo.genre
         cell.roomImage?.contentMode = .scaleToFill
         cell.roomImage?.clipsToBounds = true
+        cell.index = roomInfo.id
+        print(roomInfo.id)
+        print("🔥🔥🔥")
         
         for i in 0 ..< roomInfo.difficulty {
             cell.difficulties?.arrangedSubviews[i].tintColor = UIColor(named: "star");

@@ -19,8 +19,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-Ln-7rk">
                                 <rect key="frame" x="107" y="293" width="200" height="310"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MAj-Bk-5Mk">
-                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3dMagnifyingglass" translatesAutoresizingMaskIntoConstraints="NO" id="MAj-Bk-5Mk" userLabel="Search Image Icon">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="gfX-GN-ZvC"/>
                                             <constraint firstAttribute="height" constant="200" id="zdV-9O-M4X"/>
@@ -73,7 +73,6 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="pDx-ec-uKC"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchIconImage" destination="MAj-Bk-5Mk" id="YuZ-aP-ErT"/>
                         <outlet property="themeSearchButton" destination="JfW-Eg-CzR" id="OPZ-iD-M5O"/>
                     </connections>
                 </viewController>
@@ -81,13 +80,29 @@
             </objects>
             <point key="canvasLocation" x="3672.4637681159425" y="84.375"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="8C2-hl-udQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DetailViewControllerRef" storyboardName="Detail" id="ILe-qc-iMe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYi-tl-HjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4271" y="-36"/>
+        </scene>
         <!--SearchDetail-->
         <scene sceneID="zpV-sb-tUN">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="SearchDetailRef" storyboardName="SearchDetail" id="cXQ-h9-zCm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WJ-Yo-D6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636" y="-55"/>
+            <point key="canvasLocation" x="4277" y="25"/>
+        </scene>
+        <!--SearchResult-->
+        <scene sceneID="PFW-Wt-oV2">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchResultViewController" storyboardName="SearchResult" id="4kc-YO-lgJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwx-dV-0pw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4282" y="98"/>
         </scene>
         <!--어디갈래-->
         <scene sceneID="DRk-P6-fDT">
@@ -118,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3dMagnifyingglass" width="230" height="230"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

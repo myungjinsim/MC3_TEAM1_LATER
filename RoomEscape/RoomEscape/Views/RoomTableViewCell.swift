@@ -15,6 +15,7 @@ class RoomTableViewCell: UITableViewCell {
     @IBOutlet weak var difficulties: UIStackView!
     @IBOutlet weak var selectionCover: UIView!
     @IBOutlet weak var genre: UILabel!
+    var index: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
