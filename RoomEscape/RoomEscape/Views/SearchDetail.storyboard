@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.15942028985512" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1891.304347826087" y="137.94642857142856"/>
         </scene>
         <!--SearchDetailResult-->
         <scene sceneID="Eal-li-oNl">
@@ -252,15 +252,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="SearchDetailResultRef" storyboardName="SearchDetailResult" id="rIf-eX-2te" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmQ-of-kUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="146"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="17h-Sp-Iab">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Detail" id="Eca-xZ-aos" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8qH-ar-6qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2029" y="146"/>
+            <point key="canvasLocation" x="2542.0289855072465" y="145.98214285714286"/>
         </scene>
     </scenes>
     <resources>

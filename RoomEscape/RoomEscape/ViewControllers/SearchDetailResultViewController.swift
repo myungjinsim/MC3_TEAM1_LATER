@@ -30,7 +30,8 @@ class SearchDetailResultViewController: UIViewController {
         difficultyLabel.text = selectedDifficulty
         themeLabel.text = selectedTheme
         withLabel.text = selectedWith
-        
+
+        resultTableView.delegate = self
         resultTableView.dataSource = self
         resultTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
 
@@ -52,7 +53,17 @@ class SearchDetailResultViewController: UIViewController {
 //            )
             
         }
-        print(searchResultRoomModels)
+    }
+}
+
+extension SearchDetailResultViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? RoomTableViewCell else { return }
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        
+        viewController.roomIndex = cell.index - 1
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -60,14 +71,6 @@ extension SearchDetailResultViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultRoomModels.count
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
-        
-        viewController.roomIndex = indexPath.row
-        
-        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +83,7 @@ extension SearchDetailResultViewController: UITableViewDataSource {
         cell.genre.text = roomInfo.genre
         cell.roomImage?.contentMode = .scaleToFill
         cell.roomImage?.clipsToBounds = true
+        cell.index = roomInfo.id
         
         for i in 0 ..< roomInfo.difficulty {
             cell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");

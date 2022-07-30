@@ -113,6 +113,9 @@
                             <constraint firstItem="4HJ-a9-x2j" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="vyW-cv-qce"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="P7h-vb-kqV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ae4-fb-sbi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="difficultyLabel" destination="Rsa-aX-VGj" id="bbl-vo-IAD"/>
                         <outlet property="locationLabel" destination="ZYs-gd-EF8" id="y1b-L4-Dji"/>
@@ -123,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.230769230769226" y="71.090047393364927"/>
+            <point key="canvasLocation" x="2856.9230769230767" y="71.090047393364927"/>
         </scene>
         <!--Detail-->
         <scene sceneID="t80-56-B1G">
@@ -131,7 +134,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="DetailViewControllerRef" storyboardName="Detail" id="qJy-BV-LWd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIA-kU-xhu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="-59"/>
+            <point key="canvasLocation" x="3370.7692307692305" y="82.464454976303315"/>
         </scene>
     </scenes>
     <resources>
