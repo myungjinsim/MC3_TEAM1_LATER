@@ -13,7 +13,7 @@ class RoomSelectionTableViewCell: UITableViewCell {
     @IBOutlet weak var roomName: UITextView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var genre: UILabel!
-    @IBOutlet weak var stars: UIStackView!
+    @IBOutlet weak var difficulties: UIStackView!
     @IBOutlet weak var selectionCover: UIView!
     
     override func awakeFromNib() {

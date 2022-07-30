@@ -189,11 +189,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="difficulties" destination="juC-ke-Ddq" id="1vq-7c-vMT"/>
                 <outlet property="genre" destination="Hvr-AU-ack" id="SU0-Ax-9tP"/>
                 <outlet property="roomImage" destination="6r4-Zd-cn4" id="jgC-jk-1tt"/>
                 <outlet property="roomName" destination="b43-Do-ROD" id="Xte-UO-Tpj"/>
                 <outlet property="selectionCover" destination="LlX-OA-HxB" id="DjI-ga-4V1"/>
-                <outlet property="stars" destination="juC-ke-Ddq" id="1vq-7c-vMT"/>
                 <outlet property="storeName" destination="Toj-CV-9aP" id="oMW-Ee-z1t"/>
             </connections>
             <point key="canvasLocation" x="216.66666666666669" y="176.11607142857142"/>
