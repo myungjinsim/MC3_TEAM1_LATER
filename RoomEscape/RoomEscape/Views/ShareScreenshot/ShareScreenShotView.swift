@@ -13,7 +13,7 @@ struct ShareScreenShotView: View {
     let images: [UIImage?]
     
     var body: some View {
-        ScrollView {
+        VStack {
             HStack {
                 Text("\(forWhom)를 위해\n준비했어요")
                     .multilineTextAlignment(.leading)
