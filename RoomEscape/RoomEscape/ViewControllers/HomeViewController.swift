@@ -244,8 +244,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
         
         viewController.roomIndex = cell.index - 1
-        print("✅✅✅")
-        print(cell.index)
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
