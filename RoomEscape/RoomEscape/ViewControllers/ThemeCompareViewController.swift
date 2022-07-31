@@ -46,16 +46,16 @@ class ThemeCompareViewController: UIViewController {
         firstThemeTitle.text = firstTheme?.title ?? ""
         firstThemeStoreName.text = firstTheme?.storeName ?? ""
         firstThemeGenre.text = firstTheme?.genre ?? ""
-        firstThemeDifficulty.text = "\(firstTheme?.difficulty ?? 0)"
-        firstThemeActivity.text = "\(firstTheme?.activity ?? 0)"
-        firstThemeHorror.text = "\(firstTheme?.horror ?? 0)"
+        firstThemeDifficulty.text = "\(Float(firstTheme?.difficulty ?? 0))"
+        firstThemeActivity.text = "\(Float(firstTheme?.activity ?? 0))"
+        firstThemeHorror.text = "\(Float(firstTheme?.horror ?? 0))"
         
         secondThemeTitle.text = secondTheme?.title ?? ""
         secondThemeStoreName.text = secondTheme?.storeName ?? ""
         secondThemeGenre.text = secondTheme?.genre ?? ""
-        secondThemeDifficulty.text = "\(secondTheme?.difficulty ?? 0)"
-        secondThemeActivity.text = "\(secondTheme?.activity ?? 0)"
-        secondThemeHorror.text = "\(secondTheme?.horror ?? 0)"
+        secondThemeDifficulty.text = "\(Float(secondTheme?.difficulty ?? 0))"
+        secondThemeActivity.text = "\(Float(secondTheme?.activity ?? 0))"
+        secondThemeHorror.text = "\(Float(secondTheme?.horror ?? 0))"
         
         Task {
             do {

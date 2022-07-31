@@ -8,29 +8,98 @@
 import UIKit
 
 class SearchDetailResultViewController: UIViewController {
-
+    
     @IBOutlet var locationLabel : UILabel!
     @IBOutlet var difficultyLabel : UILabel!
     @IBOutlet var themeLabel : UILabel!
     @IBOutlet var withLabel : UILabel!
-
-
+    @IBOutlet weak var resultTableView: UITableView!
+    
+    let roomDataManager: JSONDataManager = JSONDataManager()
+    var searchResultRoomModels: [RoomModel] = []
+    var selectedLocation: String = ""
+    var selectedDifficulty: String = ""
+    var selectedTheme: String = ""
+    var selectedWith: String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationLabel.text = selectedLocation
+        difficultyLabel.text = selectedDifficulty
+        themeLabel.text = selectedTheme
+        withLabel.text = selectedWith
 
-        // Do any additional setup after loading the view.
+        resultTableView.delegate = self
+        resultTableView.dataSource = self
+        resultTableView.register(UINib(nibName: Constants.roomTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.roomTableViewCell)
+
+        configureSearchResult()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureSearchResult() {
+        searchResultRoomModels = roomDataManager.roomData.filter { RoomModel in
+            RoomModel.location == selectedLocation &&
+            RoomModel.genre == selectedTheme
+//            RoomModel.difficulty == (selectedDifficulty == "쉬운(1~2)"
+//                                     ? 2
+//                                     : selectedDifficulty == "보통(3~4)"
+//                                        ? 4
+//                                        : selectedDifficulty == "어려움(5)"
+//                                        ? 5
+//                                        : 1
+//            )
+            
+        }
     }
-    */
-
 }
+
+extension SearchDetailResultViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? RoomTableViewCell else { return }
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        
+        viewController.roomIndex = cell.index - 1
+
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension SearchDetailResultViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResultRoomModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.roomTableViewCell, for: indexPath) as! RoomTableViewCell
+        let roomInfo = searchResultRoomModels[indexPath.row]
+        let url = URL(string: roomInfo.image)
+
+        cell.roomName?.text = roomInfo.title
+        cell.storeName?.text = roomInfo.storeName
+        cell.genre.text = roomInfo.genre
+        cell.roomImage?.contentMode = .scaleToFill
+        cell.roomImage?.clipsToBounds = true
+        cell.index = roomInfo.id
+        
+        for i in 0 ..< roomInfo.difficulty {
+            cell.difficulties?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+        }
+        
+        DispatchQueue.main.async {
+            if let url = url {
+                if let data = try? Data(contentsOf: url) {
+                    cell.roomImage?.image = UIImage(data: data)
+                } else {
+                    cell.roomImage?.image = UIImage(systemName: "house")
+                }
+            }
+        }
+        
+        return cell
+    }
+}
+    

@@ -19,8 +19,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-Ln-7rk">
                                 <rect key="frame" x="107" y="293" width="200" height="310"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MAj-Bk-5Mk">
-                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3dMagnifyingglass" translatesAutoresizingMaskIntoConstraints="NO" id="MAj-Bk-5Mk" userLabel="Search Image Icon">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="gfX-GN-ZvC"/>
                                             <constraint firstAttribute="height" constant="200" id="zdV-9O-M4X"/>
@@ -41,7 +41,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="맞춤 테마 찾기">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <font key="NSFont" size="15" name="AppleSDGothicNeo-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -49,6 +49,9 @@
                                             <color key="baseForegroundColor" name="text1"/>
                                             <color key="baseBackgroundColor" name="Main"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="themeSearchButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IrR-bR-cOh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -66,22 +69,58 @@
                             <constraint firstItem="g5F-Ln-7rk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SxY-M8-gk0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3c8-By-Gjs"/>
+                    <navigationItem key="navigationItem" id="3c8-By-Gjs">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pDx-ec-uKC"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="themeSearchButton" destination="JfW-Eg-CzR" id="OPZ-iD-M5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3672.4637681159425" y="84.375"/>
         </scene>
-        <!--Search-->
+        <!--Detail-->
+        <scene sceneID="8C2-hl-udQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DetailViewControllerRef" storyboardName="Detail" id="ILe-qc-iMe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYi-tl-HjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4271" y="-36"/>
+        </scene>
+        <!--SearchDetail-->
+        <scene sceneID="zpV-sb-tUN">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchDetailRef" storyboardName="SearchDetail" id="cXQ-h9-zCm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9WJ-Yo-D6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4277" y="25"/>
+        </scene>
+        <!--SearchResult-->
+        <scene sceneID="PFW-Wt-oV2">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchResultViewController" storyboardName="SearchResult" id="4kc-YO-lgJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwx-dV-0pw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4282" y="98"/>
+        </scene>
+        <!--어디갈래-->
         <scene sceneID="DRk-P6-fDT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gri-00-Ffo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Br7-wH-vm7"/>
+                    <tabBarItem key="tabBarItem" title="어디갈래" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="Br7-wH-vm7">
+                        <color key="badgeColor" name="Main"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ojY-2f-3Wp">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="text1"/>
+                        <color key="barTintColor" name="text1"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="text1"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -94,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3dMagnifyingglass" width="230" height="230"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="Background">
             <color red="0.062745098039215685" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

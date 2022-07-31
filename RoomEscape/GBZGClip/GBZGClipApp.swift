@@ -1,14 +1,14 @@
 //
-//  GBZGAppClipApp.swift
-//  GBZGAppClip
+//  GBZGClipApp.swift
+//  GBZGClip
 //
-//  Created by Noah's Ark on 2022/07/27.
+//  Created by Hyeon-sang Lee on 2022/07/27.
 //
 
 import SwiftUI
 
 @main
-struct GBZGAppClipApp: App {
+struct GBZGClipApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

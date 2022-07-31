@@ -32,7 +32,8 @@ class MakeTeamViewController: UIViewController {
         super.viewDidLoad()
         
         self.teamNameField.delegate = self
-        self.makeButton.tintColor = UIColor.background2
+        self.makeButton.backgroundColor = UIColor.titleBlack
+        self.makeButton.layer.cornerRadius = 10
         
         self.teamNameField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         
@@ -63,10 +64,10 @@ class MakeTeamViewController: UIViewController {
 
     @objc func textFieldDidChange(sender: UITextField) {
         if sender.hasText {
-            makeButton.tintColor = UIColor.mainPurple
+            makeButton.backgroundColor = UIColor.mainPurple
             
         } else {
-            makeButton.tintColor = UIColor(rgb: 0x464646)
+            makeButton.backgroundColor = UIColor.titleBlack
         }
     }
     

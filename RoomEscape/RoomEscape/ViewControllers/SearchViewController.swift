@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
-    
+
+    @IBOutlet weak var themeSearchButton: UIButton!
+    let roomData = JSONDataManager().roomData
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,15 +22,34 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         
         title = "테마 찾기"
         searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "원하는 방탈출을 찾아보세요"
         navigationItem.searchController = searchController
     }
-
+    
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
+        guard let text = searchController.searchBar.text else { return }
+        
+        let vc = searchController.searchResultsController as? SearchResultViewController
+        var result: [RoomModel] = []
+        
+        for item in roomData {
+            if item.title.uppercased().contains(text.uppercased()) {
+                result.append(item)
+            }
         }
-      //  let vc = searchController.searchResultsController as? SearchResultViewController
-     //   vc?.view.backgroundColor = .yellow
-        print(text)
+        
+        if result.count > 0 {
+            vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾았어요!"
+        } else {
+            vc?.searchLabel.text = "'\(text)'에 대한 테마를 찾지 못했어요!"
+        }
+        vc?.update(newResult: result)
     }
+    
+    @IBAction func themeSearchButtonPressed(_ sender: Any) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "SearchDetailRef") as? SearchDetailViewController else { return }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
 }
