@@ -30,13 +30,13 @@ class SearchResultViewController: UIViewController, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         guard let cell = tableView.cellForRow(at: indexPath) as? RoomTableViewCell else { return }
-        guard let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
+        guard let detailViewController = self.storyboard?.instantiateViewController(identifier: "DetailViewControllerRef") as? DetailViewController else { return }
 
         detailViewController.roomIndex = cell.index - 1
 
-        self.present(detailViewController, animated: true)
+//        self.present(detailViewController, animated: true)
+        self.presentingViewController?.navigationController?.pushViewController(detailViewController, animated: true)
         
     }
 }

@@ -307,7 +307,7 @@ extension TeamViewController: UITableViewDataSource {
             selectionCell.roomImage?.clipsToBounds = true
             
             for i in 0 ..< roomInfo.difficulty {
-                selectionCell.stars?.arrangedSubviews[i].tintColor = UIColor(named: "star");
+                selectionCell.difficulties?.arrangedSubviews[i].tintColor = UIColor(named: "star");
             }
             
             DispatchQueue.main.async {
