@@ -128,19 +128,18 @@ class HomeViewController: UIViewController {
     }
     
     private func configruePulldownButton() {
-        currentLocationButton.showsMenuAsPrimaryAction = true
-        currentLocationButton.changesSelectionAsPrimaryAction = true
-        
-        let button1 = UIAction(title: "경주시", handler: { _ in self.changeCurrentLocation(location: "경주시") })
-        let button2 = UIAction(title: "대구광역시", handler: { _ in self.changeCurrentLocation(location: "대구광역시") })
-        let button3 = UIAction(title: "포항시", handler: { _ in self.changeCurrentLocation(location: "포항시") })
+        let button1 = UIAction(title: "경주시") { _ in self.changeCurrentLocation(location: "경주시") }
+        let button2 = UIAction(title: "대구광역시") { _ in self.changeCurrentLocation(location: "대구광역시") }
+        let button3 = UIAction(title: "포항시") { _ in self.changeCurrentLocation(location: "포항시") }
         
         let buttonMenu = UIMenu(children: [button1, button2, button3])
         
+        currentLocationButton.showsMenuAsPrimaryAction = true
         currentLocationButton.menu = buttonMenu
     }
     
     private func changeCurrentLocation(location: String) {
+        currentLocationButton.setTitle(location, for: .normal)
         currentLocationLabel.text = location + " 근처"
         
         if location.count == 3 {
